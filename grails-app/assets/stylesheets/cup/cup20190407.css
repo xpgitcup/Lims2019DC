@@ -1,0 +1,73 @@
+body {
+  background: url("../cup/img_bg_haven.jpg");
+  background-position: center;
+  background-size: cover;
+  /*这个是正确的*/
+  /* 处理EasyUI 与main.css 的不兼容*/
+  /* 处理bootstrap的问题*/
+}
+body .application-title {
+  font-size: 2.1em;
+  color: white;
+  text-align: center;
+  line-height: 78px;
+}
+body .application-menus {
+  text-align: center;
+  line-height: 78px;
+}
+body .application-menus ul {
+  list-style: none;
+}
+body .application-menus ul li {
+  float: right;
+  padding: 10px;
+}
+body .application-menus ul li a {
+  color: white;
+}
+body .application-message {
+  color: yellow;
+  line-height: 78px;
+}
+body .application-status {
+  color: white;
+  list-style: none;
+  padding-top: 10%;
+}
+body .application-status a {
+  color: #00bbee;
+}
+body .application-footer {
+  color: white;
+  float: right;
+  font-size: 1.2em;
+}
+body .application-copyright {
+  font-size: 1.2em;
+}
+body .pagination table {
+  margin-bottom: 0px;
+  /*20170212 add by lixiaoping*/
+  width: auto;
+  /*20190410 add by lixiaoping*/
+  padding-bottom: 0px;
+  alignment: center;
+}
+body .pagination table td {
+  padding: auto !important;
+  /*20190410 add by lixiaoping*/
+  padding-top: 0px;
+  /*20170212 add by lixiaoping*/
+  padding-bottom: 0px;
+  /*20170212 add by lixiaoping*/
+  vertical-align: middle;
+  /*20170212 add by lixiaoping*/
+}
+body .container {
+  width: 100%;
+}
+body .container .row {
+  padding: 0 0;
+}
+/*# sourceMappingURL=cup20190407.css.map */

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "main",
+    "title": "实验室数据管理系统2019CB",
+    "logo": "cuplogoA.png",
+    "href": "www.cup.edu.cn",
+    "description": "这里是中国石油大学（北京）的简介",
+    "layout": "mainCup20190407"
+  },
+  {
+    "name": "main详细介绍",
+    "title": "实验室数据管理系统",
+    "logo": "cup_big.png",
+    "href": "www.cup.edu.cn",
+    "description": "这里应该是中国石油大学的详细介绍"
+  },
+  {
+    "name": "main多相流实验室",
+    "title": "实验室数据管理系统",
+    "logo": "cup_big.png",
+    "href": "www.cup.edu.cn",
+    "description": "这里应该是中国石油大学的详细介绍"
+  },
+  {
+    "name": "中石化",
+    "title": "中石化",
+    "logo": "logo_cnooc.png",
+    "href": "www.cup.edu.cn",
+    "description": "这里是中石化的简介"
+  },
+  {
+    "name": "微信",
+    "title": "微信",
+    "logo": "微信.png",
+    "href": "www.cup.edu.cn",
+    "description": "这里是微信的简介"
+  }
+]

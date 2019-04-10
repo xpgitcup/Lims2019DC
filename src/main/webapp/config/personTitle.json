@@ -1,0 +1,46 @@
+[
+  {
+    "name": "全体人员",
+    "subTitles": [
+      {
+        "name": "教师",
+        "upTitle": "全体人员",
+        "subTitles": [
+          {
+            "name": "教授",
+            "upTitle": "教师"
+          },
+          {
+            "name": "副教授",
+            "upTitle": "教师"
+          },
+          {
+            "name": "讲师",
+            "upTitle": "教师"
+          },
+          {
+            "name": "助教",
+            "upTitle": "教师"
+          }
+        ]
+      },{
+        "name": "学生",
+        "upTitle": "全体人员",
+        "subTitles": [
+          {
+            "name": "博士",
+            "upTitle": "学生"
+          },
+          {
+            "name": "硕士",
+            "upTitle": "学生"
+          },
+          {
+            "name": "本科生",
+            "upTitle": "学生"
+          }
+        ]
+      }
+    ]
+  }
+]

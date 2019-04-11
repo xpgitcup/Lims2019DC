@@ -17,7 +17,7 @@ class Operation4ThingTypeController extends ThingTypeController {
     * */
 
     def getTreeViewData() {
-        def data = ThingType.findAllByUpTypeIsNull(params);
+        def data = ThingType.findAllByUpThingTypeIsNull(params);
         params.context = "name"
         params.subItems = "subTypes"
         params.attributes = "id"    //

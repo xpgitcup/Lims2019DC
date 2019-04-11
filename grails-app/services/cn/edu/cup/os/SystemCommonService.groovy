@@ -19,10 +19,10 @@ class SystemCommonService {
     private synchronized void setParameters(amap, systemStatus) {
         amap.each { e ->
             def p = StatusParameter.findByStatusKeyAndSystemStatus("${e.key}", systemStatus)
-            println("设置参数：${e} ${p}")
+            //println("设置参数：${e} ${p}")
             if (p) {
                 if (p.statusValue!="${e.value}") {
-                    println("更新！")
+                    //println("更新！")
                     p.statusValue = "${e.value}"
                     //p.save(flush: true)
                     statusParameterService.save(p)
@@ -41,7 +41,7 @@ class SystemCommonService {
 
 
     def updateSystemStatus(request, params) {
-        println("updateSystemStatus: ${params}")
+        //println("updateSystemStatus: ${params}")
         def ps = params
         ps.remove('password')
         def sid = request.session.getId()

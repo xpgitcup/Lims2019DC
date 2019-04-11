@@ -53,7 +53,7 @@ INSERT INTO `query_statement` VALUES (15, 0, NULL, 'from Major major order by na
 INSERT INTO `query_statement` VALUES (16, 0, NULL, 'select count(*) from Teacher teacher', b'0', b'1', 'count.operation4Person.教师', NULL);
 INSERT INTO `query_statement` VALUES (17, 0, NULL, 'select count(*) from Student student', b'0', b'1', 'count.operation4Person.学生', NULL);
 INSERT INTO `query_statement` VALUES (18, 0, NULL, 'select count(*) from Major major', b'0', b'1', 'count.operation4Person.专业', NULL);
-INSERT INTO `query_statement` VALUES (19, 0, NULL, 'select count(*) from ThingType thingType where upType is null', b'0', b'1', 'count.operation4ThingType.项目类型', NULL);
+INSERT INTO `query_statement` VALUES (19, 0, NULL, 'select count(*) from ThingType thingType where upThingType is null', b'0', b'1', 'count.operation4ThingType.项目类型', NULL);
 INSERT INTO `query_statement` VALUES (20, 0, NULL, 'select count(*) from PersonTitle personTitle where upTitle is null', b'0', b'1', 'count.operation4PersonTitle.人员类型', NULL);
 INSERT INTO `query_statement` VALUES (21, 0, NULL, 'from Project project order by name', b'0', b'1', 'list.operation4Thing.科研', 'listProject');
 INSERT INTO `query_statement` VALUES (22, 0, NULL, 'select count(*) from Project project', b'0', b'1', 'count.operation4Thing.科研', NULL);

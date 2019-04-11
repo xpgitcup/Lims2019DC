@@ -6,13 +6,13 @@ package cn.edu.cup.lims
 class ThingType {
 
     String name
-    ThingType upType
+    ThingType upThingType
 
     static hasMany = [subTypes: ThingType, things: Thing]
 
     static constraints = {
         name(unique: true)
-        upType(nullable: true)
+        upThingType(nullable: true)
     }
 
     static mapping = {

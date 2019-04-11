@@ -25,10 +25,6 @@ $(function () {
     configDisplayUI(settings);
 });
 
-function showCurrent(title) {
-    $("#currentTitle").html("请选择...");
-}
-
 function deleteItem(id) {
     console.info("删除：" + id);
     ajaxExecuteWithMethod("operation4ThingType/delete?id=" + id, 'DELETE');
@@ -60,6 +56,17 @@ function createCourse(id) {
 }
 
 /*
+* 显示节点信息
+* */
+function showThingType(node) {
+    console.info(jsTitle + "+节点显示......" + node);
+    if (node) {
+        var id = node.attributes[0];
+        ajaxRun("operation4ThingType/show", id, "showThingTypeDiv");
+    }
+}
+
+/*
 * 节点被选择。。。
 * */
 function changeUpNode(node) {
@@ -72,7 +79,8 @@ function changeUpNode(node) {
     //$("#deleteItem").attr('href', 'javascript: deleteItem(' + node.attributes[0] + ')');
     //$("#deleteItem").html("删除" + node.attributes[0] + '节点');
     $("#currentTitle").html(node.text);
-    ajaxRun("operation4ThingType/show", node.attributes[0], "showThingTypeDiv");
+    //ajaxRun("operation4ThingType/show", node.attributes[0], "showThingTypeDiv");
+    showThingType(node);
 }
 
 /*

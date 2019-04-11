@@ -3,6 +3,7 @@ package cn.edu.cup.init
 import cn.edu.cup.basic.Caption
 import cn.edu.cup.basic.PersonTitle
 import cn.edu.cup.basic.Teacher
+import cn.edu.cup.lims.ThingType
 import cn.edu.cup.system.SystemAttribute
 import cn.edu.cup.system.SystemMenu
 import cn.edu.cup.system.SystemUser
@@ -22,6 +23,7 @@ class InitService {
     def teacherService
     def systemCommonService
     def systemAttributeService
+    def thingTypeService
 
     /**
      * 初始化代码__开发环境下的初始化代码
@@ -96,6 +98,16 @@ class InitService {
             def menus = commonService.importTreeFromJsonFileName(systemMenuFileName, SystemMenu.class, "menuItems")
             menus.each { e ->
                 systemMenuService.save(e)
+            }
+        }
+
+        // 处理事情分类
+        def thingTypeFileName = "${webRootDir}/config/thingType.json"
+        if (thingTypeService.count() < 1) {
+            def thingTypes = commonService.importTreeFromJsonFileName(thingTypeFileName, ThingType.class, "subTypes")
+            println("${thingTypes}")
+            thingTypes.each { e ->
+                thingTypeService.save(e)
             }
         }
 

@@ -41,7 +41,7 @@
                 <li><a id="createItem" href="#"></a></li>
                 <li><a id="editItem" href="#"></a></li>
                 <!--li><a id="deleteItem" href="#"></a></li-->
-                <li><a id="exportMatterType" href="operation4ThingType/exportToJsonFile/0" class="save">导出文件</a></li>
+                <!--li><a id="exportMatterType" href="operation4ThingType/exportToJsonFile?fileName=config/thingType.json" class="save">导出文件</a></li-->
             </ul>
         </div>
     </div>
@@ -50,7 +50,7 @@
 <div class="container-cup">
     <div class="row-cup">
         <div class="col-md-6">
-            <div id="operation4ThingTypeDiv" class="easyui-panle"></div>
+            <div id="operation4ThingTypeDiv" class="easyui-panel"></div>
         </div>
 
         <div class="col-md-6">

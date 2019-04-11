@@ -1,83 +1,86 @@
 body {
-    //先定义背景
-    background: url("../cup/img_bg_haven.jpg"); //这个是正确的
-    background-position: center;
-    background-size: cover; /*这个是正确的*/
+  //先定义背景
+  background: url("../cup/img_bg_haven.jpg"); //这个是正确的
+  background-position: center;
+  background-size: cover; /*这个是正确的*/
 
-    .application-title {
-        font-size: 2.1em;
-        color: white;
-        text-align: center;
-        line-height: 78px; // 设置成图片的高度，确保垂直居中
-    }
+  .application-title {
+    font-size: 2.1em;
+    color: white;
+    text-align: center;
+    line-height: 78px; // 设置成图片的高度，确保垂直居中
+  }
 
-    .application-menus {
-        text-align: center;
-        line-height: 78px; // 设置成图片的高度，确保垂直居中
+  .application-menus {
+    text-align: center;
+    line-height: 78px; // 设置成图片的高度，确保垂直居中
 
-        ul {
-            list-style: none;
+    ul {
+      list-style: none;
 
-            li {
-                float: right;
-                padding: 10px;
-
-                a {
-                    color: white;
-                }
-            }
-        }
-    }
-
-    .application-message {
-        color: yellow;
-        line-height: 78px; // 设置成图片的高度，确保垂直居中
-    }
-
-    .application-status {
-        color: white;
-        list-style: none;
-        padding-top: 10%;
+      li {
+        float: right;
+        padding: 10px;
 
         a {
-            color: #00bbee;
+          color: white;
         }
+      }
     }
+  }
 
-    .application-footer {
-        color: white;
-        float: right;
-        font-size: 1.2em;
+  .application-message {
+    color: yellow;
+    line-height: 78px; // 设置成图片的高度，确保垂直居中
+  }
+
+  .application-status {
+    color: white;
+    list-style: none;
+    padding-top: 10%;
+
+    a {
+      color: #00bbee;
     }
+  }
 
-    .application-copyright {
-        font-size: 1.2em;
+  .application-footer {
+    color: white;
+    float: right;
+    font-size: 1.2em;
+  }
+
+  .application-copyright {
+    font-size: 1.2em;
+  }
+
+  /* 处理EasyUI 与main.css 的不兼容*/
+
+  .pagination {
+    table {
+      margin-bottom: 0px; /*20170212 add by lixiaoping*/
+      width: auto; /*20190410 add by lixiaoping*/
+      padding-bottom: 0px;
+      alignment: center;
+
+      td {
+        padding: auto !important; /*20190410 add by lixiaoping*/
+        padding-top: 0px; /*20170212 add by lixiaoping*/
+        padding-bottom: 0px; /*20170212 add by lixiaoping*/
+        vertical-align: middle; /*20170212 add by lixiaoping*/
+      }
     }
+  }
 
-    /* 处理EasyUI 与main.css 的不兼容*/
+  /* 定义自己布局---bootstrap的不好用*/
 
-    .pagination {
-        table {
-            margin-bottom: 0px; /*20170212 add by lixiaoping*/
-            width: auto; /*20190410 add by lixiaoping*/
-            padding-bottom: 0px;
-            alignment: center;
+  .container-cup {
+    width: 100%;
 
-            td {
-                padding: auto !important; /*20190410 add by lixiaoping*/
-                padding-top: 0px; /*20170212 add by lixiaoping*/
-                padding-bottom: 0px; /*20170212 add by lixiaoping*/
-                vertical-align: middle; /*20170212 add by lixiaoping*/
-            }
-        }
+    .row-cup {
+      display: flex;
+
     }
+  }
 
-    /* 处理bootstrap的问题*/
-    .container {
-        width: 100%;
-
-        .row {
-            padding: 0 0;
-        }
-    }
 }

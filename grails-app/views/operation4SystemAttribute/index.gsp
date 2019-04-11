@@ -28,18 +28,20 @@
 
 <body>
 
-<div class="container">
-    <div class="row">
+<div class="container-cup">
+    <div class="row-cup">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="nav">
-                    <ul>
-                        <li>
-                            <a class="list">
-                                系统属性维护——(重新登录后，更新)
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="easyui-panel" style="width: 100%">
+                        <ul>
+                            <li>
+                                <a class="list">
+                                    系统属性维护——(重新登录后，更新)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div id="operation4SystemAttributeDiv" class="easyui-panel">
@@ -50,10 +52,12 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="nav" role="navigation">
-                    <ul>
-                        <li><a class="create" href="javascript: createSystemAttribute(0)">新建根节点</a></li>
-                        <li><a id="createSystemAttribute" class="create" href="#">新建子节点</a></li>
-                    </ul>
+                    <div class="easyui-panel" style="width: 100%">
+                        <ul>
+                            <li><a class="create" href="javascript: createSystemAttribute(0)">新建根节点</a></li>
+                            <li><a id="createSystemAttribute" class="create" href="#">新建子节点</a></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="easyui-panel">
@@ -64,11 +68,5 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row" style="width: 100%">
-        <div class="col-6">111111111</div>
-        <div class="col-6">222222111111111</div>
-    </div>
-</div>
 </body>
 </html>

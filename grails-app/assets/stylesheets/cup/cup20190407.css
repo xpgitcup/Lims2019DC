@@ -4,7 +4,7 @@ body {
   background-size: cover;
   /*这个是正确的*/
   /* 处理EasyUI 与main.css 的不兼容*/
-  /* 处理bootstrap的问题*/
+  /* 定义自己布局---bootstrap的不好用*/
 }
 body .application-title {
   font-size: 2.1em;
@@ -64,10 +64,10 @@ body .pagination table td {
   vertical-align: middle;
   /*20170212 add by lixiaoping*/
 }
-body .container {
+body .container-cup {
   width: 100%;
 }
-body .container .row {
-  padding: 0 0;
+body .container-cup .row-cup {
+  display: flex;
 }
 /*# sourceMappingURL=cup20190407.css.map */

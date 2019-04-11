@@ -26,7 +26,7 @@ class HomeController {
         def ss = SystemStatus.findBySessionId(sid)
         if (ss) {
             println("参数：${ss.statusParameters}")
-            def ps = com.alibaba.fastjson.JSON.parseObject(ss.statusParameters)
+            def ps = ss.getParameters()
             currentMenuItem = systemMenuService.get(ps.currentMenuItem)
             println("当前菜单：${currentMenuItem}")
             if (currentMenuItem) {
@@ -82,7 +82,7 @@ class HomeController {
         def controllers = initService.checkSystemStatus()
         def fc = 0
         controllers.each { e ->
-            //println("${e.key}--")
+            //println("${e.statusKey}--")
             if (e.value) {
                 fc++
             }

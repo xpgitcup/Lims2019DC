@@ -12,4 +12,7 @@ class SystemStatusItem {
         paramsString(nullable: true)
     }
 
+    String toString() {
+        return "${actionTime}"
+    }
 }

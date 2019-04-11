@@ -7,9 +7,8 @@ class SystemStatus {
     Date logoutTime
     String userName
     String userRole
-    String statusParameters
 
-    static hasMany = [items: SystemStatusItem]
+    static hasMany = [items: SystemStatusItem, statusParameters: StatusParameter]
 
     static constraints = {
         sessionId()
@@ -17,7 +16,6 @@ class SystemStatus {
         logoutTime(nullable: true)
         userName(nullable: true)
         userRole(nullable: true)
-        statusParameters(nullable: true)
     }
 
     String toString() {
@@ -26,7 +24,9 @@ class SystemStatus {
 
     def getParameters() {
         def parameters = [:]
-        parameters = com.alibaba.fastjson.JSON.parseObject(statusParameters)
+        statusParameters.each { e->
+            parameters.put(e.statusKey, e.statusValue)
+        }
         return parameters
     }
 

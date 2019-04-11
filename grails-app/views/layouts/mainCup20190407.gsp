@@ -56,43 +56,48 @@
 </head>
 
 <body>
-<div class="nav">
-    <div class="col-md-4 column">
-        <div class="nav">
-            <asset:image src="cup/${cn.edu.cup.basic.Caption.findByName("main")?.logo}" alt="程序Logo"/>
-            <div class="application-title">
-                ${cn.edu.cup.basic.Caption.findByName("main")?.title}
+
+<div class="container-cup">
+    <div class="row-cup">
+
+        <div class="col-md-4 column">
+            <div class="nav">
+                <asset:image src="cup/${cn.edu.cup.basic.Caption.findByName("main")?.logo}" alt="程序Logo"/>
+                <div class="application-title">
+                    ${cn.edu.cup.basic.Caption.findByName("main")?.title}
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-md-7 column">
-        <g:if test="${session.systemUser}">
-            <div id="applicationMenuDiv" class="application-menus"></div>
-        </g:if>
-        <g:else>
-            <div class="application-message">
-                请先登录！
-            </div>
-        </g:else>
-    </div>
-
-    <div class="col-md-1 column">
-        <ul class="application-status">
+        <div class="col-md-7 column">
             <g:if test="${session.systemUser}">
-                <li>
-                    当前：${session.systemUser.personName()}
-                </li>
-                <li>
-                    <a href="${createLink(uri: '/home/logout')}">退出</a>
-                </li>
+                <div id="applicationMenuDiv" class="application-menus"></div>
             </g:if>
             <g:else>
-                <li>
-                    <a href="${createLink(uri: '/home/loginUI')}">去登录</a>
-                </li>
+                <div class="application-message">
+                    请先登录！
+                </div>
             </g:else>
-        </ul>
+        </div>
+
+        <div class="col-md-1 column">
+            <ul class="application-status">
+                <g:if test="${session.systemUser}">
+                    <li>
+                        当前：${session.systemUser.personName()}
+                    </li>
+                    <li>
+                        <a href="${createLink(uri: '/home/logout')}">退出</a>
+                    </li>
+                </g:if>
+                <g:else>
+                    <li>
+                        <a href="${createLink(uri: '/home/loginUI')}">去登录</a>
+                    </li>
+                </g:else>
+            </ul>
+        </div>
+
     </div>
 
 </div>

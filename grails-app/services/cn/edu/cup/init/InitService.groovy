@@ -47,9 +47,9 @@ class InitService {
                 def ename = ee[0]
                 def firstChar = ename.charAt(0).toUpperCase()
                 def cname = "${firstChar}${ename.substring(1)}"
-                println(cname)
+                //println(cname)
                 def ok = domains.findIndexOf { it == cname }
-                println("${cname} ${ok}")
+                //println("${cname} ${ok}")
                 controllers.put(cname, (ok > -1))
             }
         }

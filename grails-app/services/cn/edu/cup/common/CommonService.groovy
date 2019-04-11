@@ -2,7 +2,7 @@ package cn.edu.cup.common
 
 import grails.gorm.transactions.Transactional
 
-@Transactional
+//@Transactional
 class CommonService {
 
     def grailsApplication

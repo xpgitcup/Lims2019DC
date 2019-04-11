@@ -1,18 +1,47 @@
 package cn.edu.cup.os
 
+import cn.edu.cup.system.StatusParameter
 import cn.edu.cup.system.SystemAttribute
 import cn.edu.cup.system.SystemStatus
 import cn.edu.cup.system.SystemStatusItem
 import cn.edu.cup.system.SystemUser
+import com.alibaba.fastjson.JSON
 import grails.gorm.transactions.Transactional
 
-@Transactional
+//@Transactional
 class SystemCommonService {
 
     def systemUserService
     def systemStatusService
+    def statusParameterService
+    def systemStatusItemService
+
+    private synchronized void setParameters(amap, systemStatus) {
+        amap.each { e ->
+            def p = StatusParameter.findByStatusKeyAndSystemStatus("${e.key}", systemStatus)
+            println("设置参数：${e} ${p}")
+            if (p) {
+                if (p.statusValue!="${e.value}") {
+                    println("更新！")
+                    p.statusValue = "${e.value}"
+                    //p.save(flush: true)
+                    statusParameterService.save(p)
+                    //systemStatusService.save(systemStatus)
+                }
+            } else {
+                p = new StatusParameter(
+                        statusKey: "${e.key}",
+                        statusValue: "${e.value}",
+                        systemStatus: systemStatus
+                )
+                statusParameterService.save(p)
+            }
+        }
+    }
+
 
     def updateSystemStatus(request, params) {
+        println("updateSystemStatus: ${params}")
         def ps = params
         ps.remove('password')
         def sid = request.session.getId()
@@ -29,21 +58,23 @@ class SystemCommonService {
                     userRole: user.userRoles()
             )
         }
-        // 更新参数
-        def status = ss.getParameters()
-        if (!status) {
-            status = [:]
-        }
-        status.putAll(params)
-        println("${status}")
-        ss.statusParameters = com.alibaba.fastjson.JSON.toJSONString(status)
-        // 记录详情
-        def item = new SystemStatusItem(paramsString: com.alibaba.fastjson.JSON.toJSONString(ps), systemStatus: ss)
-        if (!ss.items) {
-            ss.items = []
-        }
-        ss.items.add(item)
         systemStatusService.save(ss)
+        // 更新参数
+        setParameters(ps, ss)
+        // 记录详细信息
+        setDetailParameters(ps, ss)
+    }
+
+    private void setDetailParameters(ps, SystemStatus ss) {
+        // 记录详情
+        def pps = JSON.toJSONString(ps)
+        def ppl = pps.length()
+        def item = new SystemStatusItem(
+                paramsString: pps.substring(0, Math.min(ppl, 200)),
+                systemStatus: ss
+        )
+        systemStatusItemService.save(item)
+        println("save ${ps} ${item} ok")
     }
 
     boolean removePersonFromUser(person) {
@@ -79,53 +110,6 @@ class SystemCommonService {
         } else {
             return false
         }
-    }
-
-    @Transactional(readOnly = false)
-    def deleteBefore(aDate) {
-        SystemLog.executeUpdate("delete SystemLog a where a.actionDate < :d", [d: aDate])
-    }
-
-    def updateSystemUserList(request) {
-        def pscontext = request.session.servletContext
-        Map serviceMap = pscontext.getAttribute("systemUserList")
-        if (serviceMap) {
-            //当前在线人员列表
-            def m = Math.min(5, serviceMap.size())
-            def users = ""
-            for (int i = 0; i < m; i++) {
-                if (i != 0) {
-                    users += ", "
-                }
-                users += serviceMap.keySet()[i]
-            }
-            if (serviceMap.size() > 5) {
-                users += "..."
-            }
-            request.session.systemUserList = users
-            //统计人数
-            request.session.onlineCount = serviceMap.size()
-            println("${users}")
-        }
-    }
-
-    //获取顶级菜单---?????
-    def getAllTopLevelMenus(params) {
-        def q = SystemMenu.createCriteria()
-        def systemMenuList = []
-        if (params.user) {
-            SystemUser user = params.user
-            def roles = user.userRoles()
-            println("${roles}")
-            if (roles) {
-                systemMenuList = q.list(params) {
-                    isNull('upMenuItem')
-                    'in'('menuContext', roles)      // 只要菜单的名字在其中就可以 20181208
-                    order('menuOrder')
-                }
-            }
-        }
-        return systemMenuList
     }
 
 }

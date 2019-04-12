@@ -12,6 +12,49 @@ class Operation4ThingTypeController extends ThingTypeController {
 
     def treeViewService
 
+    def createProject() {
+        println("${params}")
+        def aThingType = thingTypeService.get(params.id)
+        def project = new Project(
+                thingType: aThingType
+        )
+
+        def view = "createProject"
+        if (request.xhr) {
+            render(template: view, model: [project: project])
+        } else {
+            respond project
+        }
+    }
+
+    def createCourse() {
+        println("${params}")
+        def aThingType = thingTypeService.get(params.id)
+        def myself = Person.get(session.realId)
+        Calendar calendar = Calendar.getInstance();
+        def y = calendar.get(Calendar.YEAR);
+        def m = calendar.get(Calendar.MONTH);
+        def sy
+        if (m > 6) {
+            sy = "${y}-${y + 1}-1"
+        } else {
+            sy = "${y - 1}-${y}-2"
+        }
+        def course = new Course(
+                thingType: aThingType,
+                teacher: myself,
+                name: "${aThingType.name}.${sy}",
+                schoolYear: sy
+        )
+
+        def view = "createCourse"
+        if (request.xhr) {
+            render(template: view, model: [course: course])
+        } else {
+            respond course
+        }
+    }
+
     /*
     * 获取json格式的树形结构数据
     * */

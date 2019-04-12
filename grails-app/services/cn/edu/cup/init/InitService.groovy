@@ -86,7 +86,7 @@ class InitService {
         // 处理应用程序名称、图标等信息
         def captionsFileName = "${webRootDir}/config/captions.json"
         if (captionService.count() < 1) {
-            def captions = commonService.importObjectListFromJsonFileName(captionsFileName, Caption.class)
+            def captions = commonService.importObjectArrayFromJsonFileName(captionsFileName, Caption.class)
             captions.each { e ->
                 captionService.save(e)
             }
@@ -95,8 +95,9 @@ class InitService {
         // 处理菜单的设置
         def systemMenuFileName = "${webRootDir}/config/systemMenu.json"
         if (systemMenuService.count() < 1) {
-            def menus = commonService.importTreeFromJsonFileName(systemMenuFileName, SystemMenu.class, "menuItems")
+            def menus = commonService.importObjectArrayFromJsonFileName(systemMenuFileName, SystemMenu.class)
             menus.each { e ->
+                e.selfCheck()
                 systemMenuService.save(e)
             }
         }
@@ -104,9 +105,9 @@ class InitService {
         // 处理事情分类
         def thingTypeFileName = "${webRootDir}/config/thingType.json"
         if (thingTypeService.count() < 1) {
-            def thingTypes = commonService.importTreeFromJsonFileName(thingTypeFileName, ThingType.class, "subTypes")
-            println("${thingTypes}")
+            def thingTypes = commonService.importObjectArrayFromJsonFileName(thingTypeFileName, ThingType.class)
             thingTypes.each { e ->
+                e.selfCheck()
                 thingTypeService.save(e)
             }
         }
@@ -114,8 +115,9 @@ class InitService {
         // 处理人员身份
         def personTitleFileName = "${webRootDir}/config/personTitle.json"
         if (personTitleService.count() < 1) {
-            def personTitels = commonService.importTreeFromJsonFileName(personTitleFileName, PersonTitle.class, "subTitels")
+            def personTitels = commonService.importObjectArrayFromJsonFileName(personTitleFileName, PersonTitle.class)
             personTitels.each { e ->
+                e.selfCheck()
                 personTitleService.save(e)
             }
         }
@@ -123,7 +125,7 @@ class InitService {
         // 处理系统属性
         def attributeFileName = "${webRootDir}/config/systemAttribute.json"
         if (systemAttributeService.count() < 1) {
-            def attributes = commonService.importObjectListFromJsonFileName(attributeFileName, SystemAttribute.class)
+            def attributes = commonService.importObjectArrayFromJsonFileName(attributeFileName, SystemAttribute.class)
             attributes.each { e ->
                 systemAttributeService.save(e)
             }
@@ -132,7 +134,7 @@ class InitService {
         // 处理人员
         def teacherFileName = "${webRootDir}/config/teacher.json"
         if (teacherService.count() < 1) {
-            def teachers = commonService.importObjectListFromJsonFileName(teacherFileName, Teacher.class)
+            def teachers = commonService.importObjectArrayFromJsonFileName(teacherFileName, Teacher.class)
             teachers.each { e ->
                 //println("${e}")
                 teacherService.save(e)

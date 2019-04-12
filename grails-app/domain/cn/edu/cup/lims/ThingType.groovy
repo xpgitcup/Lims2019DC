@@ -1,9 +1,12 @@
 package cn.edu.cup.lims
 
+import cn.edu.cup.common.SelfCheck
+
 /*
 *  具体的任务（科研项目、教学任务--的分类都应该是叶子）
 * */
-class ThingType {
+
+class ThingType implements SelfCheck {
 
     String name
     ThingType upType
@@ -28,7 +31,7 @@ class ThingType {
     List relatedThingTypeList() {
         def list = []
         if (subTypes) {
-            subTypes.each { e->
+            subTypes.each { e ->
                 list.addAll(e.relatedThingTypeList())
             }
         } else {
@@ -44,4 +47,13 @@ class ThingType {
         return (isThis || isMember)
     }
 
+    @Override
+    void selfCheck() {
+        if (subTypes) {
+            subTypes.each { e->
+                e.upType = this
+                e.selfCheck()
+            }
+        }
+    }
 }

@@ -1,6 +1,8 @@
 package cn.edu.cup.basic
 
-class PersonTitle {
+import cn.edu.cup.common.SelfCheck
+
+class PersonTitle implements SelfCheck {
 
     String name
     PersonTitle upTitle
@@ -33,15 +35,13 @@ class PersonTitle {
         return (isThis || isMember)
     }
 
-    static def checkThingType() {
-        def tlist = PersonTitle.findAllByRelatedThingTypeIsNull()
-        tlist.each { e->
-            if (e.upTitle) {
-                e.relatedThingType = e.upTitle.relatedThingType
-            } else {
-                e.relatedThingType = ThingType.findByName("全部任务")
+    @Override
+    void selfCheck() {
+        if (subTitles) {
+            subTitles.each { e->
+                e.upTitle = this
+                e.selfCheck()
             }
         }
     }
-
 }

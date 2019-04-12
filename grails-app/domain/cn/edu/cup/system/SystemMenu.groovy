@@ -1,6 +1,8 @@
 package cn.edu.cup.system
 
-class SystemMenu {
+import cn.edu.cup.common.SelfCheck
+
+class SystemMenu implements SelfCheck {
 
     String menuContext = "缺省值"
     String menuAction
@@ -63,5 +65,15 @@ class SystemMenu {
             }
         }
         return role
+    }
+
+    @Override
+    void selfCheck() {
+        if (menuItems) {
+            menuItems.each { e->
+                e.upMenuItem = this
+                e.selfCheck()
+            }
+        }
     }
 }

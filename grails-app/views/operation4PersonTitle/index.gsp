@@ -47,10 +47,6 @@
     </div>
 </div>
 
-<g:if test="${flash.message}">
-    <div class="message" role="status">${flash.message}</div>
-</g:if>
-
 <div class="container-cup">
     <div class="row-cup">
         <div class="col-md-6">
@@ -62,6 +58,12 @@
         </div>
     </div>
 </div>
+
+<g:if test="${flash.message}">
+    <div class="easyui-panel">
+        <div class="message" role="status">${flash.message}</div>
+    </div>
+</g:if>
 
 </body>
 </html>

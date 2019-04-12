@@ -1,8 +1,9 @@
 package cn.edu.cup.basic
 
 import cn.edu.cup.common.DataExchangeInterface
+import cn.edu.cup.common.SelfCheck
 
-class Person implements DataExchangeInterface {
+class Person implements DataExchangeInterface, SelfCheck {
 
     String code
     String name
@@ -31,5 +32,13 @@ class Person implements DataExchangeInterface {
     @Override
     List exportToDataSheet() {
         return null
+    }
+
+    @Override
+    void selfCheck() {
+        def p = PersonTitle.findByName(personTitle.name)
+        if (p) {
+            personTitle = p
+        }
     }
 }

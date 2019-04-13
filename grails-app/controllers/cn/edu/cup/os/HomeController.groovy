@@ -11,6 +11,47 @@ class HomeController {
     def systemCommonService
     def systemMenuService
     def initService
+    def systemUserService
+
+    /*
+    修改密码
+    * */
+
+    def changePasswordUI() {}
+
+    def changePassword() {
+        def oldPassword = params.oldPassword.encodeAsMD5()
+        def user = systemUserService.get(session.systemUser.id)
+        println("修改${user}的密码！${user.id}")
+        def p = user.password
+        if (p==oldPassword) {
+            def newPassword = params.newPassword
+            def rePassword = params.rePassword
+            if (newPassword!="") {
+                if (newPassword == rePassword) {
+                    user.password = newPassword
+                    systemUserService.save(user)
+                    //重新设置用户
+                    session.systemUser = user
+                    flash.message = "密码修改成功！"
+                    redirect(action: "index")
+                } else {
+                    flash.message = "两次密码不一致！"
+                    redirect(action: "changePasswordUI")
+                }
+            } else {
+                flash.message = "密码不能空！"
+                redirect(action: "changePasswordUI")
+            }
+        } else {
+            flash.message = "密码不对！"
+            redirect(action: "changePasswordUI")
+        }
+    }
+
+    /*
+    选择当前菜单
+    * */
 
     def selectCurrentMenuItem() {
         println("${params}")
@@ -35,7 +76,7 @@ class HomeController {
                 systemMenuList = currentMenuItem.menuItems
             } else {
                 def q = SystemMenu.createCriteria()
-                def user = session.systemUser
+                def user = systemUserService.get(session.systemUser.id)
                 println("当前用户：${user}")
                 if (user) {
                     def roles = user.userRoles()

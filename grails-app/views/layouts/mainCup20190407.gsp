@@ -87,6 +87,9 @@
                         当前：${session.systemUser.personName()}
                     </li>
                     <li>
+                        <a href="${createLink(uri: '/home/changePasswordUI')}">修改密码</a>
+                    </li>
+                    <li>
                         <a href="${createLink(uri: '/home/logout')}">退出</a>
                     </li>
                 </g:if>

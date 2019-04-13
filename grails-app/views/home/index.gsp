@@ -19,7 +19,13 @@
 </div>
 
 <div class="container-fluid">
-    <h1>完成度${pfc}%</h1>
+    <table>
+        <tr>
+            <td><h1>完成度${pfc}%</h1></td>
+            <td><h3>${flash.message}</h3></td>
+        </tr>
+    </table>
+
     <table>
         <thead>
         <th>控制器</th>

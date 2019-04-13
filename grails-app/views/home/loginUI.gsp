@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
 <div class="login_title">
     ${cn.edu.cup.basic.Caption.findByName("main")?.title}
 </div>
@@ -38,5 +39,6 @@
         </ul>
     </div>
 </form>
+
 </body>
 </html>

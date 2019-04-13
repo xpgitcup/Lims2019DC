@@ -11,6 +11,31 @@ class CommonService {
     def webRootPath = ""        // 公用的变量---赋值是在BootStrap中
 
     /*
+    对象列表导出到文件（名）
+    * */
+
+    void exportObjectsToJsonFileName(objects, String fileName) {
+        def realFileName
+        if (fileName.contains(webRootPath)) {
+            realFileName = fileName
+        } else {
+            realFileName = "${webRootPath}/${fileName}"
+        }
+        def jsonFile = new File(realFileName)
+        if (!jsonFile.exists()) {
+            jsonFile.createNewFile()
+        }
+        exportObjectsToJsonFile(objects, jsonFile)
+    }
+
+    void exportObjectsToJsonFile(objects, File jsonFile) {
+        def jsonString = com.alibaba.fastjson.JSON.toJSONString(objects, true)
+        def printWriter = new PrintWriter(jsonFile, "utf-8")
+        printWriter.write(jsonString)
+        printWriter.close()
+    }
+
+    /*
     从json文件中导入对象，文件如果不存在，创建文件
     * */
 

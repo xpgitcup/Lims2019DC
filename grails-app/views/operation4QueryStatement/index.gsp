@@ -35,7 +35,7 @@
         <ul id="operation4QueryStatementUl">
             <li></li>
             <li>
-                <a href="operation4QueryStatement/exportToJsonFile?fileName=config/queryStatement.json" class="save">导出Json文件</a>
+                <a href="operation4QueryStatement/exportToJsonFile?fileName=config/out/queryStatement.json" class="save">导出Json文件</a>
             </li>
             <li>
                 <a href="operation4QueryStatement/importFromJsonFile?fileName=config/queryStatement.json" class="create">从Json文件导入</a>

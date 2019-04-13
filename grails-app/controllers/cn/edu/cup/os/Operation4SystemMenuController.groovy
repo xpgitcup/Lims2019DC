@@ -9,6 +9,11 @@ class Operation4SystemMenuController extends SystemMenuController {
 
     def treeViewService
 
+    def exportToJsonFileName() {
+        commonService.exportObjectsToJsonFileName(SystemMenu.findAllByUpMenuItemIsNull(), params.fileName)
+        redirect(action: "index")
+    }
+
     /*
     * 创建对象
     * */

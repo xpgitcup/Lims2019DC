@@ -56,6 +56,7 @@
                     <div class="easyui-panel" style="width: 100%">
                         <ul>
                             <li><a class="create" href="javascript: createSystemUser(0)">新建</a></li>
+                            <li><a class="save" href="operation4SystemUser/exportToJsonFile?fileName=config/out/systemUser.json">导出Json文件</a></li>
                         </ul>
                     </div>
                 </div>

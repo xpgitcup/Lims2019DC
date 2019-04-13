@@ -10,7 +10,8 @@ class Operation4SystemMenuController extends SystemMenuController {
     def treeViewService
 
     def exportToJsonFileName() {
-        commonService.exportObjectsToJsonFileName(SystemMenu.findAllByUpMenuItemIsNull(), params.fileName)
+        //commonService.exportObjectsToJsonFileName(SystemMenu.findAllByUpMenuItemIsNull(), params.fileName)
+        commonService.exportObjectsToJsonFileName(systemMenuService.list(fetch:[upMenuItem: null]), params.fileName)
         redirect(action: "index")
     }
 

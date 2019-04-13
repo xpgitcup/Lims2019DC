@@ -1,5 +1,7 @@
 package cn.edu.cup.common
 
+import com.alibaba.fastjson.JSON
+import com.alibaba.fastjson.serializer.SerializerFeature
 import grails.gorm.transactions.Transactional
 import grails.util.Environment
 import org.springframework.web.context.request.RequestContextHolder
@@ -8,7 +10,12 @@ import org.springframework.web.context.request.RequestContextHolder
 class CommonService {
 
     def grailsApplication
-    def webRootPath = ""        // 公用的变量---赋值是在BootStrap中
+    def webRootPath = ""
+
+    def getWebRootPath() {
+        webRootPath = grailsApplication.getMainContext().servletContext.getRealPath("/")
+        return webRootPath
+    }
 
     /*
     对象列表导出到文件（名）
@@ -16,11 +23,8 @@ class CommonService {
 
     void exportObjectsToJsonFileName(objects, String fileName) {
         def realFileName
-        if (fileName.contains(webRootPath)) {
-            realFileName = fileName
-        } else {
-            realFileName = "${webRootPath}/${fileName}"
-        }
+        realFileName = "${getWebRootPath()}/${fileName}"
+        println("文件名：${realFileName}")
         def jsonFile = new File(realFileName)
         if (!jsonFile.exists()) {
             jsonFile.createNewFile()
@@ -29,7 +33,16 @@ class CommonService {
     }
 
     void exportObjectsToJsonFile(objects, File jsonFile) {
-        def jsonString = com.alibaba.fastjson.JSON.toJSONString(objects, true)
+        /*
+        def jsonString = com.alibaba.fastjson.JSON.toJSONString(objects,
+                SerializerFeature.IgnoreNonFieldGetter,
+                SerializerFeature.PrettyFormat,
+                SerializerFeature.SkipTransientField
+        )*/
+        def jsonString = com.alibaba.fastjson.JSON.toJSONString(objects,
+                SerializerFeature.PrettyFormat,
+                SerializerFeature.IgnoreNonFieldGetter,
+        )
         def printWriter = new PrintWriter(jsonFile, "utf-8")
         printWriter.write(jsonString)
         printWriter.close()

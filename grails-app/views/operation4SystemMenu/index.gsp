@@ -57,8 +57,8 @@
                         <ul>
                             <li><a class="create" href="javascript: createSystemMenu(0)">新建根节点</a></li>
                             <li><a id="createSystemMenu" class="create" href="#">新建子节点</a></li>
-                            <li><a id="exportSystemMenu" href="operation4SystemMenu/exportToJsonFileName?fileName=config/out/systemMenu.json"
-                                   class="save">导出文件</a></li>
+                            <li><a id="exportSystemMenu" href="operation4SystemMenu/exportToJsonFile?fileName=config/out/systemMenu.json"
+                                   class="save">导出Json文件</a></li>
                         </ul>
                     </div>
                 </div>

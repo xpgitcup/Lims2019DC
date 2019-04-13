@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : sample
+ Source Server         : 10.1.16.50
  Source Server Type    : MySQL
- Source Server Version : 80015
- Source Host           : localhost:3306
- Source Schema         : lims2019db
+ Source Server Version : 50627
+ Source Host           : 10.1.16.50:3306
+ Source Schema         : lims2018bdb
 
  Target Server Type    : MySQL
- Target Server Version : 80015
+ Target Server Version : 50627
  File Encoding         : 65001
 
- Date: 12/04/2019 21:36:33
+ Date: 13/04/2019 08:43:06
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `major`  (
   `version` bigint(20) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of major

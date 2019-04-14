@@ -22,7 +22,7 @@
         </g:else>
     </g:else>
 <!-- end 实现可定制的布局 -->
-    <g:set var="entityName" value="Team"/>
+    <g:set var="entityName" value="UserServiceTeam"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${entityName}维护</title>
     <asset:javascript src="cn/edu/cup/lims/${entityName}.js"/>
@@ -30,18 +30,34 @@
 
 <body>
 
-<div class="nav">
-    <ul id="operation4TeamUl">
-        <li class="icon-help">&nbsp&nbsp&nbsp&nbsp：</li>
-        <li><a id="tipsOperation4Team"></a></li>
-    </ul>
+<div class="container-cup">
+    <div class="easyui-panel">
+        <div class="nav">
+            <ul class="indicator-cup">
+                <li>操作指示：</li>
+                <li>==></li>
+                <li>选择任务</li>
+                <li>==></li>
+                <li>完成任务</li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-<g:if test="${flash.message}">
-    <div class="message" role="status">${flash.message}</div>
-</g:if>
+<div class="container-cup">
+    <div class="row-cup">
+        <div class="col-6">
+            <div class="easyui-panel" title="可选">
 
-<div id="operation4TeamDiv" class="easyui-tabs"></div>
+            </div>
+        </div>
 
+        <div class="col-6">
+            <div class="easyui-panel" title="已选">
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

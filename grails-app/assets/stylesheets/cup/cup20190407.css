@@ -70,4 +70,10 @@ body .container-cup {
 body .container-cup .row-cup {
   display: flex;
 }
+body .indicator-cup {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*# sourceMappingURL=cup20190407.css.map */

@@ -22,7 +22,7 @@
         </g:else>
     </g:else>
 <!-- end 实现可定制的布局 -->
-    <g:set var="entityName" value="UserServiceTeam"/>
+    <g:set var="entityName" value="Team"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${entityName}维护</title>
     <asset:javascript src="cn/edu/cup/lims/${entityName}.js"/>
@@ -39,6 +39,10 @@
                 <li>选择任务</li>
                 <li>==></li>
                 <li>完成任务</li>
+                <li></li>
+                <li></li>
+                <li class="icon-help">&nbsp&nbsp&nbsp&nbsp：</li>
+                <li><a id="tipsOperation4Team"></a></li>
             </ul>
         </div>
     </div>
@@ -48,32 +52,23 @@
     <div class="row-cup">
         <div class="col-6">
             <div class="easyui-panel" title="可选：${currentTask}">
-                <table>
-                    <thead>
-                    <th>项目</th>
-                    </thead>
-                    <tbody>
-                    <g:each in="${taskList.objectList}" var="item" status="i">
-                        <tr>
-                            <td>${item.name}</td>
-                        </tr>
-                    </g:each>
-                    </tbody>
-                </table>
-
-                <div class="paginationGrails">
-                    <g:paginate total="${taskListCount}"/>
-                </div>
+                <div id="operation4TeamDiv" class="easyui-tabs"></div>
             </div>
-
         </div>
 
         <div class="col-6">
             <div class="easyui-panel" title="已选：${currentTask}">
-
+                <div id="operation4TeamRightDiv" class="easyui-tabs"></div>
             </div>
         </div>
     </div>
 </div>
+
+<g:if test="${flash.message}">
+    <div class="easyui-panel">
+        <div class="message" role="status">${flash.message}</div>
+    </div>
+</g:if>
+
 </body>
 </html>

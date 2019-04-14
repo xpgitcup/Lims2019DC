@@ -32,7 +32,7 @@
 
 <div class="easyui-panel">
     <div class="nav">
-        <ul id="operation4QueryStatementUl">
+        <ul id="operation4QueryStatementUl" class="indicator-cup">
             <li></li>
             <li>
                 <a href="operation4QueryStatement/exportToJsonFile?fileName=config/out/queryStatement.json" class="save">导出Json文件</a>

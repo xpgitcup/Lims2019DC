@@ -12,7 +12,7 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <!--f:table collection="${objectList}"/-->
+<!--f:table collection="${objectList}"/-->
     <table>
         <thead>
         <th>任务名称</th>
@@ -24,8 +24,13 @@
             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                 <td>
                     ${item.name}
-                    <a href="javascript: createTeam(${item.id})">创建团队</a>
-                    <a href="javascript: listTeam(${item.id})">查看团队</a>
+                    <g:if test="${Team.countByLeaderAndThing(session.systemUser.person(), item) > 0}">
+                        领导该任务团队
+                    </g:if>
+                    <g:else>
+                        <a href="javascript: createTeam(${item.id})">接受任务&创建团队</a>
+                        <a href="javascript: listTeam(${item.id})">查看团队</a>
+                    </g:else>
                 </td>
                 <td>${item.thingType}</td>
                 <td>${cn.edu.cup.lims.Team.countByThing(item)}</td>

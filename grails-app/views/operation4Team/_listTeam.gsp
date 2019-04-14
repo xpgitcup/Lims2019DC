@@ -1,4 +1,4 @@
-<%@ page import="cn.edu.cup.lims.Person" %>
+<%@ page import="cn.edu.cup.basic.Person" %>
 <!DOCTYPE html>
 <html>
 <head>

@@ -48,6 +48,15 @@ class SystemUser {
         return roles.contains(roleName)
     }
 
+    def person() {
+        def p = Person.findByCode(userName)
+        if (p) {
+            return p
+        } else {
+            return null
+        }
+    }
+
     def personName() {
         def p = Person.findByCode(userName)
         if (p) {

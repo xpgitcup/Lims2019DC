@@ -6,6 +6,10 @@ var tabsTitle = "人员维护";
 var localPageSizeTeam = 10;
 var tipsOperation4Team;
 
+var operation4TeamRightDiv;
+var jsTitleTeamRight = ["我领导的", "我参与的"];
+var title4TeamRight = jsTitleTeamRight;
+
 $(function () {
     console.info(jsTitleTeam + "......");
 
@@ -27,6 +31,19 @@ $(function () {
 
     setupDisplayUl(operation4TeamUl, jsTitleTeam);
     reflashDisplayUl(operation4TeamUl, jsTitleTeam);
+
+    operation4TeamRightDiv = $("#operation4TeamRightDiv");
+
+    var settingsRight = {
+        divId: operation4TeamRightDiv,
+        titles: jsTitleTeamRight,
+        tabsTitle: tabsTitle,
+        pageSize: localPageSizeTeam,
+        pageList: [1, 3, 5, 10],
+        loadFunction: loadTeam,
+        countFunction: countTeam
+    }
+    configDisplayUI(settingsRight);
 
 });
 
@@ -85,6 +102,8 @@ function shiftDisplay(title) {
     var id;
     var param = ""
     switch (title) {
+        case "我领到的":
+            break;
         case "可选题目":
             tipsOperation4Team.html("可以创建团队，也可以查看团队！");
             break;

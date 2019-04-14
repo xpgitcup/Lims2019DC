@@ -20,6 +20,7 @@ class SystemCommonService {
     获取当前状态参数
     * */
 
+    @Transactional(readOnly = true)
     def getParameters(request) {
         def sid = request.session.getId()
         def ss = SystemStatus.findBySessionId(sid)
@@ -30,6 +31,7 @@ class SystemCommonService {
         }
     }
 
+    @Transactional(readOnly = false)
     private synchronized void setParameters(amap, systemStatus) {
         amap.each { e ->
             def p = StatusParameter.findByStatusKeyAndSystemStatus("${e.key}", systemStatus)

@@ -56,4 +56,13 @@ class SystemUser {
             return "佚名"
         }
     }
+
+    def personTitle() {
+        def p = Person.findByCode(userName)
+        if (p) {
+            return p.personTitle
+        } else {
+            return null
+        }
+    }
 }

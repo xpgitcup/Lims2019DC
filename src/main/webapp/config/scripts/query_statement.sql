@@ -3,15 +3,15 @@
 
  Source Server         : sample
  Source Server Type    : MySQL
- Source Server Version : 80015
+ Source Server Version : 50725
  Source Host           : localhost:3306
  Source Schema         : lims2019db
 
  Target Server Type    : MySQL
- Target Server Version : 80015
+ Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 10/04/2019 22:55:20
+ Date: 14/04/2019 17:41:04
 */
 
 SET NAMES utf8mb4;
@@ -24,15 +24,15 @@ DROP TABLE IF EXISTS `query_statement`;
 CREATE TABLE `query_statement`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `version` bigint(20) NOT NULL,
-  `params_list` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `hql` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `issql` bit(1) DEFAULT NULL,
+  `params_list` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `hql` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `issql` bit(1) NULL DEFAULT NULL,
   `need_to_query` bit(1) NOT NULL,
   `key_string` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_iejb2adhrl11w1nanxv8r9hql`(`key_string`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of query_statement
@@ -91,5 +91,8 @@ INSERT INTO `query_statement` VALUES (53, 0, 'thingTypeList', 'select count(*) f
 INSERT INTO `query_statement` VALUES (54, 0, 'thingTypeList', 'from Team team where team.thing in :thingTypeList order by team.thing', b'0', b'1', 'list.operation4ProjectPlan.进度归档.thingTypeList', 'listTeam');
 INSERT INTO `query_statement` VALUES (55, 0, 'currentTeam', 'from Progress progress where progress.team=:currentTeam order by progress.regDate desc', b'0', b'1', 'list.operation4ProjectPlan.currentTeam.进度列表', 'listProgress');
 INSERT INTO `query_statement` VALUES (56, 0, 'currentTeam', 'select count(*) from Progress progress where progress.team=:currentTeam', b'0', b'1', 'count.operation4ProjectPlan.currentTeam.进度列表', NULL);
+INSERT INTO `query_statement` VALUES (57, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'index.Operation4Team.currentTask.可选题目.thingTypeList', 'listThing');
+INSERT INTO `query_statement` VALUES (58, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'list.Operation4Team.currentTask.可选题目.thingTypeList', 'listTeam');
+INSERT INTO `query_statement` VALUES (59, 1, 'thingTypeList', 'select count(*) from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'count.Operation4Team.currentTask.可选题目.thingTypeList', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

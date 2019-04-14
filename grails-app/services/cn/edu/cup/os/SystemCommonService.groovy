@@ -16,12 +16,26 @@ class SystemCommonService {
     def statusParameterService
     def systemStatusItemService
 
+    /*
+    获取当前状态参数
+    * */
+
+    def getParameters(request) {
+        def sid = request.session.getId()
+        def ss = SystemStatus.findBySessionId(sid)
+        if (ss) {
+            return ss.getParameters()
+        } else {
+            return null
+        }
+    }
+
     private synchronized void setParameters(amap, systemStatus) {
         amap.each { e ->
             def p = StatusParameter.findByStatusKeyAndSystemStatus("${e.key}", systemStatus)
             //println("设置参数：${e} ${p}")
             if (p) {
-                if (p.statusValue!="${e.value}") {
+                if (p.statusValue != "${e.value}") {
                     //println("更新！")
                     p.statusValue = "${e.value}"
                     //p.save(flush: true)

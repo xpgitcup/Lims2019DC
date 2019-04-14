@@ -47,13 +47,29 @@
 <div class="container-cup">
     <div class="row-cup">
         <div class="col-6">
-            <div class="easyui-panel" title="可选">
+            <div class="easyui-panel" title="可选：${currentTask}">
+                <table>
+                    <thead>
+                    <th>项目</th>
+                    </thead>
+                    <tbody>
+                    <g:each in="${taskList.objectList}" var="item" status="i">
+                        <tr>
+                            <td>${item.name}</td>
+                        </tr>
+                    </g:each>
+                    </tbody>
+                </table>
 
+                <div class="paginationGrails">
+                    <g:paginate total="${taskListCount}"/>
+                </div>
             </div>
+
         </div>
 
         <div class="col-6">
-            <div class="easyui-panel" title="已选">
+            <div class="easyui-panel" title="已选：${currentTask}">
 
             </div>
         </div>

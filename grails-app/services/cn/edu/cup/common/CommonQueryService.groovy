@@ -136,7 +136,7 @@ class CommonQueryService {
     }
 
     private def generateKeyString(params) {
-        println("内部：${params}")
+        //println("内部：${params}")
         def keyString = ""
         def exclude = ["offset", "max", "id", "format"] // 参数中不包含的，一律忽略
         def include = ["controller", "action", "key"]   // 参数中包含的，只包含值--将参数值包含其中

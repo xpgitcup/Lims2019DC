@@ -34,7 +34,7 @@
                 <td>
                     ${item.leader}
                     <a href="javascript: listMembers(${item.id})">查看队员</a>
-                    <g:if test="${item.leader.id != session.realId}">
+                    <g:if test="${item.leader != session.systemUser.person()}">
                         <a href="javascript: joinTeam(${item.id})">加入团队</a>
                     </g:if>
                     <g:else>

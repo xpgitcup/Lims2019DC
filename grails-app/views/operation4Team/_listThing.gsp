@@ -29,8 +29,10 @@
                     </g:if>
                     <g:else>
                         <a href="javascript: createTeam(${item.id})">接受任务&创建团队</a>
-                        <a href="javascript: listTeam(${item.id})">查看团队</a>
                     </g:else>
+                    <g:if test="${cn.edu.cup.lims.Team.countByThing(item)>0}">
+                        <a href="javascript: listTeam(${item.id})">查看团队</a>
+                    </g:if>
                 </td>
                 <td>${item.thingType}</td>
                 <td>${cn.edu.cup.lims.Team.countByThing(item)}</td>

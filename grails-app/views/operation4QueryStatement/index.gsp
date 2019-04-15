@@ -35,6 +35,9 @@
         <ul id="operation4QueryStatementUl" class="indicator-cup">
             <li></li>
             <li>
+                <a href="operation4QueryStatement/exportToJsonFileName?fileName=config/out/queryStatementS" class="save">阿里导出Json文件</a>
+            </li>
+            <li>
                 <a href="operation4QueryStatement/exportToJsonFile?fileName=config/out/queryStatement.json" class="save">导出Json文件</a>
             </li>
             <li>
@@ -57,12 +60,10 @@
     </div>
 </div>
 
+<div id="operation4QueryStatementDiv" class="easyui-panel"></div>
 
 <g:if test="${flash.message}">
-    <div class="message" role="status">${flash.message}</div>
+    <div class="easyui-panel"><div class="message" role="status">${flash.message}</div></div>
 </g:if>
-
-<div id="operation4QueryStatementDiv" class="easyui-panel">
-</div>
 </body>
 </html>

@@ -23,6 +23,7 @@ $(function () {
         tabsTitle: tabsTitle,
         pageSize: localPageSizeTeam,
         pageList: [1, 3, 5, 10],
+        paginationMessage: "",
         loadFunction: loadTeam,
         countFunction: countTeam
     }
@@ -40,6 +41,7 @@ $(function () {
         tabsTitle: tabsTitle,
         pageSize: localPageSizeTeam,
         pageList: [1, 3, 5, 10],
+        paginationMessage: "",
         loadFunction: loadTeam,
         countFunction: countTeam
     }

@@ -7,13 +7,15 @@ import java.text.SimpleDateFormat
 
 class Operation4QueryStatementController extends QueryStatementController {
 
+    def systemCommonService
+
     def exportToJsonFileName() {
         def now = new Date()
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd")
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh-mm")
         def fileName = "${params.fileName} ${df.format(now)}.json"
         commonService.exportObjectsToJsonFileName(queryStatementService.list(), fileName)
         redirect(action: "index")
     }
 
-    def index() {}
+    def index() { }
 }

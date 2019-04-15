@@ -78,6 +78,7 @@ function createTeam(id) {
     selectCurrentItem(id)
     ajaxExecute("operation4Team/createTeam/" + id)
     operation4TeamDiv.tabs("select", "相关团队");
+    location.reload();
 }
 
 function listTeam(id) {

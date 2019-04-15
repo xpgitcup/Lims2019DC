@@ -46,6 +46,8 @@
             <li>
                 <a id="filter" href="javascript: listToDo()">待编辑&完成</a>
             </li>
+            <li>当前筛选条件</li>
+            <li id="currentFilter" style="color: red">${keyString}</li>
             <li>
                 <a href="javascript: clearFilter()">清除筛选条件</a>
             </li>

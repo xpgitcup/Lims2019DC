@@ -131,6 +131,15 @@ class Operation4TeamController extends TeamController {
                     result.view = "listMember"
                 }
                 break
+            case "我参与的":
+                def teams = []
+                result.objectList.each { e ->
+                    //println("查找 ${e}")
+                    teams.add(Team.get(e.team_members_id))
+                }
+                //println("转换后：${teams}")
+                result.objectList = teams
+                break
         }
         return result
     }

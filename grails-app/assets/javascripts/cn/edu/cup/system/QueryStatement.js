@@ -35,7 +35,7 @@ function queryStatement() {
     console.info("查询..." + keyString.value);
     $.cookie("filter", true);
     $.cookie("keyString", keyString.value);
-    //$("#filter").html("待编辑&完成" + keyString);
+    //$("#currentFilter").html(keyString.value);
     location.reload();
 }
 
@@ -55,6 +55,8 @@ function clearFilter() {
     $.cookie("filter", "");
     $.cookie("keyString", "");
     //$("#filter").html("待编辑&完成");
+    console.info("?????清除....")
+    //ajaxExecute("operation4QueryStatement/clearFilter") //不好使！！
     location.reload();
 }
 
@@ -70,6 +72,7 @@ function appendParam() {
     if (filter) {
         if (keyString) {
             param = "&keyString=" + keyString;
+            $("#currentFilter").html(keyString)
         } else {
             param = "&filter=true"
         }

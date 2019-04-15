@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 14/04/2019 17:41:04
+ Date: 15/04/2019 18:33:27
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `query_statement`  (
   `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_iejb2adhrl11w1nanxv8r9hql`(`key_string`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 66 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of query_statement
@@ -79,8 +79,6 @@ INSERT INTO `query_statement` VALUES (41, 0, NULL, 'SELECT Count(DISTINCT person
 INSERT INTO `query_statement` VALUES (42, 0, NULL, 'SELECT DISTINCT person.grade_name FROM person WHERE person.grade_name IS NOT NULL limit %d,%d', b'1', b'1', 'list.operation4Person.年级', 'listGradeName');
 INSERT INTO `query_statement` VALUES (43, 0, 'thingTypeList', 'from Team team where team.thing in :thingTypeList order by team.thing', b'0', b'1', 'list.operation4Progress.我管理的.thingTypeList', 'listTeam');
 INSERT INTO `query_statement` VALUES (44, 0, 'thingTypeList', 'select count(*) from Team team where team.thing in :thingTypeList', b'0', b'1', 'count.operation4Progress.我管理的.thingTypeList', NULL);
-INSERT INTO `query_statement` VALUES (45, 0, NULL, NULL, b'0', b'0', 'list.operation4Team.队员列表', NULL);
-INSERT INTO `query_statement` VALUES (46, 0, NULL, NULL, b'0', b'0', 'list.operation4Team.currentTeam.队员列表', NULL);
 INSERT INTO `query_statement` VALUES (47, 0, 'keyString', 'select count(*) from QueryStatement queryStatement where queryStatement.keyString like :keyString', b'0', b'1', 'count.operation4QueryStatement.查询配置.keyString', NULL);
 INSERT INTO `query_statement` VALUES (48, 0, 'keyString', 'from QueryStatement queryStatement where queryStatement.keyString like :keyString', b'0', b'1', 'list.operation4QueryStatement.查询配置.keyString', 'listQueryStatement');
 INSERT INTO `query_statement` VALUES (49, 0, 'thingTypeId', 'from Plan plan  where plan.thingType.id=cast(:thingTypeId as integer) order by updateDate desc', b'0', b'1', 'list.operation4Plan.通用计划.thingTypeId', 'listPlan');
@@ -91,8 +89,14 @@ INSERT INTO `query_statement` VALUES (53, 0, 'thingTypeList', 'select count(*) f
 INSERT INTO `query_statement` VALUES (54, 0, 'thingTypeList', 'from Team team where team.thing in :thingTypeList order by team.thing', b'0', b'1', 'list.operation4ProjectPlan.进度归档.thingTypeList', 'listTeam');
 INSERT INTO `query_statement` VALUES (55, 0, 'currentTeam', 'from Progress progress where progress.team=:currentTeam order by progress.regDate desc', b'0', b'1', 'list.operation4ProjectPlan.currentTeam.进度列表', 'listProgress');
 INSERT INTO `query_statement` VALUES (56, 0, 'currentTeam', 'select count(*) from Progress progress where progress.team=:currentTeam', b'0', b'1', 'count.operation4ProjectPlan.currentTeam.进度列表', NULL);
-INSERT INTO `query_statement` VALUES (57, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'index.Operation4Team.currentTask.可选题目.thingTypeList', 'listThing');
+INSERT INTO `query_statement` VALUES (57, 3, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'index.Operation4Team.currentTask.可选题目.thingTypeList', 'listThing');
 INSERT INTO `query_statement` VALUES (58, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'list.Operation4Team.currentTask.可选题目.thingTypeList', 'listTeam');
 INSERT INTO `query_statement` VALUES (59, 1, 'thingTypeList', 'select count(*) from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'count.Operation4Team.currentTask.可选题目.thingTypeList', NULL);
+INSERT INTO `query_statement` VALUES (60, 2, 'thingTypeList,myself', 'select count(*) from Team team where team.leader=:myself and team.thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.我领导的.myself.thingTypeList', NULL);
+INSERT INTO `query_statement` VALUES (61, 1, 'thingTypeList,myself', 'from Team team where team.thing.thingType in :thingTypeList and team.leader=:myself', b'0', b'1', 'list.operation4Team.我领导的.myself.thingTypeList', 'listTeamRight');
+INSERT INTO `query_statement` VALUES (62, 6, 'thingTypeList,myself', 'from Team team where team.thing in :thingTypeList and :myself in team.members', b'0', b'1', 'list.operation4Team.我参与的.myself.thingTypeList', 'listTeamRight');
+INSERT INTO `query_statement` VALUES (63, 2, 'thingTypeList,myself', 'select count(*) from Team team where team.thing.thingType in :thingTypeList and :myself in team.members', b'0', b'1', 'count.operation4Team.我参与的.myself.thingTypeList', NULL);
+INSERT INTO `query_statement` VALUES (64, 0, NULL, NULL, b'0', b'1', 'list.operation4Team.currentTeam.队员列表', NULL);
+INSERT INTO `query_statement` VALUES (65, 0, NULL, NULL, b'0', b'1', 'count.operation4Team.currentTeam.队员列表', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

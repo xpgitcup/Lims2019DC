@@ -54,6 +54,19 @@
             </g:if>
         </fieldset>
     </g:form>
+    <table>
+        <thead>
+        <th>名称</th>
+        </thead>
+        <tbody>
+        <g:each in="${this.thingType.things}" var="item" status="i">
+            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                <td>${item.name}</td>
+            </tr>
+        </g:each>
+        </tbody>
+    </table>
+
 </div>
 </body>
 </html>

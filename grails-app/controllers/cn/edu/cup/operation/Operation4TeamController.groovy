@@ -103,8 +103,13 @@ class Operation4TeamController extends TeamController {
         }
         switch (params.key) {
             case "我参与的":
-                params.thingTypeList = thingTypeList
-                params.myself = myself
+                def idlist = []
+                thingTypeList.each { e->
+                    idlist.add(e.id)
+                }
+                params.thingTypeList = idlist
+                params.myself = myself.id
+                println("我参与：${myself.id} ${idlist}")
                 break
             case "我领导的":
                 params.thingTypeList = thingTypeList
@@ -133,11 +138,12 @@ class Operation4TeamController extends TeamController {
                 break
             case "我参与的":
                 def teams = []
+                println("结果：${result}")
                 result.objectList.each { e ->
-                    //println("查找 ${e}")
+                    println("查找 ${e}")
                     teams.add(Team.get(e.team_members_id))
                 }
-                //println("转换后：${teams}")
+                println("转换后：${teams}")
                 result.objectList = teams
                 break
         }

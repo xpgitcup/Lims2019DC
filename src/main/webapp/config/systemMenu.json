@@ -28,12 +28,6 @@
         "menuAction": "operation4QueryStatement/index",
         "menuDescription": "对系统底层的查询语句进行维护",
         "menuOrder": 40
-      },
-      {
-        "menuContext": "查询调试",
-        "menuAction": "operation4QueryStatement/debugUI",
-        "menuDescription": "对系统底层的查询语句进行维护",
-        "menuOrder": 40
       }
     ]
   },

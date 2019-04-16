@@ -99,6 +99,7 @@ class CommonService {
     def importObjectArrayFromJsonFile(File jsonFile, Class clazz) {
         if (jsonFile.exists()) {
             def jsonString = jsonFile.text
+            println("准备导入：${jsonString}")
             return importObjectArrayFromJson(jsonString, clazz)
         } else {
             def printWriter = new PrintWriter(jsonFile, "utf-8")
@@ -117,6 +118,7 @@ class CommonService {
 
     def importObjectArrayFromJson(String jsonString, Class clazz) {
         def objectArray = com.alibaba.fastjson.JSON.parseArray(jsonString, clazz)
+        println("导入的：${objectArray}")
         return objectArray
     }
 

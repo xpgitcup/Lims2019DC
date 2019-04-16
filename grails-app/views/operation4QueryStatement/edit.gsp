@@ -50,8 +50,8 @@
                     </tr>
                     <tr>
                         <td>查询语句</td>
-                        <td><g:textField name="hql" value="${queryStatement.hql}"
-                                         style="width: 80em"></g:textField></td>
+                        <td><g:textArea name="hql" value="${queryStatement.hql}"
+                                         style="width: 80em; rows:10"></g:textArea></td>
                     </tr>
                     <tr>
                         <td>SQL查询语句</td>

@@ -200,14 +200,16 @@ class QueryStatementController {
     def importFromJsonFile() {
 
         def fileName = "${commonService.webRootPath}/${params.fileName}"
-        def objectList = commonService.importObjectListFromJsonFileName(fileName, QueryStatement.class)
+        def objectList = commonService.importObjectArrayFromJsonFileName(fileName, QueryStatement.class)
         if (objectList.size()>0) {
             // 先清空
+            println("先清空...")
             QueryStatement.list().each { e ->
                 queryStatementService.delete(e.id)
             }
             objectList.each { e ->
                 queryStatementService.save(e)
+                println("${e}")
             }
         }
 

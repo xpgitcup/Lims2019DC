@@ -112,16 +112,16 @@ class CommonQueryService {
                     // 区分HQL以及SQL
                     if (queryStatement.isSQL) {
                         def db = new groovy.sql.Sql(dataSource)
-                        //println("统计SQL ${queryStatement.hql} 参数${ps}")
+                        println("统计SQL ${queryStatement.hql} 参数${ps}")
                         def c
                         if (ps.size() > 0) {
                             c = db.rows(ps, queryStatement.hql)
                         } else {
                             c = db.rows(queryStatement.hql)
                         }
-                        //println("统计SQL的结果 ${c}")
+                        println("统计SQL的结果 ${c}")
                         count = [c[0].values()[0]]
-                        //println("SQL 执行结果：${count}")
+                        println("SQL 执行结果：${count}")
                     } else {
                         def hql = processLikeParameter(queryStatement, ps)
                         count = QueryStatement.executeQuery(hql, ps)

@@ -9,7 +9,7 @@ class StatusParameter {
 
     static constraints = {
         statusKey(nullable: false)
-        statusValue(nullable: true)
+        statusValue(nullable: true, size: 0..1024)
     }
 
     String toString() {

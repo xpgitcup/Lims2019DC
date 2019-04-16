@@ -7,13 +7,6 @@ import java.text.SimpleDateFormat
 
 class Operation4QueryStatementController extends QueryStatementController {
 
-    def systemCommonService
-
-    def debug(Long id) {
-        def query = queryStatementService.get(id)
-
-    }
-
     def exportToJsonFileName() {
         def now = new Date()
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh-mm")

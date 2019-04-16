@@ -200,7 +200,7 @@ class ${className}Controller {
     def importFromJsonFile() {
 
         def fileName = "\${commonService.webRootPath}/\${params.fileName}"
-        def objectList = commonService.importObjectListFromJsonFileName(fileName, ${className}.class)
+        def objectList = commonService.importObjectArrayFromJsonFileName(fileName, ${className}.class)
         if (objectList.size()>0) {
             // 先清空
             ${className}.list().each { e ->

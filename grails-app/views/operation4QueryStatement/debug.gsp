@@ -21,17 +21,25 @@
         </g:else>
     </g:else>
 <!-- end 实现可定制的布局 -->
-    <g:set var="entityName" value="QueryStatement"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>${entityName}维护</title>
-    <asset:javascript src="cn/edu/cup/system/${entityName}.js"/>
+<!-- end 实现可定制的布局 -->
+    <title>调试界面</title>
 </head>
 
 <body>
-    <div class="container-cup">
-        <div class="easyui-panel">
-            ${objectList}
-        </div>
+<div class="container-cup">
+    <div class="easyui-panel">
+        <table>
+            <tbody>
+            <g:each in="${objectList}" var="item" status="i">
+                <tr>
+                    <g:each in="${item}" var="e" status="j">
+                        <td>${e}</td>
+                    </g:each>
+                </tr>
+            </g:each>
+            </tbody>
+        </table>
     </div>
+</div>
 </body>
 </html>

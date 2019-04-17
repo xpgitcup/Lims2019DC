@@ -100,9 +100,11 @@ class HomeController {
 
     def countOnlineUsers() {
         def current = new Date()
-        Date start = new Date(current.getTime() - 30 * 60 * 1000) // 30分钟转换成毫秒
-        def cc = SystemStatus.countByLogoutTimeIsNullAndLoginTimeGreaterThan(start)
-        def users = SystemStatus.findAllByLogoutTimeIsNullAndLoginTimeGreaterThan(start)
+        //Date start = new Date(current.getTime() - 30 * 60 * 1000) // 30分钟转换成毫秒
+        //def cc = SystemStatus.countByLogoutTimeIsNullAndLoginTimeGreaterThan(start)
+        //def users = SystemStatus.findAllByLogoutTimeIsNullAndLoginTimeGreaterThan(start)
+        def cc = SystemStatus.countByLogoutTimeIsNull()
+        def users = SystemStatus.findAllByLogoutTimeIsNull()
         def usersStr = ""
         if (users.size() < 3) {
             users.each { e ->

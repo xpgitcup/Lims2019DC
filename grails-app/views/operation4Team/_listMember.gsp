@@ -32,7 +32,7 @@
                     ${item.thing}
                 </td>
                 <td>
-                    <g:if test="${item.leader.id == session.realId}">
+                    <g:if test="${item.leader == session.systemUser.person()}">
                         <g:form controller="operation4Team" action="recruit">
                             <label>姓名</label>
                             <input name="name">
@@ -55,7 +55,7 @@
                             <tr class="${(ii % 2 == 0 ? 'even' : 'odd')}">
                                 <td>
                                     ${itemA.code}
-                                    <g:if test="${item.leader.id==session.realId}">
+                                    <g:if test="${item.leader==session.systemUser.person()}">
                                         <a href="javascript: dismiss(${itemA.id})">解聘</a>
                                     </g:if>
                                     <g:if test="${itemA.id==session.realId}">

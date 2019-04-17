@@ -20,6 +20,7 @@
         <thead>
         <th>队长</th>
         <th>任务</th>
+        <th>招募</th>
         <th>队员</th>
         <th>进度数</th>
         </thead>
@@ -31,14 +32,6 @@
             <tr class="${(i % 2 == 0 ? 'even' : 'odd')}">
                 <td>
                     ${item.leader}
-                    <g:if test="${item.leader != session.systemUser.person()}">
-                        <a href="javascript: joinTeam(${item.id})">加入团队</a>
-                    </g:if>
-                    <g:else>
-                        <g:if test="${item?.members?.size() < 1}">
-                            <a href="javascript: disband(${item.id})">解散队伍</a>
-                        </g:if>
-                    </g:else>
                 </td>
                 <td>
                     ${item.thing}

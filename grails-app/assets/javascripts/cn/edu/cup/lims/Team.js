@@ -2,16 +2,39 @@ var operation4TeamDiv;
 var operation4TeamUl;
 var jsTitleTeam = ["可选题目", "相关团队", "队员列表"];
 var title4Team = jsTitleTeam;
-var tabsTitle = "人员维护";
+var tabsTitleLeft = "可选";
 var localPageSizeTeam = 10;
 var tipsOperation4Team;
 
 var operation4TeamRightDiv;
 var jsTitleTeamRight = ["我领导的", "我参与的"];
 var title4TeamRight = jsTitleTeamRight;
+var tabsTitleRight = "已选";
+var currentCase;
+
+var tabsTitleRightCase = {
+    "科研任务.教师": ["我领导的", "我参与的"],
+    "科研任务.学生": ["我领导的", "我参与的"],
+    "教学任务.教师": ["我的课程"],
+    "教学任务.学生": ["我领导的", "我参与的"]
+}
 
 $(function () {
-    console.info(jsTitleTeam + "......");
+    currentCase = $("#currentCase").html();
+
+    console.info(currentCase + "---" + jsTitleTeam + "......");
+    console.info(tabsTitleRightCase[currentCase]);
+
+    switch (currentCase.trim()) {
+        case "科研任务.教师":
+        case "科研任务.学生":
+        case  "教学任务.学生":
+            jsTitleTeamRight = ["我领导的", "我参与的"];
+            break;
+        case "教学任务.教师":
+            jsTitleTeamRight = ["我的课程"];
+            break;
+    }
 
     tipsOperation4Team = $("#tipsOperation4Team");
     operation4TeamUl = $("#operation4TeamUl");
@@ -20,7 +43,7 @@ $(function () {
     var settings = {
         divId: operation4TeamDiv,
         titles: title4Team,
-        tabsTitle: tabsTitle,
+        tabsTitle: tabsTitleLeft,
         pageSize: localPageSizeTeam,
         pageList: [1, 3, 5, 10],
         paginationMessage: "",
@@ -38,7 +61,7 @@ $(function () {
     var settingsRight = {
         divId: operation4TeamRightDiv,
         titles: jsTitleTeamRight,
-        tabsTitle: tabsTitle,
+        tabsTitle: tabsTitleRight,
         pageSize: localPageSizeTeam,
         pageList: [1, 3, 5, 10],
         paginationMessage: "",
@@ -49,11 +72,17 @@ $(function () {
 
 });
 
+/*
+* 解散团队
+* */
 function disband(id) {
     ajaxExecute("operation4Team/disband/" + id)
     location.reload();
 }
 
+/*
+* 解聘队员
+* */
 function dismiss(id) {
     var ids = loadAllDisplayTitleId(jsTitleTeam);
     ajaxExecute("operation4Team/dismiss/?person=" + id + "&currentTeam=" + ids[1])
@@ -71,6 +100,7 @@ function joinTeam(id) {
     ajaxExecute("operation4Team/joinTeam/" + id)
     selectCurrentItem(id)
     operation4TeamDiv.tabs("select", "队员列表");
+    operation4TeamRightDiv.tabs("select", "我参与的")
 }
 
 function createTeam(id) {

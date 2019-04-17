@@ -108,7 +108,7 @@ function configDisplayUI(settings) {
     * 私有函数
     * */
     function configTabs() {
-        var tabsName = settings.tabTitle;
+        var tabsName = settings.tabsTitle;
         tabsDiv = theDiv;
         for (var i in titles) {
             var title = titles[i];

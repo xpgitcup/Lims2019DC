@@ -122,6 +122,10 @@ class Operation4TeamController extends TeamController {
                 def currentThing = Thing.get(params.currentThing)
                 params.currentThing = currentThing
                 break
+            case "我的课程":
+                params.myself = myself
+                params.thingTypeList = thingTypeList
+                break
             case "队员列表":
                 break
         }

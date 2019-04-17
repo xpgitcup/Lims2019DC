@@ -15,8 +15,8 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <!--h1><g:message code="default.list.label" args="[entityName]"/></h1-->
-    <!--f:table collection="${objectList}"/-->
+<!--h1><g:message code="default.list.label" args="[entityName]"/></h1-->
+<!--f:table collection="${objectList}"/-->
     <table>
         <thead>
         <th>队长</th>
@@ -35,7 +35,12 @@
                     ${item.leader}
                     <a href="javascript: listMembers(${item.id})">查看队员</a>
                     <g:if test="${item.leader != session.systemUser.person()}">
-                        <a href="javascript: joinTeam(${item.id})">加入团队</a>
+                        <g:if test="${item.members.contains(session.systemUser.person())}">
+                            <a href="javascript: quitTeam(${item.id})">退出团队</a>
+                        </g:if>
+                        <g:else>
+                            <a href="javascript: joinTeam(${item.id})">加入团队</a>
+                        </g:else>
                     </g:if>
                     <g:else>
                         <g:if test="${item?.members?.size() < 1}">
@@ -47,7 +52,7 @@
                     ${item.thing}
                 </td>
                 <td>
-                    <g:if test="${item.leader.id == session.realId}">
+                    <g:if test="${item.leader == session.systemUser.person()}">
                         <g:form controller="operation4Team" action="recruit">
                             <label>姓名</label>
                             <input name="name">

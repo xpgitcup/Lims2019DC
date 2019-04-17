@@ -34,7 +34,14 @@
     <div class="easyui-panel">
         <div class="nav">
             <ul class="indicator-cup">
+                <li id="currentCase">
+                    <g:if test="session.systemUser.personTitle().bePartOfByName('教师')">
+                        ${currentTask}.教师
+                    </g:if>
+                    <g:else>${currentTask}.学生</g:else>
+                </li>
                 <li>操作指示：</li>
+                <li id="currentTask">${currentTask}</li>
                 <li>==></li>
                 <li>选择任务</li>
                 <li>==></li>

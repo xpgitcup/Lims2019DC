@@ -1,0 +1,3406 @@
+[
+  {
+    "userName": "2151",
+    "roleAttribute": {
+      "attached": true,
+      "dirty": false,
+      "dirtyPropertyNames": [],
+      "errors": {
+        "allErrors": [],
+        "errorCount": 0,
+        "fieldErrorCount": 0,
+        "fieldErrors": [],
+        "globalErrorCount": 0,
+        "globalErrors": [],
+        "messageCodesResolver": {},
+        "model": {
+          "cn.edu.cup.system.SystemAttribute": {
+            "$ref": "$[0].roleAttribute"
+          },
+          "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+            "$ref": ".."
+          }
+        },
+        "nestedPath": "",
+        "objectName": "cn.edu.cup.system.SystemAttribute",
+        "propertyAccessor": {
+          "autoGrowCollectionLimit": 2147483647,
+          "autoGrowNestedPaths": true,
+          "extractOldValueForEditor": true,
+          "nestedPath": "",
+          "propertyDescriptors": [
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "attached",
+              "expert": false,
+              "hidden": false,
+              "name": "attached",
+              "preferred": false,
+              "propertyType": "boolean",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "boolean"
+                },
+                "annotations": [
+                  {},
+                  {
+                    "desc": "()Z",
+                    "traitClass": "org.grails.datastore.gorm.GormEntity"
+                  }
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "boolean",
+                "modifiers": 1,
+                "name": "isAttached",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "boolean",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "attached"
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "class",
+              "expert": false,
+              "hidden": false,
+              "name": "class",
+              "preferred": false,
+              "propertyType": "java.lang.Class",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "java.lang.Object"
+                },
+                "annotatedReturnType": {
+                  "annotatedActualTypeArguments": [
+                    {
+                      "annotatedLowerBounds": [],
+                      "annotatedUpperBounds": [
+                        {
+                          "annotations": [],
+                          "declaredAnnotations": [],
+                          "type": "java.lang.Object"
+                        }
+                      ],
+                      "annotations": [],
+                      "declaredAnnotations": [],
+                      "type": {
+                        "lowerBounds": [],
+                        "typeName": "?",
+                        "upperBounds": [
+                          "java.lang.Object"
+                        ]
+                      }
+                    }
+                  ],
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": {
+                    "actualTypeArguments": [
+                      {
+                        "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1].readMethod.annotatedReturnType.annotatedActualTypeArguments[0].type"
+                      }
+                    ],
+                    "rawType": "java.lang.Class",
+                    "typeName": "java.lang.Class<?>"
+                  }
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "java.lang.Object",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1].readMethod.annotatedReturnType.type"
+                },
+                "modifiers": 273,
+                "name": "getClass",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.lang.Class",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "class"
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "constraints",
+              "expert": false,
+              "hidden": false,
+              "name": "constraints",
+              "preferred": false,
+              "propertyType": "java.lang.Object",
+              "shortDescription": "constraints",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.Object"
+                  }
+                ],
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.Object"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 9,
+                "name": "setConstraints",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.Object"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.Object",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2].writeMethod"
+                },
+                "methodAnnotations": [],
+                "nestedGenericParameterType": "java.lang.Object",
+                "nestedParameterType": "java.lang.Object",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.Object"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "dirty",
+              "expert": false,
+              "hidden": false,
+              "name": "dirty",
+              "preferred": false,
+              "propertyType": "boolean",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "boolean"
+                },
+                "annotations": [
+                  {},
+                  {
+                    "desc": "()Z",
+                    "traitClass": "org.grails.datastore.gorm.GormEntity"
+                  }
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "boolean",
+                "modifiers": 1,
+                "name": "isDirty",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "boolean",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "dirty"
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "dirtyPropertyNames",
+              "expert": false,
+              "hidden": false,
+              "name": "dirtyPropertyNames",
+              "preferred": false,
+              "propertyType": "java.util.List",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "java.util.List"
+                },
+                "annotations": [
+                  {},
+                  {
+                    "desc": "()Ljava/util/List;",
+                    "traitClass": "org.grails.datastore.gorm.GormEntity"
+                  }
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "java.util.List",
+                "modifiers": 1,
+                "name": "getDirtyPropertyNames",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.util.List",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "dirtyPropertyNames"
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "errors",
+              "expert": false,
+              "hidden": false,
+              "name": "errors",
+              "preferred": false,
+              "propertyType": "org.springframework.validation.Errors",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "org.springframework.validation.Errors"
+                },
+                "annotations": [
+                  {},
+                  {
+                    "desc": "()Lorg/springframework/validation/Errors;",
+                    "traitClass": "org.grails.datastore.gorm.GormValidateable"
+                  }
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "org.springframework.validation.Errors",
+                "modifiers": 1,
+                "name": "getErrors",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "org.springframework.validation.Errors",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "errors",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "org.springframework.validation.Errors"
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [
+                  {
+                    "desc": "(Lorg/springframework/validation/Errors;)V",
+                    "traitClass": "org.grails.datastore.gorm.GormValidateable"
+                  }
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "org.springframework.validation.Errors"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 1,
+                "name": "setErrors",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "org.springframework.validation.Errors"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "org.springframework.validation.Errors",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5].writeMethod"
+                },
+                "methodAnnotations": [
+                  {
+                    "desc": "(Lorg/springframework/validation/Errors;)V",
+                    "traitClass": "org.grails.datastore.gorm.GormValidateable"
+                  }
+                ],
+                "nestedGenericParameterType": "org.springframework.validation.Errors",
+                "nestedParameterType": "org.springframework.validation.Errors",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "org.springframework.validation.Errors"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "hasMany",
+              "expert": false,
+              "hidden": false,
+              "name": "hasMany",
+              "preferred": false,
+              "propertyType": "java.lang.Object",
+              "shortDescription": "hasMany",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.Object"
+                  }
+                ],
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.Object"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 9,
+                "name": "setHasMany",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.Object"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.Object",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6].writeMethod"
+                },
+                "methodAnnotations": [],
+                "nestedGenericParameterType": "java.lang.Object",
+                "nestedParameterType": "java.lang.Object",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.Object"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "id",
+              "expert": false,
+              "hidden": false,
+              "name": "id",
+              "preferred": false,
+              "propertyType": "java.lang.Long",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "java.lang.Long"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "java.lang.Long",
+                "modifiers": 1,
+                "name": "getId",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.lang.Long",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "id",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.Long"
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.Long"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 1,
+                "name": "setId",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.Long"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.Long",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7].writeMethod"
+                },
+                "methodAnnotations": [],
+                "nestedGenericParameterType": "java.lang.Long",
+                "nestedParameterType": "java.lang.Long",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.Long"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "mapping",
+              "expert": false,
+              "hidden": false,
+              "name": "mapping",
+              "preferred": false,
+              "propertyType": "java.lang.Object",
+              "shortDescription": "mapping",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.Object"
+                  }
+                ],
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.Object"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 9,
+                "name": "setMapping",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.Object"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.Object",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8].writeMethod"
+                },
+                "methodAnnotations": [],
+                "nestedGenericParameterType": "java.lang.Object",
+                "nestedParameterType": "java.lang.Object",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.Object"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "metaClass",
+              "expert": false,
+              "hidden": false,
+              "name": "metaClass",
+              "preferred": false,
+              "propertyType": "groovy.lang.MetaClass",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "groovy.lang.MetaClass"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "groovy.lang.MetaClass",
+                "modifiers": 4097,
+                "name": "getMetaClass",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "groovy.lang.MetaClass",
+                "synthetic": true,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "metaClass",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "groovy.lang.MetaClass"
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "groovy.lang.MetaClass"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 4097,
+                "name": "setMetaClass",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "groovy.lang.MetaClass"
+                ],
+                "returnType": "void",
+                "synthetic": true,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "groovy.lang.MetaClass",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9].writeMethod"
+                },
+                "methodAnnotations": [],
+                "nestedGenericParameterType": "groovy.lang.MetaClass",
+                "nestedParameterType": "groovy.lang.MetaClass",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "groovy.lang.MetaClass"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "name",
+              "expert": false,
+              "hidden": false,
+              "name": "name",
+              "preferred": false,
+              "propertyType": "java.lang.String",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "java.lang.String"
+                },
+                "annotations": [
+                  {}
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "java.lang.String",
+                "modifiers": 1,
+                "name": "getName",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.lang.String",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "name",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.String"
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [
+                  {}
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.String"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 1,
+                "name": "setName",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.String"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.String",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10].writeMethod"
+                },
+                "methodAnnotations": [
+                  {}
+                ],
+                "nestedGenericParameterType": "java.lang.String",
+                "nestedParameterType": "java.lang.String",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.String"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "properties",
+              "expert": false,
+              "hidden": false,
+              "name": "properties",
+              "preferred": false,
+              "propertyType": "java.util.Map",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotatedActualTypeArguments": [
+                    {
+                      "annotatedLowerBounds": [],
+                      "annotatedUpperBounds": [
+                        {
+                          "annotations": [],
+                          "declaredAnnotations": [],
+                          "type": "java.lang.Object"
+                        }
+                      ],
+                      "annotations": [],
+                      "declaredAnnotations": [],
+                      "type": {
+                        "lowerBounds": [],
+                        "typeName": "?",
+                        "upperBounds": [
+                          "java.lang.Object"
+                        ]
+                      }
+                    },
+                    {
+                      "annotatedLowerBounds": [],
+                      "annotatedUpperBounds": [
+                        {
+                          "annotations": [],
+                          "declaredAnnotations": [],
+                          "type": "java.lang.Object"
+                        }
+                      ],
+                      "annotations": [],
+                      "declaredAnnotations": [],
+                      "type": {
+                        "lowerBounds": [],
+                        "typeName": "?",
+                        "upperBounds": [
+                          "java.lang.Object"
+                        ]
+                      }
+                    }
+                  ],
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": {
+                    "actualTypeArguments": [
+                      {
+                        "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11].readMethod.annotatedReturnType.annotatedActualTypeArguments[0].type"
+                      },
+                      {
+                        "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11].readMethod.annotatedReturnType.annotatedActualTypeArguments[1].type"
+                      }
+                    ],
+                    "rawType": "java.util.Map",
+                    "typeName": "java.util.Map<?, ?>"
+                  }
+                },
+                "annotations": [
+                  {
+                    "desc": "()Ljava/util/Map;",
+                    "traitClass": "grails.web.databinding.WebDataBinding"
+                  }
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11].readMethod.annotatedReturnType.type"
+                },
+                "modifiers": 1,
+                "name": "getProperties",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.util.Map",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "properties",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.Object"
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "org.springframework.validation.BindingResult"
+                },
+                "annotations": [
+                  {
+                    "desc": "(Ljava/lang/Object;)Lorg/springframework/validation/BindingResult;",
+                    "traitClass": "grails.web.databinding.WebDataBinding"
+                  }
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.Object"
+                ],
+                "genericReturnType": "org.springframework.validation.BindingResult",
+                "modifiers": 1,
+                "name": "setProperties",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.Object"
+                ],
+                "returnType": "org.springframework.validation.BindingResult",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.Object",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11].writeMethod"
+                },
+                "methodAnnotations": [
+                  {
+                    "desc": "(Ljava/lang/Object;)Lorg/springframework/validation/BindingResult;",
+                    "traitClass": "grails.web.databinding.WebDataBinding"
+                  }
+                ],
+                "nestedGenericParameterType": "java.lang.Object",
+                "nestedParameterType": "java.lang.Object",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.Object"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "subAttribues",
+              "expert": false,
+              "hidden": false,
+              "name": "subAttribues",
+              "preferred": false,
+              "propertyType": "java.util.Set",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotatedActualTypeArguments": [
+                    {
+                      "annotations": [],
+                      "declaredAnnotations": [],
+                      "type": "cn.edu.cup.system.SystemAttribute"
+                    }
+                  ],
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": {
+                    "actualTypeArguments": [
+                      "cn.edu.cup.system.SystemAttribute"
+                    ],
+                    "rawType": "java.util.Set",
+                    "typeName": "java.util.Set<cn.edu.cup.system.SystemAttribute>"
+                  }
+                },
+                "annotations": [
+                  {}
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].readMethod.annotatedReturnType.type"
+                },
+                "modifiers": 1,
+                "name": "getSubAttribues",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.util.Set",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "subAttribues",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotatedActualTypeArguments": [
+                      {
+                        "annotations": [],
+                        "declaredAnnotations": [],
+                        "type": "cn.edu.cup.system.SystemAttribute"
+                      }
+                    ],
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": {
+                      "actualTypeArguments": [
+                        "cn.edu.cup.system.SystemAttribute"
+                      ],
+                      "rawType": "java.util.Set",
+                      "typeName": "java.util.Set<cn.edu.cup.system.SystemAttribute>"
+                    }
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [
+                  {}
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].writeMethod.annotatedParameterTypes[0].type"
+                  }
+                ],
+                "genericReturnType": "void",
+                "modifiers": 1,
+                "name": "setSubAttribues",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.util.Set"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].writeMethod.annotatedParameterTypes[0].type"
+                },
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].writeMethod"
+                },
+                "methodAnnotations": [
+                  {}
+                ],
+                "nestedGenericParameterType": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12].writeMethod.annotatedParameterTypes[0].type"
+                },
+                "nestedParameterType": "java.util.Set",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.util.Set"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "transients",
+              "expert": false,
+              "hidden": false,
+              "name": "transients",
+              "preferred": false,
+              "propertyType": "java.lang.Object",
+              "shortDescription": "transients",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.Object"
+                  }
+                ],
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.Object"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 9,
+                "name": "setTransients",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.Object"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.Object",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13].writeMethod"
+                },
+                "methodAnnotations": [],
+                "nestedGenericParameterType": "java.lang.Object",
+                "nestedParameterType": "java.lang.Object",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.Object"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "upAttribute",
+              "expert": false,
+              "hidden": false,
+              "name": "upAttribute",
+              "preferred": false,
+              "propertyType": "cn.edu.cup.system.SystemAttribute",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotations": [
+                  {}
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "cn.edu.cup.system.SystemAttribute",
+                "modifiers": 1,
+                "name": "getUpAttribute",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "cn.edu.cup.system.SystemAttribute",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "upAttribute",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "cn.edu.cup.system.SystemAttribute"
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [
+                  {}
+                ],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "cn.edu.cup.system.SystemAttribute"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 1,
+                "name": "setUpAttribute",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "cn.edu.cup.system.SystemAttribute"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "cn.edu.cup.system.SystemAttribute",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14].writeMethod"
+                },
+                "methodAnnotations": [
+                  {}
+                ],
+                "nestedGenericParameterType": "cn.edu.cup.system.SystemAttribute",
+                "nestedParameterType": "cn.edu.cup.system.SystemAttribute",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "cn.edu.cup.system.SystemAttribute"
+              }
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "upAttributeId",
+              "expert": false,
+              "hidden": false,
+              "name": "upAttributeId",
+              "preferred": false,
+              "propertyType": "java.lang.Object",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "java.lang.Object"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "java.lang.Object",
+                "modifiers": 1,
+                "name": "getUpAttributeId",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.lang.Object",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "upAttributeId"
+            },
+            {
+              "beanClass": "cn.edu.cup.system.SystemAttribute",
+              "bound": false,
+              "constrained": false,
+              "displayName": "version",
+              "expert": false,
+              "hidden": false,
+              "name": "version",
+              "preferred": false,
+              "propertyType": "java.lang.Long",
+              "readMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "java.lang.Long"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [],
+                "genericReturnType": "java.lang.Long",
+                "modifiers": 1,
+                "name": "getVersion",
+                "parameterAnnotations": [],
+                "parameterCount": 0,
+                "parameterTypes": [],
+                "returnType": "java.lang.Long",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "shortDescription": "version",
+              "writeMethod": {
+                "accessible": false,
+                "annotatedExceptionTypes": [],
+                "annotatedParameterTypes": [
+                  {
+                    "annotations": [],
+                    "declaredAnnotations": [],
+                    "type": "java.lang.Long"
+                  }
+                ],
+                "annotatedReceiverType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "cn.edu.cup.system.SystemAttribute"
+                },
+                "annotatedReturnType": {
+                  "annotations": [],
+                  "declaredAnnotations": [],
+                  "type": "void"
+                },
+                "annotations": [],
+                "bridge": false,
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "default": false,
+                "exceptionTypes": [],
+                "genericExceptionTypes": [],
+                "genericParameterTypes": [
+                  "java.lang.Long"
+                ],
+                "genericReturnType": "void",
+                "modifiers": 1,
+                "name": "setVersion",
+                "parameterAnnotations": [
+                  []
+                ],
+                "parameterCount": 1,
+                "parameterTypes": [
+                  "java.lang.Long"
+                ],
+                "returnType": "void",
+                "synthetic": false,
+                "typeParameters": [],
+                "varArgs": false
+              },
+              "writeMethodForActualAccess": {
+                "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16].writeMethod"
+              },
+              "writeMethodParameter": {
+                "annotatedElement": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16].writeMethod"
+                },
+                "containingClass": "cn.edu.cup.system.SystemAttribute",
+                "declaringClass": "cn.edu.cup.system.SystemAttribute",
+                "genericParameterType": "java.lang.Long",
+                "member": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16].writeMethod"
+                },
+                "method": {
+                  "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16].writeMethod"
+                },
+                "methodAnnotations": [],
+                "nestedGenericParameterType": "java.lang.Long",
+                "nestedParameterType": "java.lang.Long",
+                "nestingLevel": 1,
+                "optional": false,
+                "parameterAnnotations": [],
+                "parameterIndex": 0,
+                "parameterType": "java.lang.Long"
+              }
+            }
+          ],
+          "rootClass": "cn.edu.cup.system.SystemAttribute",
+          "rootInstance": {
+            "$ref": "$[0].roleAttribute"
+          },
+          "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+          "wrappedInstance": {
+            "$ref": "$[0].roleAttribute"
+          }
+        },
+        "propertyEditorRegistry": {
+          "$ref": "$[0].roleAttribute.errors.propertyAccessor"
+        },
+        "suppressedFields": [],
+        "target": {
+          "$ref": ".."
+        }
+      },
+      "id": 8,
+      "name": "教师权限",
+      "properties": {
+        "subAttribues": [
+          {
+            "attached": true,
+            "dirty": false,
+            "dirtyPropertyNames": [],
+            "errors": {
+              "allErrors": [],
+              "errorCount": 0,
+              "fieldErrorCount": 0,
+              "fieldErrors": [],
+              "globalErrorCount": 0,
+              "globalErrors": [],
+              "messageCodesResolver": {},
+              "model": {
+                "cn.edu.cup.system.SystemAttribute": {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0]"
+                },
+                "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+                  "$ref": ".."
+                }
+              },
+              "nestedPath": "",
+              "objectName": "cn.edu.cup.system.SystemAttribute",
+              "propertyAccessor": {
+                "autoGrowCollectionLimit": 2147483647,
+                "autoGrowNestedPaths": true,
+                "extractOldValueForEditor": true,
+                "nestedPath": "",
+                "propertyDescriptors": [
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[0]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[3]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[4]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[15]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16]"
+                  }
+                ],
+                "rootClass": "cn.edu.cup.system.SystemAttribute",
+                "rootInstance": {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0]"
+                },
+                "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+                "wrappedInstance": {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0]"
+                }
+              },
+              "propertyEditorRegistry": {
+                "$ref": "$[0].roleAttribute.properties.subAttribues[0].errors.propertyAccessor"
+              },
+              "suppressedFields": [],
+              "target": {
+                "$ref": ".."
+              }
+            },
+            "id": 10,
+            "name": "基础维护",
+            "properties": {
+              "subAttribues": [],
+              "upAttribute": {
+                "$ref": "$[0].roleAttribute"
+              },
+              "name": "基础维护",
+              "upAttributeId": 8
+            },
+            "subAttribues": [],
+            "upAttribute": {
+              "attached": true,
+              "dirty": false,
+              "dirtyPropertyNames": [],
+              "errors": {
+                "$ref": "$[0].roleAttribute.errors"
+              },
+              "id": 8,
+              "name": "教师权限",
+              "properties": {
+                "subAttribues": [
+                  {
+                    "$ref": "$[0].roleAttribute.properties.subAttribues[0]"
+                  },
+                  {
+                    "attached": true,
+                    "dirty": false,
+                    "dirtyPropertyNames": [],
+                    "errors": {
+                      "allErrors": [],
+                      "errorCount": 0,
+                      "fieldErrorCount": 0,
+                      "fieldErrors": [],
+                      "globalErrorCount": 0,
+                      "globalErrors": [],
+                      "messageCodesResolver": {},
+                      "model": {
+                        "cn.edu.cup.system.SystemAttribute": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[1]"
+                        },
+                        "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+                          "$ref": ".."
+                        }
+                      },
+                      "nestedPath": "",
+                      "objectName": "cn.edu.cup.system.SystemAttribute",
+                      "propertyAccessor": {
+                        "autoGrowCollectionLimit": 2147483647,
+                        "autoGrowNestedPaths": true,
+                        "extractOldValueForEditor": true,
+                        "nestedPath": "",
+                        "propertyDescriptors": [
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[0]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[3]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[4]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[15]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16]"
+                          }
+                        ],
+                        "rootClass": "cn.edu.cup.system.SystemAttribute",
+                        "rootInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[1]"
+                        },
+                        "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+                        "wrappedInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[1]"
+                        }
+                      },
+                      "propertyEditorRegistry": {
+                        "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[1].errors.propertyAccessor"
+                      },
+                      "suppressedFields": [],
+                      "target": {
+                        "$ref": ".."
+                      }
+                    },
+                    "id": 15,
+                    "name": "底层管理",
+                    "properties": {
+                      "name": "底层管理",
+                      "subAttribues": [],
+                      "upAttribute": {
+                        "$ref": "$[0].roleAttribute"
+                      },
+                      "upAttributeId": 8
+                    },
+                    "subAttribues": [],
+                    "upAttribute": {
+                      "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute"
+                    },
+                    "upAttributeId": 8,
+                    "version": 0
+                  },
+                  {
+                    "attached": true,
+                    "dirty": false,
+                    "dirtyPropertyNames": [],
+                    "errors": {
+                      "allErrors": [],
+                      "errorCount": 0,
+                      "fieldErrorCount": 0,
+                      "fieldErrors": [],
+                      "globalErrorCount": 0,
+                      "globalErrors": [],
+                      "messageCodesResolver": {},
+                      "model": {
+                        "cn.edu.cup.system.SystemAttribute": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[2]"
+                        },
+                        "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+                          "$ref": ".."
+                        }
+                      },
+                      "nestedPath": "",
+                      "objectName": "cn.edu.cup.system.SystemAttribute",
+                      "propertyAccessor": {
+                        "autoGrowCollectionLimit": 2147483647,
+                        "autoGrowNestedPaths": true,
+                        "extractOldValueForEditor": true,
+                        "nestedPath": "",
+                        "propertyDescriptors": [
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[0]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[3]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[4]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[15]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16]"
+                          }
+                        ],
+                        "rootClass": "cn.edu.cup.system.SystemAttribute",
+                        "rootInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[2]"
+                        },
+                        "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+                        "wrappedInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[2]"
+                        }
+                      },
+                      "propertyEditorRegistry": {
+                        "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[2].errors.propertyAccessor"
+                      },
+                      "suppressedFields": [],
+                      "target": {
+                        "$ref": ".."
+                      }
+                    },
+                    "id": 16,
+                    "name": "教师服务",
+                    "properties": {
+                      "subAttribues": [],
+                      "name": "教师服务",
+                      "upAttribute": {
+                        "$ref": "$[0].roleAttribute"
+                      },
+                      "upAttributeId": 8
+                    },
+                    "subAttribues": [],
+                    "upAttribute": {
+                      "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute"
+                    },
+                    "upAttributeId": 8,
+                    "version": 0
+                  },
+                  {
+                    "attached": true,
+                    "dirty": false,
+                    "dirtyPropertyNames": [],
+                    "errors": {
+                      "allErrors": [],
+                      "errorCount": 0,
+                      "fieldErrorCount": 0,
+                      "fieldErrors": [],
+                      "globalErrorCount": 0,
+                      "globalErrors": [],
+                      "messageCodesResolver": {},
+                      "model": {
+                        "cn.edu.cup.system.SystemAttribute": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[3]"
+                        },
+                        "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+                          "$ref": ".."
+                        }
+                      },
+                      "nestedPath": "",
+                      "objectName": "cn.edu.cup.system.SystemAttribute",
+                      "propertyAccessor": {
+                        "autoGrowCollectionLimit": 2147483647,
+                        "autoGrowNestedPaths": true,
+                        "extractOldValueForEditor": true,
+                        "nestedPath": "",
+                        "propertyDescriptors": [
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[0]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[3]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[4]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[15]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16]"
+                          }
+                        ],
+                        "rootClass": "cn.edu.cup.system.SystemAttribute",
+                        "rootInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[3]"
+                        },
+                        "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+                        "wrappedInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[3]"
+                        }
+                      },
+                      "propertyEditorRegistry": {
+                        "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[3].errors.propertyAccessor"
+                      },
+                      "suppressedFields": [],
+                      "target": {
+                        "$ref": ".."
+                      }
+                    },
+                    "id": 11,
+                    "name": "用户服务",
+                    "properties": {
+                      "subAttribues": [],
+                      "name": "用户服务",
+                      "upAttribute": {
+                        "$ref": "$[0].roleAttribute"
+                      },
+                      "upAttributeId": 8
+                    },
+                    "subAttribues": [],
+                    "upAttribute": {
+                      "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute"
+                    },
+                    "upAttributeId": 8,
+                    "version": 1
+                  },
+                  {
+                    "attached": true,
+                    "dirty": false,
+                    "dirtyPropertyNames": [],
+                    "errors": {
+                      "allErrors": [],
+                      "errorCount": 0,
+                      "fieldErrorCount": 0,
+                      "fieldErrors": [],
+                      "globalErrorCount": 0,
+                      "globalErrors": [],
+                      "messageCodesResolver": {},
+                      "model": {
+                        "cn.edu.cup.system.SystemAttribute": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[4]"
+                        },
+                        "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+                          "$ref": ".."
+                        }
+                      },
+                      "nestedPath": "",
+                      "objectName": "cn.edu.cup.system.SystemAttribute",
+                      "propertyAccessor": {
+                        "autoGrowCollectionLimit": 2147483647,
+                        "autoGrowNestedPaths": true,
+                        "extractOldValueForEditor": true,
+                        "nestedPath": "",
+                        "propertyDescriptors": [
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[0]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[3]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[4]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[15]"
+                          },
+                          {
+                            "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16]"
+                          }
+                        ],
+                        "rootClass": "cn.edu.cup.system.SystemAttribute",
+                        "rootInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[4]"
+                        },
+                        "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+                        "wrappedInstance": {
+                          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[4]"
+                        }
+                      },
+                      "propertyEditorRegistry": {
+                        "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[4].errors.propertyAccessor"
+                      },
+                      "suppressedFields": [],
+                      "target": {
+                        "$ref": ".."
+                      }
+                    },
+                    "id": 14,
+                    "name": "系统维护",
+                    "properties": {
+                      "name": "系统维护",
+                      "subAttribues": [],
+                      "upAttribute": {
+                        "$ref": "$[0].roleAttribute"
+                      },
+                      "upAttributeId": 8
+                    },
+                    "subAttribues": [],
+                    "upAttribute": {
+                      "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute"
+                    },
+                    "upAttributeId": 8,
+                    "version": 0
+                  }
+                ],
+                "name": "教师权限"
+              },
+              "subAttribues": [
+                {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0]"
+                },
+                {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[1]"
+                },
+                {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[2]"
+                },
+                {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[3]"
+                },
+                {
+                  "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[4]"
+                }
+              ],
+              "version": 0
+            },
+            "upAttributeId": 8,
+            "version": 0
+          },
+          {
+            "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[1]"
+          },
+          {
+            "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[2]"
+          },
+          {
+            "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[3]"
+          },
+          {
+            "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[4]"
+          }
+        ],
+        "name": "教师权限"
+      },
+      "subAttribues": [
+        {
+          "$ref": "$[0].roleAttribute.properties.subAttribues[0]"
+        },
+        {
+          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[1]"
+        },
+        {
+          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[2]"
+        },
+        {
+          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[3]"
+        },
+        {
+          "$ref": "$[0].roleAttribute.properties.subAttribues[0].upAttribute.properties.subAttribues[4]"
+        }
+      ],
+      "version": 0
+    },
+    "roleAttributeId": 8,
+    "appendAttribute": "Teacher=李晓平",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttribute": {
+      "$ref": "$[0].roleAttribute"
+    },
+    "roleAttributeId": 8,
+    "appendAttribute": "Teacher=宫敬",
+    "userName": "1552",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttribute": {
+      "$ref": "$[0].roleAttribute"
+    },
+    "roleAttributeId": 8,
+    "userName": "1102",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Teacher=吴海浩"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "attached": true,
+      "dirty": false,
+      "dirtyPropertyNames": [],
+      "errors": {
+        "allErrors": [],
+        "errorCount": 0,
+        "fieldErrorCount": 0,
+        "fieldErrors": [],
+        "globalErrorCount": 0,
+        "globalErrors": [],
+        "messageCodesResolver": {},
+        "model": {
+          "cn.edu.cup.system.SystemAttribute": {
+            "$ref": "$[3].roleAttribute"
+          },
+          "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+            "$ref": ".."
+          }
+        },
+        "nestedPath": "",
+        "objectName": "cn.edu.cup.system.SystemAttribute",
+        "propertyAccessor": {
+          "autoGrowCollectionLimit": 2147483647,
+          "autoGrowNestedPaths": true,
+          "extractOldValueForEditor": true,
+          "nestedPath": "",
+          "propertyDescriptors": [
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[0]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[3]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[4]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[15]"
+            },
+            {
+              "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16]"
+            }
+          ],
+          "rootClass": "cn.edu.cup.system.SystemAttribute",
+          "rootInstance": {
+            "$ref": "$[3].roleAttribute"
+          },
+          "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+          "wrappedInstance": {
+            "$ref": "$[3].roleAttribute"
+          }
+        },
+        "propertyEditorRegistry": {
+          "$ref": "$[3].roleAttribute.errors.propertyAccessor"
+        },
+        "suppressedFields": [],
+        "target": {
+          "$ref": ".."
+        }
+      },
+      "id": 9,
+      "name": "学生权限",
+      "properties": {
+        "subAttribues": [
+          {
+            "attached": true,
+            "dirty": false,
+            "dirtyPropertyNames": [],
+            "errors": {
+              "allErrors": [],
+              "errorCount": 0,
+              "fieldErrorCount": 0,
+              "fieldErrors": [],
+              "globalErrorCount": 0,
+              "globalErrors": [],
+              "messageCodesResolver": {},
+              "model": {
+                "cn.edu.cup.system.SystemAttribute": {
+                  "$ref": "$[3].roleAttribute.properties.subAttribues[0]"
+                },
+                "org.springframework.validation.BindingResult.cn.edu.cup.system.SystemAttribute": {
+                  "$ref": ".."
+                }
+              },
+              "nestedPath": "",
+              "objectName": "cn.edu.cup.system.SystemAttribute",
+              "propertyAccessor": {
+                "autoGrowCollectionLimit": 2147483647,
+                "autoGrowNestedPaths": true,
+                "extractOldValueForEditor": true,
+                "nestedPath": "",
+                "propertyDescriptors": [
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[0]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[1]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[2]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[3]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[4]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[5]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[6]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[7]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[8]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[9]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[10]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[11]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[12]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[13]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[14]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[15]"
+                  },
+                  {
+                    "$ref": "$[0].roleAttribute.errors.propertyAccessor.propertyDescriptors[16]"
+                  }
+                ],
+                "rootClass": "cn.edu.cup.system.SystemAttribute",
+                "rootInstance": {
+                  "$ref": "$[3].roleAttribute.properties.subAttribues[0]"
+                },
+                "wrappedClass": "cn.edu.cup.system.SystemAttribute",
+                "wrappedInstance": {
+                  "$ref": "$[3].roleAttribute.properties.subAttribues[0]"
+                }
+              },
+              "propertyEditorRegistry": {
+                "$ref": "$[3].roleAttribute.properties.subAttribues[0].errors.propertyAccessor"
+              },
+              "suppressedFields": [],
+              "target": {
+                "$ref": ".."
+              }
+            },
+            "id": 12,
+            "name": "用户服务",
+            "properties": {
+              "subAttribues": [],
+              "name": "用户服务",
+              "upAttribute": {
+                "$ref": "$[3].roleAttribute"
+              },
+              "upAttributeId": 9
+            },
+            "subAttribues": [],
+            "upAttribute": {
+              "attached": true,
+              "dirty": false,
+              "dirtyPropertyNames": [],
+              "errors": {
+                "$ref": "$[3].roleAttribute.errors"
+              },
+              "id": 9,
+              "name": "学生权限",
+              "properties": {
+                "subAttribues": [
+                  {
+                    "$ref": "$[3].roleAttribute.properties.subAttribues[0]"
+                  }
+                ],
+                "name": "学生权限"
+              },
+              "subAttribues": [
+                {
+                  "$ref": "$[3].roleAttribute.properties.subAttribues[0]"
+                }
+              ],
+              "version": 0
+            },
+            "upAttributeId": 9,
+            "version": 1
+          }
+        ],
+        "name": "学生权限"
+      },
+      "subAttribues": [
+        {
+          "$ref": "$[3].roleAttribute.properties.subAttribues[0]"
+        }
+      ],
+      "version": 0
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=石国赟",
+    "userName": "2014314014"
+  },
+  {
+    "appendAttribute": "Student=丁麟",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2014314013"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=虞维超",
+    "userName": "2015314019",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=马千里",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2015314016"
+  },
+  {
+    "userName": "2015314022",
+    "appendAttribute": "Student=靳航",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2015314023",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=柳扬"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=宋尚飞",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2015314017"
+  },
+  {
+    "appendAttribute": "Student=金浩",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2015214549",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=马晓旭",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2015214571"
+  },
+  {
+    "appendAttribute": "Student=朱梦琪",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2015214557",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=康琦",
+    "userName": "2016314026",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2016314018",
+    "appendAttribute": "Student=洪炳沅",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016314025",
+    "appendAttribute": "Student=黄辉荣",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2016314019",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=王丹",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=李昂",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016314017",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=陈新果",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214568"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=陈怡鸣",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214090"
+  },
+  {
+    "appendAttribute": "Student=陈影",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214554",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214555",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=崔可心"
+  },
+  {
+    "appendAttribute": "Student=丁凯",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214536"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=甘东英",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214091"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=高航",
+    "userName": "2016214537"
+  },
+  {
+    "appendAttribute": "Student=韩庆龙",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214541",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2016214538",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=黄璞",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2016214539",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=李梦瑶"
+  },
+  {
+    "userName": "2016214086",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=李莎",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=李愚",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214556"
+  },
+  {
+    "appendAttribute": "Student=王传硕",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214544",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=任亮",
+    "userName": "2016214543",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2016214060",
+    "appendAttribute": "Student=沈伟伟",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214092",
+    "appendAttribute": "Student=沈允"
+  },
+  {
+    "appendAttribute": "Student=苏越",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214076",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=万洋洋",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214557"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=王茀玺",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2016214558"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214057",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=王君傲"
+  },
+  {
+    "userName": "2016214093",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=吴停",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=夏子杰",
+    "userName": "2016214096",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=许洁",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2015214064",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2016214063",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=张若晨",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214065",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=赵云鹏"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2016214560",
+    "appendAttribute": "Student=周艳红",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017314026",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=樊迪",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=齐雪宇",
+    "userName": "2017314015",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=于志鹏",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2017314023"
+  },
+  {
+    "userName": "2017314013",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=陈玉川"
+  },
+  {
+    "userName": "2017314014",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=李熠辰",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017314024",
+    "appendAttribute": "Student=张盛楠",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214552",
+    "appendAttribute": "Student=邓坤",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=高晶晶",
+    "userName": "2017214564",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017214553",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=高振宇"
+  },
+  {
+    "appendAttribute": "Student=何卓",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214565",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214554",
+    "appendAttribute": "Student=胡杰",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017214558",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=兰文萍",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214584",
+    "appendAttribute": "Student=李根",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=李金潮",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2017214050"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214052",
+    "appendAttribute": "Student=李立",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017214555",
+    "appendAttribute": "Student=林聿明",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=吕鹏飞",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214053",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214054",
+    "appendAttribute": "Student=孙小喆",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=王振威",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2017214081"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214078",
+    "appendAttribute": "Student=肖亚琪",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=谢平",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2017214070"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=薛一菡",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2017214082"
+  },
+  {
+    "appendAttribute": "Student=杨克",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214570",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017214566",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=禹亚峰",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017214556",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=张昊"
+  },
+  {
+    "appendAttribute": "Student=张杰",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214055",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2017214557",
+    "appendAttribute": "Student=张蒙丽",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2017214056",
+    "appendAttribute": "Student=张佩颖",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=狄国佳",
+    "userName": "2017214069",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2018314016",
+    "appendAttribute": "Student=段旭"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=陈思杭",
+    "userName": "2018314015",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=彭泽恒",
+    "userName": "2018314026",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2018314025",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=李楷"
+  },
+  {
+    "userName": "2018214052",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=丁陈陈",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=纪晨秋",
+    "userName": "2018214053",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=廖清云",
+    "userName": "2018214054",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=刘鹏",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2018214055"
+  },
+  {
+    "appendAttribute": "Student=刘轩章",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2018214056"
+  },
+  {
+    "userName": "2018214051",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=李国豪",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2018214075",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=林德才",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=葛运通",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2018214078"
+  },
+  {
+    "appendAttribute": "Student=杨晓鹏",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2018214079"
+  },
+  {
+    "appendAttribute": "Student=冯兴",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2018214544",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2018214545",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "appendAttribute": "Student=王昕楚"
+  },
+  {
+    "appendAttribute": "Student=王靖怡",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2018214546",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=崔雪萌",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2018214553"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2018214554",
+    "appendAttribute": "Student=都兆楠",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=谭遥",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2018214555",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "userName": "2018214084",
+    "appendAttribute": "Student=周建伟",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "appendAttribute": "Student=刘胜男",
+    "password": "25d55ad283aa400af464c76d713c07ad",
+    "userName": "2018214068"
+  },
+  {
+    "appendAttribute": "Student=喻伟婕",
+    "userName": "2018214080",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  },
+  {
+    "appendAttribute": "Student=张璐瑶",
+    "roleAttributeId": 9,
+    "roleAttribute": {
+      "$ref": "$[3].roleAttribute"
+    },
+    "userName": "2018214081",
+    "password": "25d55ad283aa400af464c76d713c07ad"
+  }
+]

@@ -66,6 +66,12 @@
         "menuAction": "Operation4Thing/index",
         "menuDescription": "各种项目的基础数据",
         "menuOrder": 3
+      },
+      {
+        "menuContext": "通用计划",
+        "menuAction": "Operation4Plan/index",
+        "menuDescription": "通用计划管理",
+        "menuOrder": 3
       }
     ]
   },

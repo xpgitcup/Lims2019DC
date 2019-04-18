@@ -33,6 +33,7 @@ $(function () {
             break;
         case "教学任务.教师":
             jsTitleTeamRight = ["我的课程"];
+            title4Team = ["所有课程"];
             break;
     }
 

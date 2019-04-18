@@ -3,15 +3,15 @@
 
  Source Server         : sample
  Source Server Type    : MySQL
- Source Server Version : 80015
+ Source Server Version : 50725
  Source Host           : localhost:3306
  Source Schema         : lims2019db
 
  Target Server Type    : MySQL
- Target Server Version : 80015
+ Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 16/04/2019 22:39:20
+ Date: 18/04/2019 11:06:50
 */
 
 SET NAMES utf8mb4;
@@ -24,15 +24,15 @@ DROP TABLE IF EXISTS `query_statement`;
 CREATE TABLE `query_statement`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `version` bigint(20) NOT NULL,
-  `params_list` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `hql` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
-  `issql` bit(1) DEFAULT NULL,
+  `params_list` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `hql` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `issql` bit(1) NULL DEFAULT NULL,
   `need_to_query` bit(1) NOT NULL,
   `key_string` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_iejb2adhrl11w1nanxv8r9hql`(`key_string`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of query_statement
@@ -99,5 +99,9 @@ INSERT INTO `query_statement` VALUES (61, 2, 'thingTypeList,myself', 'select cou
 INSERT INTO `query_statement` VALUES (62, 10, 'myself,thingTypeList', 'SELECT\r\nteam_person.team_members_id\r\nFROM\r\nteam_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE\r\nteam_person.person_id=myself AND\r\nthing.thing_type_id IN (thingTypeList)\r\nlimit %d,%d', b'1', b'1', 'list.operation4Team.我参与的.myself.thingTypeList', 'listTeamRight');
 INSERT INTO `query_statement` VALUES (63, 10, 'myself,thingTypeList', 'SELECT\r\ncount(*)\r\nFROM\r\nteam_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE\r\nteam_person.person_id=myself  AND\r\nthing.thing_type_id IN (thingTypeList)', b'1', b'1', 'count.operation4Team.我参与的.myself.thingTypeList', NULL);
 INSERT INTO `query_statement` VALUES (64, 0, NULL, NULL, b'0', b'1', 'count.operation4Team.currentTeam.队员列表', NULL);
+INSERT INTO `query_statement` VALUES (65, 1, 'thingTypeList', 'select count(*) from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.所有课程.thingTypeList', NULL);
+INSERT INTO `query_statement` VALUES (66, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'list.operation4Team.所有课程.thingTypeList', 'listThingLeft4Teacher');
+INSERT INTO `query_statement` VALUES (67, 1, 'thingTypeList,myself', 'select count(*) from Team team where team.thing.teacher=:myself and team.thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.我的课程.myself.thingTypeList', NULL);
+INSERT INTO `query_statement` VALUES (68, 1, 'thingTypeList,myself', 'from Team team where team.thing.teacher=:myself and team.thing.thingType in :thingTypeList', b'0', b'1', 'list.operation4Team.我的课程.myself.thingTypeList', 'listTeamRight4Teacher');
 
 SET FOREIGN_KEY_CHECKS = 1;

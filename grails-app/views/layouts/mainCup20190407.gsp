@@ -84,7 +84,10 @@
             <ul class="application-status">
                 <g:if test="${session.systemUser}">
                     <li>
-                        当前：${session.systemUser.personName()}
+                        当前：${session.userName}
+                    </li>
+                    <li>
+                        身份：${session.userTitle}
                     </li>
                     <li>
                         <a href="${createLink(uri: '/home/changePasswordUI')}">修改密码</a>

@@ -103,8 +103,13 @@ class HomeController {
         //Date start = new Date(current.getTime() - 30 * 60 * 1000) // 30分钟转换成毫秒
         //def cc = SystemStatus.countByLogoutTimeIsNullAndLoginTimeGreaterThan(start)
         //def users = SystemStatus.findAllByLogoutTimeIsNullAndLoginTimeGreaterThan(start)
-        def cc = SystemStatus.countByLogoutTimeIsNull()
-        def users = SystemStatus.findAllByLogoutTimeIsNull()
+        def ctx = request.session.servletContext
+        List serviceUserList = (List) ctx.getAttribute("serviceUserList");
+
+        //def cc = SystemStatus.countByLogoutTimeIsNull()
+        def cc = SystemStatus.countBySessionIdInList(serviceUserList)
+        //def users = SystemStatus.findAllByLogoutTimeIsNull()
+        def users = SystemStatus.findAllBySessionIdInList(serviceUserList)
         def usersStr = ""
         if (users.size() < 3) {
             users.each { e ->
@@ -167,6 +172,8 @@ class HomeController {
             //println("找到了：${systemUser}")
             session.layout = Caption.findByName("main").layout
             session.systemUser = systemUser
+            session.userTitle = systemUser.personTitle()
+            session.userName = systemUser.personName()
             systemCommonService.updateSystemStatus(request, params)
             redirect(uri: "/home")
         } else {

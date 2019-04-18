@@ -70,7 +70,7 @@ class SystemCommonService {
             def user = request.session.systemUser
             ss = new SystemStatus(
                     sessionId: sid,
-                    userName: user.personName(),
+                    userName: request.session.userName,
                     userRole: user.userRoles()
             )
         }

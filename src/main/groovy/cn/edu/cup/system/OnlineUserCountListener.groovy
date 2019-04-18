@@ -27,7 +27,7 @@ class OnlineUserCountListener implements HttpSessionListener {
                     serviceUserList = new ArrayList()
                     ctx.setAttribute("serviceUserList", serviceUserList);
                 }
-                serviceUserList.add(s)
+                serviceUserList.add(s.getId())
             }
         }
     }
@@ -45,8 +45,8 @@ class OnlineUserCountListener implements HttpSessionListener {
         if (ctx != null) {
             List serviceUserList = (List) ctx.getAttribute("serviceUserList");
             if (serviceUserList != null) {
-                if (serviceUserList.contains(s)) {
-                    serviceUserList.remove(s)
+                if (serviceUserList.contains(s.getId())) {
+                    serviceUserList.remove(s.getId())
                 }
             }
         }

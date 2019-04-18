@@ -122,6 +122,9 @@ class Operation4TeamController extends TeamController {
                 def currentThing = Thing.get(params.currentThing)
                 params.currentThing = currentThing
                 break
+            case "所有课程":
+                params.thingTypeList = thingTypeList
+                break
             case "我的课程":
                 params.myself = myself
                 params.thingTypeList = thingTypeList
@@ -156,11 +159,19 @@ class Operation4TeamController extends TeamController {
 
     def index() {
         def currentTask
+        def currentCase
         if (params.currentTask) {
             currentTask = params.currentTask
         }
+        def p = session.systemUser.personTitle()
+        println("当前 ${p}")
+        if (p.bePartOfByName("教师")) {
+            currentCase = "${currentTask}.教师"
+        } else {
+            currentCase = "${currentTask}.学生"
+        }
         model:
-        [currentTask: currentTask]
+        [currentTask: currentTask, currentCase: currentCase]
     }
 
 }

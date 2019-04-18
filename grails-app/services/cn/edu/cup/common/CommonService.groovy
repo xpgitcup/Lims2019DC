@@ -118,7 +118,7 @@ class CommonService {
 
     def importObjectArrayFromJson(String jsonString, Class clazz) {
         def objectArray = com.alibaba.fastjson.JSON.parseArray(jsonString, clazz)
-        println("导入的：${objectArray}")
+        //println("导入的：${objectArray}")
         return objectArray
     }
 

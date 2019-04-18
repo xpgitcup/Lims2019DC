@@ -1,6 +1,8 @@
 package cn.edu.cup.lims
 
-class Plan {
+import cn.edu.cup.common.SelfCheck
+
+class Plan implements SelfCheck{
 
     Plan upPlan
     ThingType thingType
@@ -26,4 +28,13 @@ class Plan {
         return "${description}"
     }
 
+    @Override
+    void selfCheck() {
+        if (subItems) {
+            subItems.each { e->
+                e.upPlan = this
+                e.selfCheck()
+            }
+        }
+    }
 }

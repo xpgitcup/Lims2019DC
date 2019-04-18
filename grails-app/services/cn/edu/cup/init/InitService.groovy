@@ -3,6 +3,7 @@ package cn.edu.cup.init
 import cn.edu.cup.basic.Caption
 import cn.edu.cup.basic.PersonTitle
 import cn.edu.cup.basic.Teacher
+import cn.edu.cup.lims.Plan
 import cn.edu.cup.lims.ThingType
 import cn.edu.cup.system.SystemAttribute
 import cn.edu.cup.system.SystemMenu
@@ -24,6 +25,7 @@ class InitService {
     def systemCommonService
     def systemAttributeService
     def thingTypeService
+    def planService
 
     /**
      * 初始化代码__开发环境下的初始化代码
@@ -117,9 +119,14 @@ class InitService {
         def teacherFileName = "${webRootDir}/config/teacher.json"
         if (teacherService.count() < 1) {
             def teachers = importObjects(teacherFileName, Teacher.class, "selfCheck")
-            teachers.each { e->
+            teachers.each { e ->
                 systemCommonService.addPersonToUser(e)
             }
+        }
+
+        // 初始化项目类型的计划
+        if (planService.count() < 1) {
+            initThingTypePlan()
         }
     }
 
@@ -133,6 +140,55 @@ class InitService {
             e.save(flush: true)
         }
         return objects
+    }
+
+    def initThingTypePlan() {
+        def fileName = "${commonService.webRootPath}/config/thingTypePlan.json"
+        def jsonFile = new File(fileName)
+        def plans
+        if (jsonFile.exists()) {
+            def json = jsonFile.text
+            plans = com.alibaba.fastjson.JSON.parse(json)
+
+            println("计划配置：${plans}")
+            plans.each { e ->
+                def tp = ThingType.findByName(e.key)
+                if (tp) {
+                    println("创建 ${e.key} 计划...")
+                    if (Plan.countByThingTypeAndUpPlanIsNull(tp) < 1) {
+                        createPlan4ThingType(tp, e)
+                        if (tp.subTypes) {
+                            tp.subTypes.each { etp ->
+                                createPlan4ThingType(etp, e)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void createPlan4ThingType(thingType, e) {
+        // 创建根节点
+        def p = new Plan(
+                thingType: thingType,
+                description: "${thingType.name}.计划",
+                serialNumber: 0,
+                updateDate: new Date()
+        )
+        planService.save(p)
+        // 创建叶节点
+        println("${e.value}")
+        e.value.each { ee ->
+            def sp = new Plan(
+                    upPlan: p,
+                    thingType: thingType,
+                    description: ee.name,
+                    serialNumber: ee.sn,
+                    updateDate: new Date()
+            )
+            planService.save(sp)
+        }
     }
 
     /**

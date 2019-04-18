@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 18/04/2019 11:06:50
+ Date: 18/04/2019 16:07:30
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `query_statement`  (
   `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_iejb2adhrl11w1nanxv8r9hql`(`key_string`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of query_statement
@@ -73,7 +73,7 @@ INSERT INTO `query_statement` VALUES (35, 0, 'currentTeam', 'from Progress progr
 INSERT INTO `query_statement` VALUES (36, 0, 'currentTeam', 'select count(*) from Progress progress where progress.team=:currentTeam', b'0', b'1', 'count.operation4Progress.currentTeam.进度查看', 'listProgress');
 INSERT INTO `query_statement` VALUES (37, 0, 'currentProgress', 'from Evaluate evaluate where evaluate.progress=:currentProgress', b'0', b'1', 'list.operation4Progress.currentProgress.反馈信息', 'listEvaluate');
 INSERT INTO `query_statement` VALUES (38, 0, NULL, 'from QueryStatement queryStatement where queryStatement.hql is null  order by keyString', b'0', b'1', 'list.operation4QueryStatement.filter.查询配置', 'listQueryStatement');
-INSERT INTO `query_statement` VALUES (39, 0, 'currentThing', 'from Team team where team.thing=:currentThing', b'0', b'1', 'list.operation4Team.currentThing.相关团队', 'listTeam');
+INSERT INTO `query_statement` VALUES (39, 1, 'currentThing', 'from Team team where team.thing=:currentThing', b'0', b'1', 'list.operation4Team.currentThing.相关团队', 'listTeamLeft');
 INSERT INTO `query_statement` VALUES (40, 0, NULL, 'SELECT DISTINCT person.grade_name FROM person WHERE person.grade_name IS NOT NULL limit %d,%d', b'1', b'1', 'list.operation4Person.年级', 'listGradeName');
 INSERT INTO `query_statement` VALUES (41, 0, 'thingTypeList', 'from Team team where team.thing in :thingTypeList order by team.thing', b'0', b'1', 'list.operation4Progress.我管理的.thingTypeList', 'listTeam');
 INSERT INTO `query_statement` VALUES (42, 0, 'thingTypeList', 'select count(*) from Team team where team.thing in :thingTypeList', b'0', b'1', 'count.operation4Progress.我管理的.thingTypeList', NULL);
@@ -96,12 +96,14 @@ INSERT INTO `query_statement` VALUES (58, 0, 'thingTypeId', 'select count(*) fro
 INSERT INTO `query_statement` VALUES (59, 0, 'thingTypeList', 'select count(*) from Team team where team.thing in :thingTypeList', b'0', b'1', 'count.operation4ProjectPlan.进度归档.myself', NULL);
 INSERT INTO `query_statement` VALUES (60, 1, 'thingTypeList,myself', 'from Team team where team.thing.thingType in :thingTypeList and team.leader=:myself', b'0', b'1', 'list.operation4Team.我领导的.myself.thingTypeList', 'listTeamRight');
 INSERT INTO `query_statement` VALUES (61, 2, 'thingTypeList,myself', 'select count(*) from Team team where team.leader=:myself and team.thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.我领导的.myself.thingTypeList', NULL);
-INSERT INTO `query_statement` VALUES (62, 10, 'myself,thingTypeList', 'SELECT\r\nteam_person.team_members_id\r\nFROM\r\nteam_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE\r\nteam_person.person_id=myself AND\r\nthing.thing_type_id IN (thingTypeList)\r\nlimit %d,%d', b'1', b'1', 'list.operation4Team.我参与的.myself.thingTypeList', 'listTeamRight');
+INSERT INTO `query_statement` VALUES (62, 11, 'myself,thingTypeList', 'SELECT\r\nteam_person.team_members_id\r\nFROM\r\nteam_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE\r\nteam_person.person_id=myself AND\r\nthing.thing_type_id IN (thingTypeList)\r\nlimit %d,%d', b'1', b'1', 'list.operation4Team.我参与的.myself.thingTypeList', 'listTeamRightAsMember');
 INSERT INTO `query_statement` VALUES (63, 10, 'myself,thingTypeList', 'SELECT\r\ncount(*)\r\nFROM\r\nteam_person\r\nINNER JOIN team ON team_person.team_members_id = team.id\r\nINNER JOIN thing ON team.thing_id = thing.id\r\nINNER JOIN thing_type ON thing.thing_type_id = thing_type.id\r\nWHERE\r\nteam_person.person_id=myself  AND\r\nthing.thing_type_id IN (thingTypeList)', b'1', b'1', 'count.operation4Team.我参与的.myself.thingTypeList', NULL);
 INSERT INTO `query_statement` VALUES (64, 0, NULL, NULL, b'0', b'1', 'count.operation4Team.currentTeam.队员列表', NULL);
 INSERT INTO `query_statement` VALUES (65, 1, 'thingTypeList', 'select count(*) from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.所有课程.thingTypeList', NULL);
 INSERT INTO `query_statement` VALUES (66, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'list.operation4Team.所有课程.thingTypeList', 'listThingLeft4Teacher');
 INSERT INTO `query_statement` VALUES (67, 1, 'thingTypeList,myself', 'select count(*) from Team team where team.thing.teacher=:myself and team.thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.我的课程.myself.thingTypeList', NULL);
 INSERT INTO `query_statement` VALUES (68, 1, 'thingTypeList,myself', 'from Team team where team.thing.teacher=:myself and team.thing.thingType in :thingTypeList', b'0', b'1', 'list.operation4Team.我的课程.myself.thingTypeList', 'listTeamRight4Teacher');
+INSERT INTO `query_statement` VALUES (69, 1, 'currentThing,thingTypeList', 'from Team team where team.thing=:currentThing and team.thing.thingType in :thingTypeList', b'0', b'1', 'list.operation4Team.currentThing.相关团队.thingTypeList', 'listTeamLeft');
+INSERT INTO `query_statement` VALUES (70, 1, 'currentThing,thingTypeList', 'select count(*) from Team team where team.thing=:currentThing and team.thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.currentThing.相关团队.thingTypeList', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

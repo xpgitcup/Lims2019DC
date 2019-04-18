@@ -136,7 +136,7 @@ function shiftDisplay(title) {
     var id;
     var param = ""
     switch (title) {
-        case "我领到的":
+        case "我领导的":
             break;
         case "可选题目":
             tipsOperation4Team.html("可以创建团队，也可以查看团队！");
@@ -147,7 +147,7 @@ function shiftDisplay(title) {
             console.info("当前id:" + key + "=" + id);
             if (id > 0) {
                 param = "&currentThing=" + id;
-                tipsOperation4Team.html("查看当前任务相关团队：");
+                tipsOperation4Team.html("查看当前任务相关团队：" + id);
             } else {
                 tipsOperation4Team.html("请先选择任务！");
             }
@@ -158,7 +158,7 @@ function shiftDisplay(title) {
             console.info("当前id:" + key + "=" + id);
             if (id > 0) {
                 param = "&currentTeam=" + id;
-                tipsOperation4Team.html("查看当前团队：");
+                tipsOperation4Team.html("查看当前团队：" + id);
             } else {
                 tipsOperation4Team.html("请先选择团队！");
             }

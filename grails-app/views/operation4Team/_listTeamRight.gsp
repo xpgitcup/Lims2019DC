@@ -15,7 +15,7 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <!--f:table collection="${objectList}"/-->
+<!--f:table collection="${objectList}"/-->
     <table>
         <thead>
         <th>队长</th>
@@ -35,7 +35,7 @@
                         <a href="javascript: joinTeam(${item.id})">加入团队</a>
                     </g:if>
                     <g:else>
-                        <g:if test="${item?.members?.size() < 1}">
+                        <g:if test="${(item?.members?.size() < 1) && (item.progresses?.size() < 1)}">
                             <a href="javascript: disband(${item.id})">解散队伍</a>
                         </g:if>
                     </g:else>

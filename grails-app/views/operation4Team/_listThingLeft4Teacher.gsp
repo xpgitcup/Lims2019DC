@@ -24,9 +24,6 @@
             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                 <td>
                     ${item.name}
-                    <g:if test="${cn.edu.cup.lims.Team.countByThing(item)>0}">
-                        <a href="javascript: listTeam(${item.id})">查看团队</a>
-                    </g:if>
                 </td>
                 <td>${item.thingType}</td>
                 <td>${cn.edu.cup.lims.Team.countByThing(item)}</td>

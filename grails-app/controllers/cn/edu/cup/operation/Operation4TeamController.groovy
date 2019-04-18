@@ -121,6 +121,7 @@ class Operation4TeamController extends TeamController {
             case "相关团队":
                 def currentThing = Thing.get(params.currentThing)
                 params.currentThing = currentThing
+                params.thingTypeList = thingTypeList
                 break
             case "所有课程":
                 params.thingTypeList = thingTypeList

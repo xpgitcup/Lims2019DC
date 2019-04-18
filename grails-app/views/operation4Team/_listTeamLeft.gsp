@@ -43,7 +43,7 @@
                         </g:else>
                     </g:if>
                     <g:else>
-                        <g:if test="${item?.members?.size() < 1}">
+                        <g:if test="${(item?.members?.size() < 1) && (item.progresses?.size() < 1)}">
                             <a href="javascript: disband(${item.id})">解散队伍</a>
                         </g:if>
                     </g:else>

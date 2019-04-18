@@ -41,6 +41,8 @@ class OnlineUserCountListener implements HttpSessionListener {
     @Override
     void sessionDestroyed(HttpSessionEvent se) {
         HttpSession s = se.getSession();
+        Date now = new Date()
+        println("${s} 会话撤销 at ${now.toString()}...")
         ServletContext ctx = s.getServletContext();
         if (ctx != null) {
             List serviceUserList = (List) ctx.getAttribute("serviceUserList");

@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 18/04/2019 16:07:30
+ Date: 19/04/2019 09:48:01
 */
 
 SET NAMES utf8mb4;
@@ -81,7 +81,7 @@ INSERT INTO `query_statement` VALUES (43, 0, NULL, NULL, b'0', b'0', 'list.opera
 INSERT INTO `query_statement` VALUES (44, 0, NULL, NULL, b'0', b'0', 'list.operation4Team.currentTeam.队员列表', NULL);
 INSERT INTO `query_statement` VALUES (45, 0, 'keyString', 'select count(*) from QueryStatement queryStatement where queryStatement.keyString like :keyString', b'0', b'1', 'count.operation4QueryStatement.查询配置.keyString', NULL);
 INSERT INTO `query_statement` VALUES (46, 0, 'keyString', 'from QueryStatement queryStatement where queryStatement.keyString like :keyString', b'0', b'1', 'list.operation4QueryStatement.查询配置.keyString', 'listQueryStatement');
-INSERT INTO `query_statement` VALUES (47, 0, 'thingTypeId', 'from Plan plan  where plan.thingType.id=cast(:thingTypeId as integer) order by updateDate desc', b'0', b'1', 'list.operation4Plan.通用计划.thingTypeId', 'listPlan');
+INSERT INTO `query_statement` VALUES (47, 1, 'thingTypeId', 'from Plan plan  where plan.thingType.id=cast(:thingTypeId as integer) and plan.upPlan is null order by updateDate desc', b'0', b'1', 'list.operation4Plan.通用计划.thingTypeId', 'listPlan');
 INSERT INTO `query_statement` VALUES (48, 0, 'currentProgress', 'select count(*) from Evaluate evaluate where evaluate.progress=:currentProgress', b'0', b'1', 'count.operation4Progress.currentProgress.反馈信息', NULL);
 INSERT INTO `query_statement` VALUES (49, 0, NULL, 'SELECT Count(DISTINCT person.grade_name) FROM person WHERE person.grade_name IS NOT NULL', b'1', b'1', 'count.operation4Person.年级', NULL);
 INSERT INTO `query_statement` VALUES (50, 0, 'thingTypeList', 'from Team team where team.thing in :thingTypeList order by team.thing', b'0', b'1', 'list.operation4ProjectPlan.进度归档.myself', 'listTeam');
@@ -92,7 +92,7 @@ INSERT INTO `query_statement` VALUES (54, 0, 'currentTeam', 'select count(*) fro
 INSERT INTO `query_statement` VALUES (55, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'index.Operation4Team.currentTask.可选题目.thingTypeList', 'listThing');
 INSERT INTO `query_statement` VALUES (56, 1, 'thingTypeList', 'from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'list.Operation4Team.currentTask.可选题目.thingTypeList', 'listTeam');
 INSERT INTO `query_statement` VALUES (57, 1, 'thingTypeList', 'select count(*) from Thing thing where thing.thingType in :thingTypeList', b'0', b'1', 'count.Operation4Team.currentTask.可选题目.thingTypeList', NULL);
-INSERT INTO `query_statement` VALUES (58, 0, 'thingTypeId', 'select count(*) from Plan plan where plan.thingType.id=cast(:thingTypeId as integer)', b'0', b'1', 'count.operation4Plan.通用计划.thingTypeId', NULL);
+INSERT INTO `query_statement` VALUES (58, 1, 'thingTypeId', 'select count(*) from Plan plan where plan.thingType.id=cast(:thingTypeId as integer) and plan.upPlan is null', b'0', b'1', 'count.operation4Plan.通用计划.thingTypeId', NULL);
 INSERT INTO `query_statement` VALUES (59, 0, 'thingTypeList', 'select count(*) from Team team where team.thing in :thingTypeList', b'0', b'1', 'count.operation4ProjectPlan.进度归档.myself', NULL);
 INSERT INTO `query_statement` VALUES (60, 1, 'thingTypeList,myself', 'from Team team where team.thing.thingType in :thingTypeList and team.leader=:myself', b'0', b'1', 'list.operation4Team.我领导的.myself.thingTypeList', 'listTeamRight');
 INSERT INTO `query_statement` VALUES (61, 2, 'thingTypeList,myself', 'select count(*) from Team team where team.leader=:myself and team.thing.thingType in :thingTypeList', b'0', b'1', 'count.operation4Team.我领导的.myself.thingTypeList', NULL);

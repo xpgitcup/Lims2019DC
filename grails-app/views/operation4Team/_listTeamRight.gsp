@@ -31,6 +31,7 @@
             <tr class="${(i % 2 == 0 ? 'even' : 'odd')}">
                 <td>
                     ${item.leader}
+                    <a>进度维护</a>
                     <g:if test="${item.leader != session.systemUser.person()}">
                         <a href="javascript: joinTeam(${item.id})">加入团队</a>
                     </g:if>

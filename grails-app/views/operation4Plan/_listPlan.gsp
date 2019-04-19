@@ -17,7 +17,7 @@
                         <a href="javascript: deleteItem(${item.id})">删除</a>
                     </g:if>
                     <a href="javascript: showItem(${item.id})">详细信息</a>
-                    <a href="javascript: createPlanItem(${item.id})">创建计划细节</a>
+                    <a href="javascript: createPlanItem(${item.id})">创建计划项</a>
                 </td>
                 <td>${item.updateDate}</td>
                 <td>${item.subItems.size()}</td>

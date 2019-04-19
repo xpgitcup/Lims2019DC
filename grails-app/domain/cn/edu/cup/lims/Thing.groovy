@@ -12,7 +12,6 @@ class Thing implements DataExchangeInterface{
 
     static constraints = {
         name(unique: true)
-
     }
 
     String toString() {

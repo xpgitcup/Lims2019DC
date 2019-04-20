@@ -80,4 +80,8 @@ body .indicator-cup {
   margin-left: auto;
   margin-right: auto;
 }
+body .indicator-cup a {
+  padding: 0 0;
+  color: red;
+}
 /*# sourceMappingURL=cup20190407.css.map */

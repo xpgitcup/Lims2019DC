@@ -9,7 +9,7 @@ var operation4ProjectPlanRightDiv;
 var title4ProjectPlanRight = "当前进度"
 
 var operation4ProjectPlanNeedToFile;
-var titleNeedToFile = "待归档"
+var titleNeedToFile = ["待归档"]
 var titleNeedToFiles = [titleNeedToFile]
 
 var localPageSizeProjectPlan = 10;
@@ -56,7 +56,6 @@ $(function () {
 
 });
 
-
 /*
 * 显示节点信息
 * */
@@ -73,19 +72,22 @@ function showProjectPlan(node) {
 * */
 function projectPlanNodeSelect(node) {
     console.info(jsTitle + "+节点选择......" + node);
-    showProjectPlan(node);
+    //showProjectPlan(node);
     $("#createProjectPlan").attr('href', 'javascript: createProjectPlan(' + node.attributes[0] + ')');
+    $("#createProjectPlan").html('上传【' + node.attributes[0] + '】进度');
+    $("#fileToProjectPlan").html('归档到【' + node.attributes[0] + '】进度');
     console.info(node);
     console.info("当前节点：" + node.target.id);
     $.cookie("currentProjectPlan", node.target.id);
+    $.cookie("currentProjectPlanId", node.attributes[0]);
 }
 
 /*
 * 统计函数
 * */
 function countProjectPlan(title) {
-    console.info(jsTitle + "+统计......");
-    var total = ajaxCalculate("operation4projectPlan/count?key=" + title + "&currentTeam=" + currentTeamId);
+    console.info(title + "+统计......");
+    var total = ajaxCalculate("operation4ProjectPlan/count?key=" + title + "&currentTeam=" + currentTeamId);
     return total
 }
 
@@ -96,4 +98,13 @@ function loadProjectPlan(title, page, pageSize) {
     console.info(jsTitle + "+数据加载......" + title + " 第" + page + "页/" + pageSize);
     var params = getParams(page, pageSize);    //getParams必须是放在最最前面！！
     ajaxRun("operation4ProjectPlan/list" + params + "&key=" + title + "&currentTeam=" + currentTeamId, 0, "list" + title + "Div");
+}
+
+/*
+* 进度归档
+* */
+function fileToProjectPlan(progress) {
+    var currentProjectPlan = readCookie("currentProjectPlanId", 0);
+    ajaxExecute("operation4ProjectPlan/fileToProjectPlan?currentProjectPlan=" + currentProjectPlan + "&progress=" + progress);
+    location.reload();
 }

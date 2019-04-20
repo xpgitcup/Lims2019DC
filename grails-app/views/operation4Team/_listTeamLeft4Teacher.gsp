@@ -16,7 +16,6 @@
         <div class="message" role="status">${flash.message}</div>
     </g:if>
 <!--h1><g:message code="default.list.label" args="[entityName]"/></h1-->
-<!--f:table collection="${objectList}"/-->
     <table>
         <thead>
         <th>队长</th>

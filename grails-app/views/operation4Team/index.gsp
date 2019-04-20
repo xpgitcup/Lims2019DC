@@ -54,13 +54,13 @@
     <div class="row-cup">
         <div class="col-6">
             <div class="easyui-panel" title="可选：${currentTask}">
-                <div id="operation4TeamDiv" class="easyui-panel"></div>
+                <div id="operation4TeamDiv" class="easyui-tabs"></div>
             </div>
         </div>
 
         <div class="col-6">
             <div class="easyui-panel" title="已选：${currentTask}">
-                <div id="operation4TeamRightDiv" class="easyui-panel"></div>
+                <div id="operation4TeamRightDiv" class="easyui-tabs"></div>
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 package cn.edu.cup.operation
 
 import cn.edu.cup.lims.Plan
+import cn.edu.cup.lims.Progress
 import cn.edu.cup.lims.ProjectPlanController
 import cn.edu.cup.lims.Team
 import cn.edu.cup.system.JsFrame
@@ -13,6 +14,24 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     def teamService
 
     /*
+    进度归档
+    * */
+
+    def fileToProjectPlan() {
+        println("${params}")
+        def currentProjectPlan = ProjectPlan.get(params.currentProjectPlan)
+        def progress = Progress.get(params.progress)
+        def currentTeam = currentProjectPlan.team
+        println("${currentProjectPlan} ${progress}")
+        if (currentProjectPlan && progress) {
+            currentProjectPlan.progresses.add(progress)
+            projectPlanService.save(currentProjectPlan)
+            println("归档...${currentProjectPlan.progresses}")
+        }
+        redirect(action: "index", params:[currentTeam: currentTeam.id])
+    }
+
+    /*
     准备参数
     * */
 
@@ -20,13 +39,16 @@ class Operation4ProjectPlanController extends ProjectPlanController {
         // 首先获取当前任务
         def currentTeam = Team.get(params.currentTeam)
         def currentProjectPlan = ProjectPlan.findByTeam(currentTeam)
-        def currentProjectPlanProgressList = currentProjectPlan.progresses
-
+        def filedList = []
+        currentProjectPlan.subItems.each { e->
+            filedList.addAll(e.progresses)
+        }
+        println("已归档的：${filedList}")
         switch (params.key) {
             case "待归档":
                 params.currentTeam = currentTeam
-                if (currentProjectPlanProgressList.size()>0) {
-                    params.currentProjectPlanProgressList = currentProjectPlanProgressList
+                if (filedList.size() > 0) {
+                    params.filedList = filedList
                 }
                 break
         }
@@ -89,6 +111,7 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     }
 
     def index() {
+        println("${params}")
         def currentTeam = Team.get(params.currentTeam)
         model:
         [currentTeam: currentTeam]

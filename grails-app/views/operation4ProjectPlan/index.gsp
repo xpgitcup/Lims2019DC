@@ -37,15 +37,10 @@
                 <li id="currentTeamId">${currentTeam.id}</li>
                 <li>||</li>
                 <li>操作指示：</li>
-                <li id="currentTask">${currentTask}</li>
-                <li>==></li>
-                <li>选择任务</li>
-                <li>==></li>
-                <li>完成任务</li>
+                <li><a id="createProjectPlan" href="#">上传进度</a></li>
+                <li>||</li>
                 <li></li>
-                <li></li>
-                <li class="icon-help">&nbsp&nbsp&nbsp&nbsp：</li>
-                <li><a id="tipsOperation4ProjectPlan"></a></li>
+                <li><a id="fileToProjectPlan" href="#">归档到</a></li>
             </ul>
         </div>
     </div>

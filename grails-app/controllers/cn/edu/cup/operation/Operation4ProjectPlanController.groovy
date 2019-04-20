@@ -13,6 +13,26 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     def teamService
 
     /*
+    准备参数
+    * */
+
+    protected void prepareParams() {
+        // 首先获取当前任务
+        def currentTeam = Team.get(params.currentTeam)
+        def currentProjectPlan = ProjectPlan.findByTeam(currentTeam)
+        def currentProjectPlanProgressList = currentProjectPlan.progresses
+
+        switch (params.key) {
+            case "待归档":
+                params.currentTeam = currentTeam
+                if (currentProjectPlanProgressList.size()>0) {
+                    params.currentProjectPlanProgressList = currentProjectPlanProgressList
+                }
+                break
+        }
+    }
+
+    /*
     * 获取json格式的树形结构数据
     * */
 
@@ -70,6 +90,7 @@ class Operation4ProjectPlanController extends ProjectPlanController {
 
     def index() {
         def currentTeam = Team.get(params.currentTeam)
-        model:[currentTeam: currentTeam]
+        model:
+        [currentTeam: currentTeam]
     }
 }

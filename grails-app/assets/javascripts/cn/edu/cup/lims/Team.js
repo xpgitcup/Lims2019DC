@@ -1,6 +1,7 @@
 var operation4TeamDiv;
 var operation4TeamUl;
 var jsTitleTeam = ["可选题目", "相关团队", "队员列表"];
+var isTreeView4Team = [false];
 var title4Team = jsTitleTeam;
 var tabsTitleLeft = "可选";
 var localPageSizeTeam = 10;
@@ -45,6 +46,7 @@ $(function () {
         divId: operation4TeamDiv,
         titles: title4Team,
         tabsTitle: tabsTitleLeft,
+        isTreeView: isTreeView4Team,
         pageSize: localPageSizeTeam,
         pageList: [1, 3, 5, 10],
         paginationMessage: "",
@@ -63,6 +65,7 @@ $(function () {
         divId: operation4TeamRightDiv,
         titles: jsTitleTeamRight,
         tabsTitle: tabsTitleRight,
+        isTreeView: isTreeView4Team,
         pageSize: localPageSizeTeam,
         pageList: [1, 3, 5, 10],
         paginationMessage: "",

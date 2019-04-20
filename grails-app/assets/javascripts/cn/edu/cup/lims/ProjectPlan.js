@@ -8,6 +8,10 @@ var currentTeamId;
 var operation4ProjectPlanRightDiv;
 var title4ProjectPlanRight = "当前进度"
 
+var operation4ProjectPlanNeedToFile;
+var titleNeedToFile = "待归档"
+var titleNeedToFiles = [titleNeedToFile]
+
 var localPageSizeProjectPlan = 10;
 
 $(function () {
@@ -17,6 +21,7 @@ $(function () {
     currentTeamId = $("#currentTeamId").html();
     treeData4ProjectPlan = ["operation4ProjectPlan/getTreeViewData?currentTeam=" + currentTeamId];
 
+    // 左侧，计划表
     var settings = {
         divId: operation4ProjectPlanDiv,
         titles: title4ProjectPlan,
@@ -30,8 +35,24 @@ $(function () {
         loadFunction: loadProjectPlan,
         countFunction: countProjectPlan
     }
-
     configDisplayUI(settings);
+
+    // 下面，待归档进度表
+
+    operation4ProjectPlanNeedToFile = $("#operation4ProjectPlanNeedToFile");
+
+    var settingsBottom = {
+        divId: operation4ProjectPlanNeedToFile,
+        titles: titleNeedToFiles,
+        tabsTitle: titleNeedToFile,
+        pageSize: localPageSizeProjectPlan,
+        pageList: [1, 3, 5, 10],
+        paginationMessage: "",
+        loadFunction: loadProjectPlan,
+        countFunction: countProjectPlan
+    }
+    configDisplayUI(settingsBottom);
+
 
 });
 
@@ -64,7 +85,7 @@ function projectPlanNodeSelect(node) {
 * */
 function countProjectPlan(title) {
     console.info(jsTitle + "+统计......");
-    var total = ajaxCalculate("operation4projectPlan/count?key=" + title);
+    var total = ajaxCalculate("operation4projectPlan/count?key=" + title + "&currentTeam=" + currentTeamId);
     return total
 }
 
@@ -74,5 +95,5 @@ function countProjectPlan(title) {
 function loadProjectPlan(title, page, pageSize) {
     console.info(jsTitle + "+数据加载......" + title + " 第" + page + "页/" + pageSize);
     var params = getParams(page, pageSize);    //getParams必须是放在最最前面！！
-    ajaxRun("operation4ProjectPlan/list" + params + "&key=" + title, 0, "list" + title + "Div");
+    ajaxRun("operation4ProjectPlan/list" + params + "&key=" + title + "&currentTeam=" + currentTeamId, 0, "list" + title + "Div");
 }

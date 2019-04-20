@@ -55,19 +55,21 @@
     <div class="row-cup">
         <div class="col-4">
             <div class="easyui-panel" title="当前阶段：${currentTask}">
-                <div id="operation4ProjectPlanDiv" class="easyui-tabs"></div>
+                <div id="operation4ProjectPlanDiv" class="easyui-panel"></div>
             </div>
         </div>
 
         <div class="col-8">
             <div class="easyui-panel" title="当前进度：${currentTask}">
-                <div id="operation4ProjectPlanRightDiv" class="easyui-tabs"></div>
+                <div id="operation4ProjectPlanRightDiv" class="easyui-panel"></div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-cup"></div>
+<div class="container-cup">
+    <div id="operation4ProjectPlanNeedToFile" class="easyui-panel"></div>
+</div>
 
 <g:if test="${flash.message}">
     <div class="easyui-panel">

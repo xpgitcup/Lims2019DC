@@ -6,6 +6,7 @@ var treeData4ProjectPlan;
 var currentTeamId;
 
 var operation4ProjectPlanRightDiv;
+var titles4ProjectPlanRight = ["当前进度"];
 var title4ProjectPlanRight = "当前进度"
 
 var operation4ProjectPlanNeedToFile;
@@ -36,6 +37,21 @@ $(function () {
         countFunction: countProjectPlan
     }
     configDisplayUI(settings);
+
+    // 右侧，计划表
+    operation4ProjectPlanRightDiv = $("#operation4ProjectPlanRightDiv");
+
+    var settingsRight = {
+        divId: operation4ProjectPlanRightDiv,
+        titles: titles4ProjectPlanRight,
+        tabsTitle: title4ProjectPlanRight,
+        pageSize: localPageSizeProjectPlan,
+        pageList: [1, 3, 5, 10],
+        paginationMessage: "",
+        loadFunction: loadProjectPlanRight,
+        countFunction: countProjectPlanRight
+    }
+    configDisplayUI(settingsRight);
 
     // 下面，待归档进度表
 
@@ -80,6 +96,32 @@ function projectPlanNodeSelect(node) {
     console.info("当前节点：" + node.target.id);
     $.cookie("currentProjectPlan", node.target.id);
     $.cookie("currentProjectPlanId", node.attributes[0]);
+
+    var rightDiv = $("#pagination当前进度Div");
+    rightDiv.pagination('select');
+    console.info(rightDiv + "刷新啊.....");
+}
+
+/*
+* 统计函数
+* */
+function countProjectPlanRight(title) {
+    console.info(title + "+统计......");
+    var currentProjectPlanId = readCookie("currentProjectPlanId", 0);
+    var total = ajaxCalculate("operation4ProjectPlan/count?key=" + title
+        + "&currentProjectPlanId=" + currentProjectPlanId + "&currentTeam=" + currentTeamId);
+    return total
+}
+
+/*
+* 数据加载函数
+* */
+function loadProjectPlanRight(title, page, pageSize) {
+    console.info(jsTitle + "+数据加载......" + title + " 第" + page + "页/" + pageSize);
+    var currentProjectPlanId = readCookie("currentProjectPlanId", 0);
+    var params = getParams(page, pageSize);    //getParams必须是放在最最前面！！
+    ajaxRun("operation4ProjectPlan/list" + params + "&key=" + title
+        + "&currentProjectPlanId=" + currentProjectPlanId + "&currentTeam=" + currentTeamId, 0, "list" + title + "Div");
 }
 
 /*

@@ -55,7 +55,7 @@
         </div>
 
         <div class="col-8">
-            <div class="easyui-panel" title="当前进度：${currentTask}">
+            <div class="easyui-panel">
                 <div id="operation4ProjectPlanRightDiv" class="easyui-panel"></div>
             </div>
         </div>

@@ -28,7 +28,26 @@ class Operation4ProjectPlanController extends ProjectPlanController {
             projectPlanService.save(currentProjectPlan)
             println("归档...${currentProjectPlan.progresses}")
         }
-        redirect(action: "index", params:[currentTeam: currentTeam.id])
+        redirect(action: "index", params: [currentTeam: currentTeam.id])
+    }
+
+    /*
+    处理结果
+    * */
+
+    protected def processResult(result, params) {
+        switch (params.key) {
+            case "当前进度":
+                def progressList = []
+                result.objectList.each { e ->
+                    //println("查找 ${e}")
+                    progressList.add(Progress.get(e.progress_id))
+                }
+                //println("转换后：${teams}")
+                result.objectList = progressList
+                break
+        }
+        return result
     }
 
     /*
@@ -40,7 +59,7 @@ class Operation4ProjectPlanController extends ProjectPlanController {
         def currentTeam = Team.get(params.currentTeam)
         def currentProjectPlan = ProjectPlan.findByTeam(currentTeam)
         def filedList = []
-        currentProjectPlan.subItems.each { e->
+        currentProjectPlan.subItems.each { e ->
             filedList.addAll(e.progresses)
         }
         println("已归档的：${filedList}")

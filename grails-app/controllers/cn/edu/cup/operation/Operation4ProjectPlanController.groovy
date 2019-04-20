@@ -52,6 +52,7 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     private void checkProjectPlanItems(Team team, projectPlan) {
         if (!projectPlan.subItems) {
             def typePlan = Plan.findByThingType(team.thing.thingType)
+            //println("找到同类型的计划：${typePlan}")
             typePlan.subItems.each { e ->
                 def newItem = new ProjectPlan(
                         upProjectPlan: projectPlan,
@@ -62,6 +63,7 @@ class Operation4ProjectPlanController extends ProjectPlanController {
                         serialNumber: e.serialNumber
                 )
                 projectPlanService.save(newItem)
+                //println("保存item:${newItem}")
             }
         }
     }

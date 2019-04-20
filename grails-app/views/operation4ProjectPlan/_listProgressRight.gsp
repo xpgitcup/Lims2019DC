@@ -25,6 +25,7 @@
                     <td>
                         ${item.currentStatus}
                         <a class="create" href="javascript: createNextProgress(${item?.id})">上报进度</a>
+                        <a class="create" href="javascript: removeProgress(${item?.id})">删除</a>
                     </td>
                     <td>${item.contributor}</td>
                     <td>${item.problemEncounter}</td>

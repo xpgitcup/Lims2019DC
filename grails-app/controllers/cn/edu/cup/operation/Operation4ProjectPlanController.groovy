@@ -14,6 +14,23 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     def teamService
 
     /*
+    删除归档信息
+    * */
+    def removeProgress() {
+        println("${params}")
+        def currentProjectPlan = ProjectPlan.get(params.currentProjectPlan)
+        def progress = Progress.get(params.progress)
+        def currentTeam = currentProjectPlan.team
+        println("${currentProjectPlan} ${progress}")
+        if (currentProjectPlan && progress) {
+            currentProjectPlan.progresses.remove(progress)
+            projectPlanService.save(currentProjectPlan)
+            println("删除归档...${currentProjectPlan.progresses}")
+        }
+        redirect(action: "index", params: [currentTeam: currentTeam.id])
+    }
+
+    /*
     进度归档
     * */
 

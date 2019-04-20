@@ -150,3 +150,21 @@ function fileToProjectPlan(progress) {
     ajaxExecute("operation4ProjectPlan/fileToProjectPlan?currentProjectPlan=" + currentProjectPlan + "&progress=" + progress);
     location.reload();
 }
+
+/*
+* 删除归档
+* */
+function removeProgress(progress) {
+    var currentProjectPlan = readCookie("currentProjectPlanId", 0);
+    ajaxExecute("operation4ProjectPlan/removeProgress?currentProjectPlan=" + currentProjectPlan + "&progress=" + progress);
+    location.reload();
+}
+
+/*
+* 创建新的进度
+* */
+function createNextProgress(progress) {
+    var currentProjectPlan = readCookie("currentProjectPlanId", 0);
+    ajaxExecute("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan + "&prevProgress=" + progress);
+
+}

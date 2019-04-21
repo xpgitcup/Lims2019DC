@@ -2,6 +2,7 @@ package cn.edu.cup.operation
 
 import cn.edu.cup.lims.Progress
 import cn.edu.cup.lims.ProgressController
+import cn.edu.cup.lims.ProjectPlan
 
 import java.text.SimpleDateFormat
 
@@ -9,12 +10,31 @@ class Operation4ProgressController extends ProgressController {
 
     def createNextProgress() {
         def prevProgress = progressService.get(params.prevProgress)
+        def currentProjectPlan = ProjectPlan.get(params.currentProjectPlan)
         def myself = session.systemUser.person()
-        def progress = new Progress(
-                team: prevProgress.team,
-                prevProgress: prevProgress,
-                contributor: myself
-        )
+        def progress
+        if (prevProgress) {
+            progress = new Progress(
+                    team: prevProgress.team,
+                    prevProgress: prevProgress,
+                    contributor: myself
+            )
+            setupDate(prevProgress, progress)
+        } else {
+            progress = new Progress(
+                    team: currentProjectPlan.team,
+                    contributor: myself
+            )
+        }
+        def view = "createProgress"
+        if (request.xhr) {
+            render(template: view, model: [progress: progress])
+        } else {
+            respond progress
+        }
+    }
+
+    private void setupDate(Progress prevProgress, Progress progress) {
         Date prev = prevProgress.regDate
         Date now = progress.regDate
         def dif = (now.getTime() - prev.getTime()) / 1000 / 60
@@ -32,12 +52,6 @@ class Operation4ProgressController extends ProgressController {
             println("修正后的时间：${progress.regDate}")
         } else {
             println("两个时间：${prevProgress.regDate} ${prevProgress.regDate}")
-        }
-        def view = "createProgress"
-        if (request.xhr) {
-            render(template: view, model: [progress: progress])
-        } else {
-            respond progress
         }
     }
 

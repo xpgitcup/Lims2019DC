@@ -82,6 +82,15 @@ class ProgressController {
         try {
             progressService.save(progress)
             flash.message = message(code: 'default.created.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
+
+            if (!params.uploadedFile.empty) {
+                //处理文件上传
+                def destDir = commonService.webRootPath + "documents/${progress.id}"
+                params.destDir = destDir
+                println(destDir)
+                def sf = commonService.upload(params)
+                println("上传${sf}成功...")
+            }
         } catch (ValidationException e) {
             flash.message = progress.errors
         }

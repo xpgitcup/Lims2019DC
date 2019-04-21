@@ -20,6 +20,7 @@ $(function () {
 
     operation4ProjectPlanDiv = $("#operation4ProjectPlanDiv");
     currentTeamId = $("#currentTeamId").html();
+    $.cookie("currentTeamId", currentTeamId);
     treeData4ProjectPlan = ["operation4ProjectPlan/getTreeViewData?currentTeam=" + currentTeamId];
 
     // 左侧，计划表
@@ -161,10 +162,44 @@ function removeProgress(progress) {
 }
 
 /*
+* 创建进度的时候，处理文件名
+* */
+function updateUploadFileName(fileName) {
+    var aainput = document.getElementById("uploadedFile");
+    $("#supportFileName").attr("value", aainput.files[0].name);
+    console.info("所选择的文件：" + fileName);
+    console.info(aainput.files[0].name)
+}
+
+/*
 * 创建新的进度
 * */
 function createNextProgress(progress) {
     var currentProjectPlan = readCookie("currentProjectPlanId", 0);
-    ajaxExecute("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan + "&prevProgress=" + progress);
+    $.cookie("nextAction", "toFile");
+    var title = "当前进度";
+    ajaxRun("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan
+        + "&nextController=operation4ProjectPlan"
+        + "&nextAction=index"
+        + "&currentTeam=3"
+        + "&prevProgress=" + progress,
+        0, "list" + title + "Div");
+
+}
+
+/*
+* 创建新的进度
+* */
+function createCurrentProgress() {
+    var progress = 0;
+    var currentProjectPlan = readCookie("currentProjectPlanId", 0);
+    var title = "当前进度";
+    $.cookie("nextAction", "toFile");
+    ajaxRun("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan
+        + "&nextController=operation4ProjectPlan"
+        + "&nextAction=index"
+        + "&currentTeam=3"
+        + "&prevProgress=" + progress,
+        0, "list" + title + "Div");
 
 }

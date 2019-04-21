@@ -12,10 +12,12 @@ class Operation4ProjectPlanController extends ProjectPlanController {
 
     def treeViewService
     def teamService
+    def cookieService
 
     /*
     删除归档信息
     * */
+
     def removeProgress() {
         println("${params}")
         def currentProjectPlan = ProjectPlan.get(params.currentProjectPlan)
@@ -40,12 +42,16 @@ class Operation4ProjectPlanController extends ProjectPlanController {
         def progress = Progress.get(params.progress)
         def currentTeam = currentProjectPlan.team
         println("${currentProjectPlan} ${progress}")
+        doFileToProjectPlan(currentProjectPlan, progress)
+        redirect(action: "index", params: [currentTeam: currentTeam.id])
+    }
+
+    private void doFileToProjectPlan(ProjectPlan currentProjectPlan, Progress progress) {
         if (currentProjectPlan && progress) {
             currentProjectPlan.progresses.add(progress)
             projectPlanService.save(currentProjectPlan)
             println("归档...${currentProjectPlan.progresses}")
         }
-        redirect(action: "index", params: [currentTeam: currentTeam.id])
     }
 
     /*
@@ -149,6 +155,25 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     def index() {
         println("${params}")
         def currentTeam = Team.get(params.currentTeam)
+        if (!currentTeam) {
+            def ctid = cookieService.getCookie("currentTeamId")
+            currentTeam = Team.get(ctid)
+        }
+
+        def nextAction = cookieService.getCookie("nextAction")
+        def currentProjectPlanId = cookieService.getCookie("currentProjectPlanId")
+        def currentProjectPlan
+        if (currentProjectPlanId > 0) {
+            currentProjectPlan = projectPlanService.get(currentProjectPlanId)
+        }
+        println("下一步：${nextAction}")
+        switch (nextAction) {
+            case "toFile":
+                def progress = Progress.last()
+                doFileToProjectPlan(currentProjectPlan, progress)
+                cookieService.setCookie("nextAction", "")
+                break
+        }
         model:
         [currentTeam: currentTeam]
     }

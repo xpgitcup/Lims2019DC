@@ -11,6 +11,7 @@ class CommonService {
 
     def grailsApplication
     def webRootPath = ""
+    def dataRootPath = "/home/documents/lims2019dc/"
 
     def getWebRootPath() {
         webRootPath = grailsApplication.getMainContext().servletContext.getRealPath("/")

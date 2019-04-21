@@ -85,7 +85,7 @@ class ProgressController {
 
             if (!params.uploadedFile.empty) {
                 //处理文件上传
-                def destDir = commonService.dataRootPath + "documents/${progress.id}"
+                def destDir = commonService.dataRootPath.operation4Progress + "/documents/${progress.id}"
                 params.destDir = destDir
                 println(destDir)
                 def sf = commonService.upload(params)

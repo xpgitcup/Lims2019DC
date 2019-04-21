@@ -8,6 +8,7 @@ import cn.edu.cup.lims.ThingType
 import cn.edu.cup.system.SystemAttribute
 import cn.edu.cup.system.SystemMenu
 import cn.edu.cup.system.SystemUser
+import com.alibaba.fastjson.JSON
 import grails.gorm.transactions.Transactional
 
 import javax.servlet.ServletContext
@@ -127,6 +128,16 @@ class InitService {
         // 初始化项目类型的计划
         if (planService.count() < 1) {
             initThingTypePlan()
+        }
+
+        initDataRootPath(webRootDir)
+    }
+
+    void initDataRootPath(webRootDir) {
+        def pathConfigFileName = "${webRootDir}/config/pathConfig.json"
+        def pathConfig = new File(pathConfigFileName)
+        if (pathConfig) {
+            commonService.dataRootPath = JSON.parseObject(pathConfig.text)
         }
     }
 

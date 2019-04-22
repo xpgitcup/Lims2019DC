@@ -34,7 +34,7 @@
         <div class="nav">
             <ul class="indicator-cup">
                 <li id="currentTeam">当前团队：${currentTeam}</li>
-                <li id="currentTeamId">${currentTeam.id}</li>
+                <li id="currentTeamId">${currentTeam?.id}</li>
                 <li>||</li>
                 <li>操作指示：</li>
                 <li><a id="createProjectPlan" href="#">上传进度</a></li>

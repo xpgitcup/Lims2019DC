@@ -107,7 +107,7 @@ function projectPlanNodeSelect(node) {
 * 统计函数
 * */
 function countProjectPlanRight(title) {
-    console.info(title + "+统计......");
+    console.info(title + "+右侧统计......");
     var currentProjectPlanId = readCookie("currentProjectPlanId", 0);
     var total = ajaxCalculate("operation4ProjectPlan/count?key=" + title
         + "&currentProjectPlanId=" + currentProjectPlanId + "&currentTeam=" + currentTeamId);
@@ -118,7 +118,7 @@ function countProjectPlanRight(title) {
 * 数据加载函数
 * */
 function loadProjectPlanRight(title, page, pageSize) {
-    console.info(jsTitle + "+数据加载......" + title + " 第" + page + "页/" + pageSize);
+    console.info(jsTitle + "+右侧数据加载......" + title + " 第" + page + "页/" + pageSize);
     var currentProjectPlanId = readCookie("currentProjectPlanId", 0);
     var params = getParams(page, pageSize);    //getParams必须是放在最最前面！！
     ajaxRun("operation4ProjectPlan/list" + params + "&key=" + title
@@ -176,8 +176,8 @@ function updateUploadFileName(fileName) {
 * */
 function createNextProgress(progress) {
     var currentProjectPlan = readCookie("currentProjectPlanId", 0);
-    $.cookie("nextAction", "toFile");
-    console.info("写入下一步计划...")
+    $.cookie("nextAction", "toFile", {path: '/operation4ProjectPlan'});
+    console.info("写入下一步计划..." + $.cookie("nextAction"))
     var title = "当前进度";
     ajaxRun("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan
         + "&nextController=operation4ProjectPlan"
@@ -195,7 +195,9 @@ function createCurrentProgress() {
     var progress = 0;
     var currentProjectPlan = readCookie("currentProjectPlanId", 0);
     var title = "当前进度";
-    $.cookie("nextAction", "toFile");
+    $.cookie("nextAction", "toFile", {path: '/operation4ProjectPlan'});
+    //document.cookie = "nextAction=toFile";
+    console.info("创建当前进度，写入下一步计划..." + $.cookie("nextAction"))
     ajaxRun("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan
         + "&nextController=operation4ProjectPlan"
         + "&nextAction=index"

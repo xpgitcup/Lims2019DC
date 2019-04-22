@@ -3,15 +3,15 @@
 
  Source Server         : sample
  Source Server Type    : MySQL
- Source Server Version : 80015
+ Source Server Version : 50725
  Source Host           : localhost:3306
  Source Schema         : lims2019db
 
  Target Server Type    : MySQL
- Target Server Version : 80015
+ Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 20/04/2019 21:22:43
+ Date: 22/04/2019 15:35:27
 */
 
 SET NAMES utf8mb4;
@@ -24,15 +24,15 @@ DROP TABLE IF EXISTS `query_statement`;
 CREATE TABLE `query_statement`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `version` bigint(20) NOT NULL,
-  `params_list` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `hql` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
-  `issql` bit(1) DEFAULT NULL,
+  `params_list` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `hql` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `issql` bit(1) NULL DEFAULT NULL,
   `need_to_query` bit(1) NOT NULL,
   `key_string` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `view_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_iejb2adhrl11w1nanxv8r9hql`(`key_string`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 82 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of query_statement
@@ -111,6 +111,6 @@ INSERT INTO `query_statement` VALUES (73, 1, 'currentTeam', 'select count(*) Fro
 INSERT INTO `query_statement` VALUES (76, 3, 'currentTeam,filedList', 'select count(*)\r\nfrom Progress progress where progress.team=:currentTeam\r\nand \r\nprogress not in :filedList', b'0', b'1', 'count.operation4ProjectPlan.currentTeam.filedList.待归档', NULL);
 INSERT INTO `query_statement` VALUES (77, 3, 'currentTeam,filedList', 'from Progress progress where progress.team=:currentTeam\r\nand \r\nprogress not in :filedList', b'0', b'1', 'list.operation4ProjectPlan.currentTeam.filedList.待归档', 'listProgressNeedToFile');
 INSERT INTO `query_statement` VALUES (80, 3, 'currentProjectPlanId', 'select count(*) from project_plan_progress\r\nwhere project_plan_progresses_id=currentProjectPlanId', b'1', b'1', 'count.operation4ProjectPlan.currentProjectPlanId.currentTeam.当前进度', NULL);
-INSERT INTO `query_statement` VALUES (81, 3, 'currentProjectPlanId', 'select progress_id from project_plan_progress\r\nwhere project_plan_progresses_id=currentProjectPlanId', b'1', b'1', 'list.operation4ProjectPlan.currentProjectPlanId.currentTeam.当前进度', 'listProgressRight');
+INSERT INTO `query_statement` VALUES (81, 4, 'currentProjectPlanId', 'select progress_id from project_plan_progress\r\nwhere project_plan_progresses_id=currentProjectPlanId\r\nlimit %d,%d', b'1', b'1', 'list.operation4ProjectPlan.currentProjectPlanId.currentTeam.当前进度', 'listProgressRight');
 
 SET FOREIGN_KEY_CHECKS = 1;

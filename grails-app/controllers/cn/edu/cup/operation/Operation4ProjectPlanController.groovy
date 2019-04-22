@@ -155,14 +155,6 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     }
 
     def index() {
-        // 计划检查--确保每个团队都有计划
-        /*
-        Team.list().each { e ->
-            if (ProjectPlan.countByTeam(e) < 1) {
-                createProjectPlan(e)
-            }
-        }
-*/
         println("${params}")
         def currentTeam = Team.get(params.currentTeam)
         if (!currentTeam) {
@@ -187,10 +179,34 @@ class Operation4ProjectPlanController extends ProjectPlanController {
             case "toFile":
                 def progress = Progress.last()
                 doFileToProjectPlan(currentProjectPlan, progress)
+                println("清除下一步标志...")
                 cookieService.setCookie("nextAction", "")
                 break
         }
         model:
         [currentTeam: currentTeam]
     }
+
+    /*
+    计划检查--确保每个团队都有计划
+    * */
+
+    def checkAndInitProjectPlan() {
+        def currentTeam = Team.get(params.currentTeam)
+        if (!currentTeam) {
+            def ctid = cookieService.getCookie("currentTeamId")
+            currentTeam = Team.get(ctid)
+        }
+        if (!currentTeam) {
+            currentTeam = Team.first()
+        }
+
+        Team.list().each { e ->
+            if (ProjectPlan.countByTeam(e) < 1) {
+                createProjectPlan(e)
+            }
+        }
+        redirect(action: "index", params:[currentTeam: currentTeam])
+    }
+
 }

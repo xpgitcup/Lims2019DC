@@ -92,6 +92,12 @@
         "menuAction": "Operation4Team/index?currentTask=教学任务",
         "menuDescription": "各种项目的基础数据",
         "menuOrder": 0
+      },
+      {
+        "menuContext": "初始化团队计划",
+        "menuAction": "Operation4ProjectPlan/checkAndInitProjectPlan",
+        "menuDescription": "初始化格格团队的计划信息",
+        "menuOrder": 0
       }
     ]
   }

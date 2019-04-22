@@ -177,6 +177,7 @@ function updateUploadFileName(fileName) {
 function createNextProgress(progress) {
     var currentProjectPlan = readCookie("currentProjectPlanId", 0);
     $.cookie("nextAction", "toFile");
+    console.info("写入下一步计划...")
     var title = "当前进度";
     ajaxRun("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan
         + "&nextController=operation4ProjectPlan"
@@ -202,4 +203,30 @@ function createCurrentProgress() {
         + "&prevProgress=" + progress,
         0, "list" + title + "Div");
 
+}
+
+/*
+* 编辑进度
+* */
+function editProgress(progress) {
+    var currentProjectPlan = readCookie("currentProjectPlanId", 0);
+    var title = "当前进度";
+    //$.cookie("nextAction", "toFile");
+    ajaxRun("operation4Progress/edit?"
+        + "&nextController=operation4ProjectPlan"
+        + "&nextAction=index",
+        progress, "list" + title + "Div");
+}
+
+/*
+* 修复支撑文件
+* */
+function fixSupportFile4Progress(progress) {
+    var currentProjectPlan = readCookie("currentProjectPlanId", 0);
+    var title = "当前进度";
+    //$.cookie("nextAction", "toFile");
+    ajaxRun("operation4Progress/fixSupportFile?"
+        + "&nextController=operation4ProjectPlan"
+        + "&nextAction=index",
+        progress, "list" + title + "Div");
 }

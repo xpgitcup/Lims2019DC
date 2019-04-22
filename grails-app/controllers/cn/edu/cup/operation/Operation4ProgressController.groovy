@@ -8,6 +8,52 @@ import java.text.SimpleDateFormat
 
 class Operation4ProgressController extends ProgressController {
 
+    def doFixSupportFile() {
+
+        println("更新文件 ${params}")
+        def progress = progressService.get(params.id)
+        progress.supportFileName = params.supportFileName
+        progressService.save(progress)
+
+        uploadFile(params, progress)
+
+        def action = "index"
+        if (params.nextAction) {
+            action = params.nextAction
+        }
+
+        def controller = ""
+        if (params.nextController) {
+            controller = params.nextController
+        }
+
+        if (controller == "") {
+            redirect(action: action)
+        } else {
+            redirect(controller: controller, action: action)
+        }
+    }
+
+    def fixSupportFile(Long id) {
+
+        println("${params}")
+
+        def view = "fixSupportFile4Progress"
+        if (params.view) {
+            view = params.view
+        }
+
+        def progress = progressService.get(id)
+
+        println("编辑${progress}")
+
+        if (request.xhr) {
+            render(template: view, model: [progress: progress])
+        } else {
+            respond progress
+        }
+    }
+
     def createNextProgress() {
         def prevProgress = progressService.get(params.prevProgress)
         def currentProjectPlan = ProjectPlan.get(params.currentProjectPlan)

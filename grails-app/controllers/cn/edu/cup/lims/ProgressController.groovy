@@ -28,7 +28,7 @@ class ProgressController {
         if (userResult) {
             model
         } else {
-            respond progressService.list(params), model:[progressCount: progressService.count()]
+            respond progressService.list(params), model: [progressCount: progressService.count()]
         }
     }
 
@@ -82,7 +82,6 @@ class ProgressController {
         try {
             progressService.save(progress)
             flash.message = message(code: 'default.created.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
-            uploadFile(progress)
         } catch (ValidationException e) {
             flash.message = progress.errors
         }
@@ -94,7 +93,7 @@ class ProgressController {
         }
     }
 
-    private void uploadFile(Progress progress) {
+    protected void uploadFile(params, Progress progress) {
         if (!params.uploadedFile.empty) {
             //处理文件上传
             def destDir = commonService.dataRootPath.operation4Progress + "/documents/${progress.id}"
@@ -106,12 +105,17 @@ class ProgressController {
     }
 
     def edit(Long id) {
+
+        println("${params}")
+
         def view = "edit"
         if (params.view) {
             view = params.view
         }
 
         def progress = progressService.get(id)
+
+        println("编辑${progress}")
 
         if (request.xhr) {
             render(template: view, model: [progress: progress])
@@ -139,13 +143,12 @@ class ProgressController {
         try {
             progressService.save(progress)
             flash.message = message(code: 'default.updated.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
-            uploadFile(progress)
+            uploadFile(params, progress)
         } catch (ValidationException e) {
             flash.message = progress.errors
         }
 
-        if (controller == "")
-        {
+        if (controller == "") {
             redirect(action: action)
         } else {
             redirect(controller: controller, action: action)
@@ -171,8 +174,7 @@ class ProgressController {
             controller = params.nextController
         }
 
-        if (controller == "")
-        {
+        if (controller == "") {
             redirect(action: action)
         } else {
             redirect(controller: controller, action: action)
@@ -214,7 +216,7 @@ class ProgressController {
 
         def fileName = "${commonService.webRootPath}/${params.fileName}"
         def objectList = commonService.importObjectListFromJsonFileName(fileName, Progress.class)
-        if (objectList.size()>0) {
+        if (objectList.size() > 0) {
             // 先清空
             Progress.list().each { e ->
                 progressService.delete(e.id)
@@ -226,8 +228,8 @@ class ProgressController {
 
         def action = "index"
         if (params.nextAction) {
-           action = params.nextAction
-         }
+            action = params.nextAction
+        }
 
         def controller = ""
         if (params.nextController) {
@@ -245,7 +247,7 @@ class ProgressController {
 
         def fileName = "${commonService.webRootPath}/${params.fileName}"
 
-       def fjson = commonService.exportObjects2JsonString(Progress.list())
+        def fjson = commonService.exportObjects2JsonString(Progress.list())
         def printer = new File(fileName).newPrintWriter('utf-8')    //写入文件
         printer.println(fjson)
         printer.close()
@@ -260,8 +262,7 @@ class ProgressController {
             controller = params.nextController
         }
 
-        if (controller == "")
-        {
+        if (controller == "") {
             redirect(action: action)
         } else {
             redirect(controller: controller, action: action)
@@ -274,7 +275,7 @@ class ProgressController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'progress.label', default: 'Progress'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }

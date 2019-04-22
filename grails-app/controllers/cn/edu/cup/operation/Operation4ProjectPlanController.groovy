@@ -137,29 +137,32 @@ class Operation4ProjectPlanController extends ProjectPlanController {
         if (!projectPlan.subItems) {
             def typePlan = Plan.findByThingType(team.thing.thingType)
             //println("找到同类型的计划：${typePlan}")
-            typePlan.subItems.each { e ->
-                def newItem = new ProjectPlan(
-                        upProjectPlan: projectPlan,
-                        description: e.description,
-                        precent: 0,
-                        team: team,
-                        updateDate: new Date(),
-                        serialNumber: e.serialNumber
-                )
-                projectPlanService.save(newItem)
-                //println("保存item:${newItem}")
+            if (typePlan) {
+                typePlan.subItems.each { e ->
+                    def newItem = new ProjectPlan(
+                            upProjectPlan: projectPlan,
+                            description: e.description,
+                            precent: 0,
+                            team: team,
+                            updateDate: new Date(),
+                            serialNumber: e.serialNumber
+                    )
+                    projectPlanService.save(newItem)
+                    //println("保存item:${newItem}")
+                }
             }
         }
     }
 
     def index() {
         // 计划检查--确保每个团队都有计划
-        Team.list().each { e->
+        /*
+        Team.list().each { e ->
             if (ProjectPlan.countByTeam(e) < 1) {
                 createProjectPlan(e)
             }
         }
-
+*/
         println("${params}")
         def currentTeam = Team.get(params.currentTeam)
         if (!currentTeam) {
@@ -168,7 +171,13 @@ class Operation4ProjectPlanController extends ProjectPlanController {
         }
 
         def nextAction = cookieService.getCookie("nextAction")
-        def currentProjectPlanId = Integer.parseInt(cookieService.getCookie("currentProjectPlanId"))
+        def currentProjectPlanIdCookie = cookieService.getCookie("currentProjectPlanId")
+        def currentProjectPlanId
+        if (currentProjectPlanIdCookie) {
+            currentProjectPlanId = Integer.parseInt(currentProjectPlanIdCookie)
+        } else {
+            currentProjectPlanId = 0
+        }
         def currentProjectPlan
         if (currentProjectPlanId > 0) {
             currentProjectPlan = projectPlanService.get(currentProjectPlanId)

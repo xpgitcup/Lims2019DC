@@ -99,7 +99,10 @@ function configDisplayUI(settings) {
     if (titles.length < 2) {
         console.info("只有一个Panel的情况：" + settings.isTreeView);
         configSinglePanel();
-        var doReflash = !(settings.isTreeView[0])
+        var doReflash = true
+        if (settings.isTreeView) {
+            doReflash = !(settings.isTreeView[0])
+        }
         console.info("是否：" + doReflash);
         if (doReflash) {
             console.info("强制加载...")

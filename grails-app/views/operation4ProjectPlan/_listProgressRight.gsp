@@ -11,6 +11,7 @@
         <!--f:table collection="${objectList}"/-->
         <table>
             <thead>
+            <th>id</th>
             <th>前情</th>
             <th>状态</th>
             <th>贡献者</th>
@@ -21,10 +22,13 @@
             <tbody>
             <g:each in="${objectList}" var="item" status="i">
                 <tr class="${(i % 2 == 0 ? 'even' : 'odd')}">
+                    <td>${item.id}</td>
                     <td>${item?.prevProgress?.currentStatus}</td>
                     <td>
                         ${item.currentStatus}
                         <a class="create" href="javascript: createNextProgress(${item?.id})">上报进度</a>
+                        <a class="create" href="javascript: editProgress(${item?.id})">编辑</a>
+                        <a class="create" href="javascript: fixSupportFile4Progress(${item?.id})">修复支撑文件</a>
                         <a class="create" href="javascript: removeProgress(${item?.id})">删除</a>
                     </td>
                     <td>${item.contributor}</td>

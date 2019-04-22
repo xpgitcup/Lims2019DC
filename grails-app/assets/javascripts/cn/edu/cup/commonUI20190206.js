@@ -97,8 +97,14 @@ function configDisplayUI(settings) {
 
 
     if (titles.length < 2) {
-        console.info("只有一个Panel的情况：");
+        console.info("只有一个Panel的情况：" + settings.isTreeView);
         configSinglePanel();
+        var doReflash = !(settings.isTreeView[0])
+        console.info("是否：" + doReflash);
+        if (doReflash) {
+            console.info("强制加载...")
+            paginationDiv.pagination('select')
+        }
     } else {
         // 多个标签页面的情况
         configTabs();

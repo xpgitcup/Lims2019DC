@@ -82,15 +82,7 @@ class ProgressController {
         try {
             progressService.save(progress)
             flash.message = message(code: 'default.created.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
-
-            if (!params.uploadedFile.empty) {
-                //处理文件上传
-                def destDir = commonService.dataRootPath.operation4Progress + "/documents/${progress.id}"
-                params.destDir = destDir
-                println(destDir)
-                def sf = commonService.upload(params)
-                println("上传${sf}成功...")
-            }
+            uploadFile(progress)
         } catch (ValidationException e) {
             flash.message = progress.errors
         }
@@ -99,6 +91,17 @@ class ProgressController {
             redirect(params.url)
         } else {
             redirect(controller: controller, action: action)
+        }
+    }
+
+    private void uploadFile(Progress progress) {
+        if (!params.uploadedFile.empty) {
+            //处理文件上传
+            def destDir = commonService.dataRootPath.operation4Progress + "/documents/${progress.id}"
+            params.destDir = destDir
+            println(destDir)
+            def sf = commonService.upload(params)
+            println("上传${sf}成功...")
         }
     }
 
@@ -136,6 +139,7 @@ class ProgressController {
         try {
             progressService.save(progress)
             flash.message = message(code: 'default.updated.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
+            uploadFile(progress)
         } catch (ValidationException e) {
             flash.message = progress.errors
         }

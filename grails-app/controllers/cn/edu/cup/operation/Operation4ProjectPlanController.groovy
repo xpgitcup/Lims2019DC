@@ -153,6 +153,13 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     }
 
     def index() {
+        // 计划检查--确保每个团队都有计划
+        Team.list().each { e->
+            if (ProjectPlan.countByTeam(e) < 1) {
+                createProjectPlan(e)
+            }
+        }
+
         println("${params}")
         def currentTeam = Team.get(params.currentTeam)
         if (!currentTeam) {
@@ -161,7 +168,7 @@ class Operation4ProjectPlanController extends ProjectPlanController {
         }
 
         def nextAction = cookieService.getCookie("nextAction")
-        def currentProjectPlanId = cookieService.getCookie("currentProjectPlanId")
+        def currentProjectPlanId = Integer.parseInt(cookieService.getCookie("currentProjectPlanId"))
         def currentProjectPlan
         if (currentProjectPlanId > 0) {
             currentProjectPlan = projectPlanService.get(currentProjectPlanId)

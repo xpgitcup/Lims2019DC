@@ -70,7 +70,9 @@ $(function () {
     }
     configDisplayUI(settingsBottom);
 
-
+    if (sessionStorage.needToFile > 0) {
+        processNeedToFile();
+    }
 });
 
 /*
@@ -153,6 +155,14 @@ function fileToProjectPlan(progress) {
 }
 
 /*
+* 处理创建新文档的归档问题
+* */
+function processNeedToFile() {
+    console.info("处理归档的问题...")
+    sessionStorage.needToFile = 0;
+}
+
+/*
 * 删除归档
 * */
 function removeProgress(progress) {
@@ -176,13 +186,11 @@ function updateUploadFileName(fileName) {
 * */
 function createNextProgress(progress) {
     var currentProjectPlan = readCookie("currentProjectPlanId", 0);
-    $.cookie("nextAction", "toFile", {path: '/operation4ProjectPlan'});
-    console.info("写入下一步计划..." + $.cookie("nextAction"))
     var title = "当前进度";
     ajaxRun("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan
         + "&nextController=operation4ProjectPlan"
         + "&nextAction=index"
-        + "&currentTeam=3"
+        + "&needToDo=toFile"
         + "&prevProgress=" + progress,
         0, "list" + title + "Div");
 
@@ -195,13 +203,10 @@ function createCurrentProgress() {
     var progress = 0;
     var currentProjectPlan = readCookie("currentProjectPlanId", 0);
     var title = "当前进度";
-    $.cookie("nextAction", "toFile", {path: '/operation4ProjectPlan'});
-    //document.cookie = "nextAction=toFile";
-    console.info("创建当前进度，写入下一步计划..." + $.cookie("nextAction"))
     ajaxRun("operation4Progress/createNextProgress?currentProjectPlan=" + currentProjectPlan
         + "&nextController=operation4ProjectPlan"
         + "&nextAction=index"
-        + "&currentTeam=3"
+        + "&needToDo=toFile"
         + "&prevProgress=" + progress,
         0, "list" + title + "Div");
 

@@ -89,7 +89,15 @@ class ProgressController {
         if (params.url) {
             redirect(params.url)
         } else {
-            redirect(controller: controller, action: action)
+            switch (params.needToDo) {
+                case "toFile":
+                    println("处理下一步的任务...")
+                    redirect(controller: controller, action: "fileToProjectPlan", params:[progress: progress.id, currentProjectPlan: params.currentProjectPlan])
+                    break
+                default:
+                    println("没有设置下一步的任务...")
+                    redirect(controller: controller, action: action)
+            }
         }
     }
 

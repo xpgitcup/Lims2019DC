@@ -37,11 +37,11 @@ class Operation4ProjectPlanController extends ProjectPlanController {
     * */
 
     def fileToProjectPlan() {
-        println("${params}")
+        println("进行归档：${params}")
         def currentProjectPlan = ProjectPlan.get(params.currentProjectPlan)
         def progress = Progress.get(params.progress)
         def currentTeam = currentProjectPlan.team
-        println("${currentProjectPlan} ${progress}")
+        println("将${progress} 归档到：${currentProjectPlan} ")
         doFileToProjectPlan(currentProjectPlan, progress)
         redirect(action: "index", params: [currentTeam: currentTeam.id])
     }
@@ -160,28 +160,6 @@ class Operation4ProjectPlanController extends ProjectPlanController {
         if (!currentTeam) {
             def ctid = cookieService.getCookie("currentTeamId")
             currentTeam = Team.get(ctid)
-        }
-
-        def nextAction = cookieService.getCookie("nextAction")
-        def currentProjectPlanIdCookie = cookieService.getCookie("currentProjectPlanId")
-        def currentProjectPlanId
-        if (currentProjectPlanIdCookie) {
-            currentProjectPlanId = Integer.parseInt(currentProjectPlanIdCookie)
-        } else {
-            currentProjectPlanId = 0
-        }
-        def currentProjectPlan
-        if (currentProjectPlanId > 0) {
-            currentProjectPlan = projectPlanService.get(currentProjectPlanId)
-        }
-        println("下一步：${nextAction}")
-        switch (nextAction) {
-            case "toFile":
-                def progress = Progress.last()
-                doFileToProjectPlan(currentProjectPlan, progress)
-                println("清除下一步标志...")
-                cookieService.setCookie("nextAction", "")
-                break
         }
         model:
         [currentTeam: currentTeam]

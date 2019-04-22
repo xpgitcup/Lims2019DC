@@ -74,7 +74,7 @@ class Operation4ProgressController extends ProgressController {
         }
         def view = "createProgress"
         if (request.xhr) {
-            render(template: view, model: [progress: progress])
+            render(template: view, model: [progress: progress, needToDo: params.needToDo])
         } else {
             respond progress
         }

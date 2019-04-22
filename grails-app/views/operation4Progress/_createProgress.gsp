@@ -108,6 +108,8 @@
             <g:hiddenField name="nextController" value="${params.nextController}"/>
             <g:hiddenField name="nextAction" value="${params.nextAction}"/>
             <g:hiddenField name="url" value=""/>
+            <g:hiddenField name="needToDo" value="${params.needToDo}"/>
+            <g:hiddenField name="currentProjectPlan" value="${params.currentProjectPlan}"/>
         </fieldset>
         <fieldset class="buttons">
             <g:submitButton name="create" class="save"

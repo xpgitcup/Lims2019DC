@@ -111,13 +111,17 @@
 <g:layoutBody/>
 
 <div class="nav">
-    <div class="col-md-6 column">
+    <div class="col-md-4 column">
         <div class="application-copyright">
             中国石油大学（北京），Copyright 2019, Ver 0.9
         </div>
     </div>
 
-    <div class="col-md-6 column">
+    <div class="col-md-4 column">
+        <div class="application-footer">当前环境 ${grails.util.Environment.current}</div>
+    </div>
+
+    <div class="col-md-4 column">
         <div id="onlineCount" class="application-footer"></div>
     </div>
 </div>

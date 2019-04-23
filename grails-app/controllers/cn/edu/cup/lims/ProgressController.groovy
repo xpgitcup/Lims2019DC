@@ -1,14 +1,14 @@
 package cn.edu.cup.lims
 
+import cn.edu.cup.system.DataRootPath
 import grails.converters.JSON
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
 class ProgressController {
 
-    ProgressService progressService
+    def progressService
     def commonQueryService
-    def commonService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -92,7 +92,7 @@ class ProgressController {
             switch (params.needToDo) {
                 case "toFile":
                     println("处理下一步的任务...")
-                    redirect(controller: controller, action: "fileToProjectPlan", params:[progress: progress.id, currentProjectPlan: params.currentProjectPlan])
+                    redirect(controller: controller, action: "fileToProjectPlan", params: [progress: progress.id, currentProjectPlan: params.currentProjectPlan])
                     break
                 default:
                     println("没有设置下一步的任务...")
@@ -104,7 +104,9 @@ class ProgressController {
     protected void uploadFile(params, Progress progress) {
         if (!params.uploadedFile.empty) {
             //处理文件上传
-            def destDir = commonService.dataRootPath.operation4Progress + "/documents/${progress.id}"
+            def keyString = "${grails.util.Environment.current}.operation4Progress"
+            def rootPath = DataRootPath.findByKeyString(keyString).rootPath
+            def destDir = "${rootPath}/documents/${progress.id}"
             params.destDir = destDir
             println(destDir)
             def sf = commonService.upload(params)
@@ -151,7 +153,6 @@ class ProgressController {
         try {
             progressService.save(progress)
             flash.message = message(code: 'default.updated.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
-            uploadFile(params, progress)
         } catch (ValidationException e) {
             flash.message = progress.errors
         }

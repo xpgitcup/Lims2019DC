@@ -28,8 +28,8 @@
                         ${item.currentStatus}
                         <a class="create" href="javascript: createNextProgress(${item?.id})">上报进度</a>
                         <a class="create" href="javascript: editProgress(${item?.id})">编辑</a>
-                        <g:if test="${item.checkSupportFile()}">
-                            <a class="create" href="javascript: fixSupportFile4Progress(${item?.id})">修复支撑文件</a>
+                        <g:if test="${!item.checkSupportFile()}">
+                            <a class="create" href="javascript: fixSupportFile4Progress(${item?.id})" style="color: red">修复支撑文件</a>
                         </g:if>
                         <a class="create" href="javascript: removeProgress(${item?.id})">删除</a>
                     </td>

@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 22/04/2019 15:35:27
+ Date: 23/04/2019 14:52:49
 */
 
 SET NAMES utf8mb4;
@@ -111,6 +111,6 @@ INSERT INTO `query_statement` VALUES (73, 1, 'currentTeam', 'select count(*) Fro
 INSERT INTO `query_statement` VALUES (76, 3, 'currentTeam,filedList', 'select count(*)\r\nfrom Progress progress where progress.team=:currentTeam\r\nand \r\nprogress not in :filedList', b'0', b'1', 'count.operation4ProjectPlan.currentTeam.filedList.待归档', NULL);
 INSERT INTO `query_statement` VALUES (77, 3, 'currentTeam,filedList', 'from Progress progress where progress.team=:currentTeam\r\nand \r\nprogress not in :filedList', b'0', b'1', 'list.operation4ProjectPlan.currentTeam.filedList.待归档', 'listProgressNeedToFile');
 INSERT INTO `query_statement` VALUES (80, 3, 'currentProjectPlanId', 'select count(*) from project_plan_progress\r\nwhere project_plan_progresses_id=currentProjectPlanId', b'1', b'1', 'count.operation4ProjectPlan.currentProjectPlanId.currentTeam.当前进度', NULL);
-INSERT INTO `query_statement` VALUES (81, 4, 'currentProjectPlanId', 'select progress_id from project_plan_progress\r\nwhere project_plan_progresses_id=currentProjectPlanId\r\nlimit %d,%d', b'1', b'1', 'list.operation4ProjectPlan.currentProjectPlanId.currentTeam.当前进度', 'listProgressRight');
+INSERT INTO `query_statement` VALUES (81, 5, 'currentProjectPlanId', 'select progress_id from project_plan_progress\r\nwhere project_plan_progresses_id=currentProjectPlanId\r\norder by progress_id desc\r\nlimit %d,%d', b'1', b'1', 'list.operation4ProjectPlan.currentProjectPlanId.currentTeam.当前进度', 'listProgressRight');
 
 SET FOREIGN_KEY_CHECKS = 1;

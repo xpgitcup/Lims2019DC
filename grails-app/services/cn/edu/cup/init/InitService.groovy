@@ -29,6 +29,7 @@ class InitService {
     def thingTypeService
     def planService
     def dataRootPathService
+    def commonLimsService
 
     /**
      * 初始化代码__开发环境下的初始化代码
@@ -140,6 +141,9 @@ class InitService {
         if (planService.count() < 1) {
             initThingTypePlan()
         }
+
+        // 初始化团队的计划
+        commonLimsService.checkAndInitTeamProjectPlans()
 
     }
 

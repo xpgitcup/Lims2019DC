@@ -1,12 +1,12 @@
 package cn.edu.cup.lims
 
 import cn.edu.cup.basic.Person
+import cn.edu.cup.system.DataRootPath
+import org.omg.CORBA.Environment
 
 import java.sql.Timestamp
 
 class Progress {
-
-    def commonService
 
     Progress prevProgress
     String currentStatus
@@ -34,9 +34,12 @@ class Progress {
         if (this.supportFileName.isEmpty()) {
             return true
         } else {
-            def fileName = commonService.dataRootPath
-            + "/documents/${this.id}${this.supportFileName}"
+            println("当前环境 ${grails.util.Environment.current}");
+            def keyString = "${grails.util.Environment.current}.operation4Progress"
+            def rootPath = DataRootPath.findByKeyString(keyString).rootPath
+            def fileName = "${rootPath}/documents/${this.id}/${this.supportFileName}"
             def file = new File(fileName)
+            println("当前文件：${fileName} ${file.exists()}")
             return file.exists()
         }
     }

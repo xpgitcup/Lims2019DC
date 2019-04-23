@@ -116,7 +116,7 @@ class HomeController {
                 usersStr += "${e.userName},"
             }
         } else {
-            usersStr = "${users[0].userName},${users[0].userName},${users[0].userName}..."
+            usersStr = "${users[0].userName},${users[2].userName},${users[3].userName}..."
         }
         def result = [count: cc, usersStr: usersStr]
         if (request.xhr) {

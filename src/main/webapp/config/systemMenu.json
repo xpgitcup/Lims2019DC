@@ -28,6 +28,12 @@
         "menuAction": "operation4QueryStatement/index",
         "menuDescription": "对系统底层的查询语句进行维护",
         "menuOrder": 40
+      },
+      {
+        "menuContext": "路径维护",
+        "menuAction": "operation4DataRootPath/index",
+        "menuDescription": "对系统底层的数据路径进行维护",
+        "menuOrder": 40
       }
     ]
   },

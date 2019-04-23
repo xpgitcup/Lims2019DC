@@ -8,6 +8,19 @@ import java.text.SimpleDateFormat
 
 class Operation4ProgressController extends ProgressController {
 
+    def commonService
+
+    Boolean checkSupportFile(Progress progress) {
+        if (progress.supportFileName.isEmpty()) {
+            return true
+        } else {
+            def fileName = commonService.dataRootPath
+            + "/documents/${progress.id}${progress.supportFileName}"
+            def file = new File(fileName)
+            return file.exists()
+        }
+    }
+
     def doFixSupportFile() {
 
         println("更新文件 ${params}")

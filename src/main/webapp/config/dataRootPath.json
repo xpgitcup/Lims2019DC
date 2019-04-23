@@ -1,0 +1,10 @@
+[
+  {
+    "keyString": "development.operation4Progress",
+    "rootPath": "e:/home"
+  },
+  {
+    "keyString": "production.operation4Progress",
+    "rootPath": "/home/documents/lims2019dc"
+  }
+]

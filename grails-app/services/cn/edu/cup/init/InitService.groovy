@@ -5,6 +5,7 @@ import cn.edu.cup.basic.PersonTitle
 import cn.edu.cup.basic.Teacher
 import cn.edu.cup.lims.Plan
 import cn.edu.cup.lims.ThingType
+import cn.edu.cup.system.DataRootPath
 import cn.edu.cup.system.SystemAttribute
 import cn.edu.cup.system.SystemMenu
 import cn.edu.cup.system.SystemUser
@@ -27,6 +28,7 @@ class InitService {
     def systemAttributeService
     def thingTypeService
     def planService
+    def dataRootPathService
 
     /**
      * 初始化代码__开发环境下的初始化代码
@@ -125,20 +127,20 @@ class InitService {
             }
         }
 
+        // 处理数据路径
+        def dataRootPathFileName = "${webRootDir}/config/dataRootPath.json"
+        if (dataRootPathService.count() < 1) {
+            def dataRootPaths = importObjects(dataRootPathFileName, DataRootPath.class, null)
+            dataRootPaths.each { e ->
+                dataRootPathService.save(e)
+            }
+        }
+
         // 初始化项目类型的计划
         if (planService.count() < 1) {
             initThingTypePlan()
         }
 
-        initDataRootPath(webRootDir)
-    }
-
-    void initDataRootPath(webRootDir) {
-        def pathConfigFileName = "${webRootDir}/config/pathConfig.json"
-        def pathConfig = new File(pathConfigFileName)
-        if (pathConfig) {
-            commonService.dataRootPath = JSON.parseObject(pathConfig.text)
-        }
     }
 
     private synchronized importObjects(GString captionsFileName, Class clazz, selfCheckMethod) {

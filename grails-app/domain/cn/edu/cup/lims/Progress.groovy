@@ -6,6 +6,8 @@ import java.sql.Timestamp
 
 class Progress {
 
+    def commonService
+
     Progress prevProgress
     String currentStatus
     String problemEncounter
@@ -26,6 +28,17 @@ class Progress {
 
     String toString() {
         return "${team}.${regDate}.${currentStatus}"
+    }
+
+    Boolean checkSupportFile() {
+        if (this.supportFileName.isEmpty()) {
+            return true
+        } else {
+            def fileName = commonService.dataRootPath
+            + "/documents/${this.id}${this.supportFileName}"
+            def file = new File(fileName)
+            return file.exists()
+        }
     }
 
 }

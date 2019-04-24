@@ -92,7 +92,7 @@ function showProjectPlan(node) {
 function projectPlanNodeSelect(node) {
     console.info(jsTitle + "+节点选择......" + node);
     //showProjectPlan(node);
-    $("#createProjectPlan").attr('href', 'javascript: createProjectPlan(' + node.attributes[0] + ')');
+    //$("#createProjectPlan").attr('href', 'javascript: createProjectPlan(' + node.attributes[0] + ')');
     $("#createProjectPlan").html('上传【' + node.attributes[0] + '】进度');
     $("#fileToProjectPlan").html('归档到【' + node.attributes[0] + '】进度');
     console.info(node);

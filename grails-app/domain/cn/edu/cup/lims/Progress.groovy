@@ -31,7 +31,7 @@ class Progress {
     }
 
     Boolean checkSupportFile() {
-        if (this.supportFileName.isEmpty()) {
+        if (!this.supportFileName) {
             return true
         } else {
             println("当前环境 ${grails.util.Environment.current}");

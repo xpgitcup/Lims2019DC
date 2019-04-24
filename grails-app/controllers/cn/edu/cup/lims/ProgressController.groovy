@@ -82,6 +82,9 @@ class ProgressController {
         try {
             progressService.save(progress)
             flash.message = message(code: 'default.created.message', args: [message(code: 'progress.label', default: 'Progress'), progress.id])
+            // 第一次上报进度，应该可以上传文件啊
+            uploadFile(params, progress)
+
         } catch (ValidationException e) {
             flash.message = progress.errors
         }
